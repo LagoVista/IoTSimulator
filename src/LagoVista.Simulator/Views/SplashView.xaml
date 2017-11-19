@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pge:LagoVistaContentPage     
+    xmlns:pge="clr-namespace:LagoVista.XPlat.Core;assembly=LagoVista.XPlat.Core"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="LagoVista.Simulator.Views.SplashView"
+    xmlns:trs="clr-namespace:LagoVista.Simulator;assembly=LagoVista.Simulator"
+    HasToolBar="false" >
+    <pge:LagoVistaContentPage.Content>
+        <Grid>
+            <Grid IsVisible="{Binding NotLoggedIn}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Image Source="splashbg.jpg" Aspect="AspectFill" Grid.RowSpan="5" />
+                <Label Text="IoT Simlator" FontSize="48" HorizontalOptions="Center" TextColor="White" Grid.Row="0" Margin="0,40,0,0"  />
+                <Image Source="nuviot.png" VerticalOptions="Center" HorizontalOptions="Center"  Grid.Row="2"/>
+                <Image Source="softwarelogistics.png" HorizontalOptions="Center" Grid.Row="4" Margin="20" />
+                <pge:Button Command="{Binding LoginCommand}" Text="{trs:Translate Common_GetStarted}" WidthRequest="200" HeightRequest="48" Margin="10" HorizontalOptions="Center"  Grid.Row="6" />
+            </Grid>
+        </Grid>
+    </pge:LagoVistaContentPage.Content>
+</pge:LagoVistaContentPage>

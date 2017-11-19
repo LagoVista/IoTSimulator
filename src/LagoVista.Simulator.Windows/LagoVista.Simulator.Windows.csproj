@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{42696275-B7C9-4553-87F8-D635B8A27C97}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LagoVista.Simulator.Windows</RootNamespace>
+    <AssemblyName>LagoVista.Simulator.Windows</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.15063.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <PackageCertificateKeyFile>LagoVista.Simulator.Windows_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>781400CD9B85D7A93678541F0D09D4180714538B</PackageCertificateThumbprint>
+    <RuntimeIdentifiers>win10-arm;win10-arm-aot;win10-x86;win10-x86-aot;win10-x64;win10-x64-aot</RuntimeIdentifiers>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NETFX_CORE;WINDOWS_UWP;CODE_ANALYSIS;DISABLE_XAML_GENERATED_BREAK_ON_UNHANDLED_EXCEPTION;CODE_ANALYSIS</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="add.png" />
+    <Content Include="Assets\Fonts\iconize-fontawesome.ttf" />
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-125.png" />
+    <Content Include="Assets\LargeTile.scale-150.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\SmallTile.scale-100.png" />
+    <Content Include="Assets\SmallTile.scale-125.png" />
+    <Content Include="Assets\SmallTile.scale-150.png" />
+    <Content Include="Assets\SmallTile.scale-200.png" />
+    <Content Include="Assets\SmallTile.scale-400.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="nuviot.png" />
+    <Content Include="softwarelogistics.png" />
+    <Content Include="splashbg.jpg" />
+    <Content Include="Assets\Fonts\iconize-ionicons.ttf" />
+    <Content Include="Assets\Fonts\iconize-material.ttf" />
+    <Content Include="Assets\Fonts\iconize-meteocons.ttf" />
+    <Content Include="Assets\Fonts\iconize-simplelineicons.ttf" />
+    <Content Include="Assets\Fonts\iconize-typicons.ttf" />
+    <Content Include="Assets\Fonts\iconize-weathericons.ttf" />
+    <Content Include="Assets\Fonts\Roboto-Black.ttf" />
+    <Content Include="Assets\Fonts\Roboto-BlackItalic.ttf" />
+    <Content Include="Assets\Fonts\Roboto-Bold.ttf" />
+    <Content Include="Assets\Fonts\Roboto-BoldItalic.ttf" />
+    <Content Include="Assets\Fonts\Roboto-Italic.ttf" />
+    <Content Include="Assets\Fonts\Roboto-Light.ttf" />
+    <Content Include="Assets\Fonts\Roboto-LightItalic.ttf" />
+    <Content Include="Assets\Fonts\Roboto-Medium.ttf" />
+    <Content Include="Assets\Fonts\Roboto-MediumItalic.ttf" />
+    <Content Include="Assets\Fonts\Roboto-Regular.ttf" />
+    <Content Include="Assets\Fonts\Roboto-Thin.ttf" />
+    <Content Include="Assets\Fonts\Roboto-ThinItalic.ttf" />
+    <Content Include="Assets\Fonts\RobotoCondensed-Bold.ttf" />
+    <Content Include="Assets\Fonts\RobotoCondensed-BoldItalic.ttf" />
+    <Content Include="Assets\Fonts\RobotoCondensed-Italic.ttf" />
+    <Content Include="Assets\Fonts\RobotoCondensed-Light.ttf" />
+    <Content Include="Assets\Fonts\RobotoCondensed-LightItalic.ttf" />
+    <Content Include="Assets\Fonts\RobotoCondensed-Regular.ttf" />
+    <Content Include="Assets\Fonts\iconize-entypoplus.ttf" />
+    <None Include="LagoVista.Simulator.Windows_StoreKey.pfx" />
+    <None Include="Package.StoreAssociation.xml" />
+    <None Include="project.lock.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Icons\AV Receiver_100px.png" />
+    <Content Include="Assets\Icons\Checkmark_100px.png" />
+    <Content Include="Assets\Icons\Delete_100px.png" />
+    <Content Include="Assets\Icons\Design_100px.png" />
+    <Content Include="Assets\Icons\Edit Property_100px.png" />
+    <Content Include="Assets\Icons\Edit_100px.png" />
+    <Content Include="Assets\Icons\Electrical Threshold_100px.png" />
+    <Content Include="Assets\Icons\Exit_100px.png" />
+    <Content Include="Assets\Icons\Feed In_100px.png" />
+    <Content Include="Assets\Icons\Fog Lamp_100px.png" />
+    <Content Include="Assets\Icons\Forward Arrow_100px.png" />
+    <Content Include="Assets\Icons\Full Battery_100px.png" />
+    <Content Include="Assets\Icons\Half-Charged Battery_100px.png" />
+    <Content Include="Assets\Icons\Hub_100px.png" />
+    <Content Include="Assets\Icons\Idea_100px.png" />
+    <Content Include="Assets\Icons\Infrared Beam Sending_100px.png" />
+    <Content Include="Assets\Icons\LED Diode_100px.png" />
+    <Content Include="Assets\Icons\Low Battery_100px.png" />
+    <Content Include="Assets\Icons\Medium Volume_100px.png" />
+    <Content Include="Assets\Icons\Mirrored Reflector Bulb_100px.png" />
+    <Content Include="Assets\Icons\No Battery_100px.png" />
+    <Content Include="Assets\Icons\Nuclear Power Plant_100px.png" />
+    <Content Include="Assets\Icons\Play_100px.png" />
+    <Content Include="Assets\Icons\Plug 4_100px.png" />
+    <Content Include="Assets\Icons\Pressure Vessel_100px.png" />
+    <Content Include="Assets\Icons\Relay_100px.png" />
+    <Content Include="Assets\Icons\Right_100px.png" />
+    <Content Include="Assets\Icons\Robot_100px.png" />
+    <Content Include="Assets\Icons\Satellite Sending Signal_100px.png" />
+    <Content Include="Assets\Icons\Satellite_100px.png" />
+    <Content Include="Assets\Icons\Save_100px.png" />
+    <Content Include="Assets\Icons\Screenshot_100px.png" />
+    <Content Include="Assets\Icons\Settings_100px.png" />
+    <Content Include="Assets\Icons\Share_100px.png" />
+    <Content Include="Assets\Icons\Transistor_100px.png" />
+    <Content Include="Assets\Icons\Turbocharger_100px.png" />
+    <Content Include="Assets\Icons\Upload_100px.png" />
+    <Content Include="Assets\NuvIoT-128x128W.png" />
+    <Content Include="Assets\NuvIoT-256x256W.png" />
+    <Content Include="Assets\Settings_100px.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LagoVista.Simulator\LagoVista.Simulator.csproj">
+      <Project>{b5ec62f1-6739-4055-b6fc-21776e60f98a}</Project>
+      <Name>LagoVista.Simulator</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LagoVista.Core">
+      <Version>1.2.181-alpha1716</Version>
+    </PackageReference>
+    <PackageReference Include="LagoVista.Core.Networking">
+      <Version>1.2.181-alpha1716</Version>
+    </PackageReference>
+    <PackageReference Include="LagoVista.Core.UWP">
+      <Version>1.2.186-alpha0806</Version>
+    </PackageReference>
+    <PackageReference Include="LagoVista.IoT.DeviceAdmin">
+      <Version>1.2.181-alpha1716</Version>
+    </PackageReference>
+    <PackageReference Include="LagoVista.UserAdmin">
+      <Version>1.2.181-alpha1716</Version>
+    </PackageReference>
+    <PackageReference Include="LagoVista.UWP.UI">
+      <Version>1.2.186-alpha0806</Version>
+    </PackageReference>
+    <PackageReference Include="LagoVista.XPlat">
+      <Version>1.2.186-alpha0806</Version>
+    </PackageReference>
+    <PackageReference Include="LagoVista.XPlat.Core">
+      <Version>1.2.186-alpha0806</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Azure.Mobile.Analytics">
+      <Version>0.17.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>10.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>2.5.0.75255-pre3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'iOS Build|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\iOS Build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP;CODE_ANALYSIS</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'iOS Build|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\iOS Build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP;CODE_ANALYSIS</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'iOS Build|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\iOS Build\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NETFX_CORE;WINDOWS_UWP;CODE_ANALYSIS;DISABLE_XAML_GENERATED_BREAK_ON_UNHANDLED_EXCEPTION;CODE_ANALYSIS;CODE_ANALYSIS</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

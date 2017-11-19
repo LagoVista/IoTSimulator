@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <NetStandardImplicitPackageVersion>2.0.1</NetStandardImplicitPackageVersion>
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='iOS Build|AnyCPU'" />
+  <ItemGroup>
+    <Compile Remove="Net\**" />
+    <Compile Remove="ViewModels\Account\**" />
+    <Compile Remove="ViewModels\Orgs\**" />
+    <EmbeddedResource Remove="Net\**" />
+    <EmbeddedResource Remove="ViewModels\Account\**" />
+    <EmbeddedResource Remove="ViewModels\Orgs\**" />
+    <None Remove="Net\**" />
+    <None Remove="ViewModels\Account\**" />
+    <None Remove="ViewModels\Orgs\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LagoVista.Client.Core" Version="1.2.186-alpha0806" />
+    <PackageReference Include="LagoVista.Core" Version="1.2.181-alpha1716" />
+    <PackageReference Include="LagoVista.Core.Authentication" Version="1.2.181-alpha1716" />
+    <PackageReference Include="LagoVista.Core.Networking" Version="1.2.181-alpha1716" />
+    <PackageReference Include="LagoVista.IoT.DeviceAdmin" Version="1.2.181-alpha1716" />
+    <PackageReference Include="LagoVista.IoT.Simulator.Admin" Version="1.2.181-alpha1716" />
+    <PackageReference Include="LagoVista.MQTT.Core" Version="1.2.186-alpha0806" />
+    <PackageReference Include="LagoVista.UserAdmin" Version="1.2.181-alpha1716" />
+    <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.6.0-preview-001" />
+    <PackageReference Include="Microsoft.Azure.EventHubs" Version="1.0.3" />
+    <PackageReference Include="Microsoft.Azure.ServiceBus" Version="1.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\SimulatorCoreResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SimulatorCoreResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\SimulatorCoreResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SimulatorCoreResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

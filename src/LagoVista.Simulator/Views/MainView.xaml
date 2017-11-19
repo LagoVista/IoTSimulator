@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pge:LagoVistaContentPage xmlns:pge="clr-namespace:LagoVista.XPlat.Core;assembly=LagoVista.XPlat.Core"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:iconize="clr-namespace:FormsPlugin.Iconize;assembly=FormsPlugin.Iconize"
+             xmlns:trs="clr-namespace:LagoVista.Simulator;assembly=LagoVista.Simulator"
+             x:Class="LagoVista.Simulator.Views.MainView"
+             LeftMenu="Menu" RightMenu="Add"
+             AddCommand ="{Binding AddNewSimulatorCommand}"
+             Title="{trs:Translate AppName}">
+
+    <pge:LagoVistaContentPage.MainContent >
+        <Grid>
+            <ListView ItemsSource="{Binding ListItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" RowHeight="64"  x:Name="SimulatorList" >
+                <ListView.ItemTemplate>
+                    <DataTemplate  >
+                        <ViewCell>
+                            <Grid  >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+                                <pge:Icon IconKey="md-developer-board"  Grid.Column="1" FontSize="48" VerticalOptions="Center" TextColor="{StaticResource NuvIoTDark}" Grid.RowSpan="2"  Margin="0,9,0,0" />
+                                <Label Text="{Binding Name}" Grid.Column="2" FontSize="18" Margin="0,10,0,0" TextColor="{StaticResource NuvIoTDark}" VerticalOptions="End" LineBreakMode="TailTruncation" />
+
+                                <!-- Sorty hacky, but we need this as a source to get the command parameter for the item that  will be deleted. -->
+                                <Label Text="{Binding Id}"  x:Name="SimulatorItem" IsVisible="False" />
+
+                                <pge:IconButton IconKey="fa-trash-o" 
+                                            BindingContext="{Binding Source={x:Reference SimulatorList}, Path=BindingContext}"
+                                            Command="{Binding DeleteSimulatorCommand}" 
+                                            CommandParameter="{Binding Source={x:Reference SimulatorItem}, Path=Text}" TextColor="Red" FontSize="20"  Grid.Column="3" Margin="0,3,0,0" Grid.RowSpan="2" />
+
+                                <pge:Icon IconKey="fa-chevron-right" TextColor="{StaticResource NuvIoTDark}" Grid.Column="4" FontSize="28" Margin="0,5,16,0" VerticalOptions="Center" Grid.RowSpan="2" />
+
+                                <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="2">
+                                    <pge:Label Text="{Binding TransportType}" FontSize="13"/>
+                                    <pge:Label Text="-" FontSize="13"/>
+                                    <pge:Label Text="{Binding EndPoint}" FontSize="13" LineBreakMode="TailTruncation" />
+                                    <pge:Label Text="{Binding Port}" FontSize="13" IsVisible="{Binding Port}" LineBreakMode="TailTruncation" />
+                                    
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <pge:Icon IsVisible="{Binding IsListEmpty}" IconKey="md-developer-board"  TextColor="{StaticResource NuvIoTDark}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="256" />
+        </Grid>
+    </pge:LagoVistaContentPage.MainContent>
+</pge:LagoVistaContentPage >

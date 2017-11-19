@@ -1,0 +1,12 @@
+﻿<Application
+    x:Class="LagoVista.Simulator.Windows.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LagoVista.Simulator.Windows"
+    RequestedTheme="Light">
+
+    <Application.Resources>
+        <SolidColorBrush x:Key="SystemControlHighlightBaseHighBrush" Color="White"/>
+     </Application.Resources>
+
+</Application>

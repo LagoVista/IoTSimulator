@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cmn="clr-namespace:LagoVista.Simulator"
+             xmlns:cvts="clr-namespace:LagoVista.XPlat.Core.ValueConverter;assembly=LagoVista.XPlat.Core"
+             x:Class="LagoVista.Simulator.App">
+	<Application.Resources>
+        <!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <cvts:VisibilityConverter x:Key="VisibilityConverter" />
+            <cvts:ColorConverter  x:Key="ColorConverter" />
+            <Color x:Key="NuvIoTContrast">#FFD48D17</Color>
+            <Color x:Key="PageBackground">#2E533D</Color>
+            <Color x:Key="NuvIoTDark">#1976D2</Color>
+            <Color x:Key="NuvIoTLight">#BBDEFB</Color>
+            <Color x:Key="RightNavArrow">#BBDEFB</Color>
+            <Color x:Key="NuvIoTMedium">#2196F3</Color>
+            <Color x:Key="NuvIoTBlack">#171717</Color>
+            <Color x:Key="NuvIoTWhite">#F3F3F3</Color>
+            <Color x:Key="MenuBarBackground">#2E353D</Color>
+            <Color x:Key="MenuBarForeground">#F3F3F3</Color>
+            <Style TargetType="Label" x:Key="SectionLabel" >
+                <Setter Property="FontAttributes"  Value="Bold" />
+                <Setter Property="Margin" Value="10,10,0,0" />
+            </Style>
+        </ResourceDictionary>
+	</Application.Resources>
+</Application>
