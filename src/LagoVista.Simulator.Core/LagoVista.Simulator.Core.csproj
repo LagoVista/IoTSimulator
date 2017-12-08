@@ -17,18 +17,18 @@
     <None Remove="ViewModels\Orgs\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="LagoVista.Client.Core" Version="1.2.186-alpha0806" />
+    <PackageReference Include="LagoVista.Client.Core" Version="1.2.205-alpha1737" />
     <PackageReference Include="LagoVista.Core" Version="1.2.181-alpha1716" />
     <PackageReference Include="LagoVista.Core.Authentication" Version="1.2.181-alpha1716" />
     <PackageReference Include="LagoVista.Core.Networking" Version="1.2.181-alpha1716" />
     <PackageReference Include="LagoVista.IoT.DeviceAdmin" Version="1.2.181-alpha1716" />
     <PackageReference Include="LagoVista.IoT.Simulator.Admin" Version="1.2.181-alpha1716" />
-    <PackageReference Include="LagoVista.MQTT.Core" Version="1.2.186-alpha0806" />
+    <PackageReference Include="LagoVista.MQTT.Core" Version="1.2.205-alpha1737" />
     <PackageReference Include="LagoVista.UserAdmin" Version="1.2.181-alpha1716" />
-    <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.6.0-preview-001" />
-    <PackageReference Include="Microsoft.Azure.EventHubs" Version="1.0.3" />
+    <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.6.0" />
+    <PackageReference Include="Microsoft.Azure.EventHubs" Version="1.0.0" />
     <PackageReference Include="Microsoft.Azure.ServiceBus" Version="1.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1-beta1" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Resources\SimulatorCoreResources.Designer.cs">

@@ -5,10 +5,10 @@
     <DebugType>Full</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="LagoVista.Client.Core" Version="1.2.186-alpha0806" />
-    <PackageReference Include="LagoVista.MQTT.Core" Version="1.2.186-alpha0806" />
-    <PackageReference Include="LagoVista.XPlat" Version="1.2.186-alpha0806" />
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.91635" />
+    <PackageReference Include="LagoVista.Client.Core" Version="1.2.205-alpha1737" />
+    <PackageReference Include="LagoVista.MQTT.Core" Version="1.2.205-alpha1737" />
+    <PackageReference Include="LagoVista.XPlat" Version="1.2.205-alpha1737" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
     <PackageReference Include="LagoVista.Core" Version="1.2.181-alpha1716" />
   </ItemGroup>
   <ItemGroup>
