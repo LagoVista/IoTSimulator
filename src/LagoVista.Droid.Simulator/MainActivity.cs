@@ -20,7 +20,7 @@ namespace LagoVista.Simulator.Droid
             //https://play.google.com/apps/publish/?dev_acc=12258406958683843289
             LagoVista.XPlat.Droid.Startup.Init(BaseContext, MOBILE_CENTER_KEY);
 
-            SLWIOC.Register<ISecureStorage, SecureStorage>();
+            //SLWIOC.Register<ISecureStorage, SecureStorage>();
 
             base.OnCreate(bundle);
 
