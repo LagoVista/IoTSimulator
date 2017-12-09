@@ -1,6 +1,8 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using LagoVista.Client.Core.Auth;
+using LagoVista.Core.IOC;
 using static LagoVista.Droid.Simulator.Resource;
 
 namespace LagoVista.Simulator.Droid
@@ -17,6 +19,8 @@ namespace LagoVista.Simulator.Droid
 
             //https://play.google.com/apps/publish/?dev_acc=12258406958683843289
             LagoVista.XPlat.Droid.Startup.Init(BaseContext, MOBILE_CENTER_KEY);
+
+            SLWIOC.Register<ISecureStorage, SecureStorage>();
 
             base.OnCreate(bundle);
 

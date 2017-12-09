@@ -1,4 +1,7 @@
 ﻿using Foundation;
+using LagoVista.Client.Core.Auth;
+using LagoVista.Core.IOC;
+using LagoVista.XPlat.iOS.Services;
 using System;
 using UIKit;
 
@@ -12,6 +15,8 @@ namespace LagoVista.Simulator.iOS
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            SLWIOC.RegisterSingleton<ISecureStorage, SecureStorage>();
+
             LagoVista.XPlat.iOS.Startup.Init(app, MOBILE_CENTER_KEY);
 
             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;

@@ -65,12 +65,6 @@ namespace LagoVista.Simulator
             };
 #endif
 
-
-            /* Configuring the IoC is something like this...be warned
-             * 
-             * https://www.youtube.com/watch?v=7-FbfkUD78w
-             */
-
             var clientAppInfo = new ClientAppInfo()
             {
                 MainViewModel = typeof(MainViewModel)
