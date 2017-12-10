@@ -94,32 +94,6 @@
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
-    <AndroidResource Include="Resources\Font\iconizeentypoplus.ttf" />
-    <AndroidResource Include="Resources\Font\iconizefontawesome.ttf" />
-    <AndroidResource Include="Resources\Font\iconizeionicons.ttf" />
-    <AndroidResource Include="Resources\Font\iconizematerial.ttf" />
-    <AndroidResource Include="Resources\Font\iconizemeteocons.ttf" />
-    <AndroidResource Include="Resources\Font\iconizesimplelineicons.ttf" />
-    <AndroidResource Include="Resources\Font\iconizetypicons.ttf" />
-    <AndroidResource Include="Resources\Font\iconizeweathericons.ttf" />
-    <AndroidResource Include="Resources\Font\RobotoBlack.ttf" />
-    <AndroidResource Include="Resources\Font\RobotoBlackItalic.ttf" />
-    <AndroidResource Include="Resources\Font\RobotoBold.ttf" />
-    <AndroidResource Include="Resources\Font\RobotoBoldItalic.ttf" />
-    <AndroidResource Include="Resources\Font\RobotoCondensedBold.ttf" />
-    <AndroidResource Include="Resources\Font\RobotoCondensedBoldItalic.ttf" />
-    <AndroidResource Include="Resources\Font\RobotoCondensedItalic.ttf" />
-    <AndroidResource Include="Resources\Font\RobotoCondensedLight.ttf" />
-    <AndroidResource Include="Resources\Font\RobotoCondensedLightItalic.ttf" />
-    <AndroidResource Include="Resources\Font\RobotoCondensedRegular.ttf" />
-    <AndroidResource Include="Resources\Font\RobotoItalic.ttf" />
-    <AndroidResource Include="Resources\Font\RobotoLight.ttf" />
-    <AndroidResource Include="Resources\Font\RobotoLightItalic.ttf" />
-    <AndroidResource Include="Resources\Font\RobotoMedium.ttf" />
-    <AndroidResource Include="Resources\Font\RobotoMediumItalic.ttf" />
-    <AndroidResource Include="Resources\Font\RobotoRegular.ttf" />
-    <AndroidResource Include="Resources\Font\RobotoThin.ttf" />
-    <AndroidResource Include="Resources\Font\RobotoThinItalic.ttf" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
