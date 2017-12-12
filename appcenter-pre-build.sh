@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-plutil -replace CFBundleName -string $APPNAME $APPCENTER_SOURCE_DIRECTORY/src/LagoVista.Simulator.iOS/Info.plist
+plutil -replace CFBundleDisplayName -string "$APPNAME" $APPCENTER_SOURCE_DIRECTORY/src/LagoVista.Simulator.iOS/Info.plist
 plutil -replace CFBundleId -string $APPBUNDLEID $APPCENTER_SOURCE_DIRECTORY/src/LagoVista.Simulator.iOS/Info.plist
 
 # set the package name for Android
