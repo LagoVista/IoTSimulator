@@ -151,22 +151,48 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                 await this.ViewModelNavigation.GoBackAsync();
             }
 
-            if(!EntityHeader.IsNullOrEmpty(this.Model.CredentialStorage) &&
-                this.Model.CredentialStorage.Value == CredentialsStorage.OnDevice)
+            if (!EntityHeader.IsNullOrEmpty(this.Model.CredentialStorage))
             {
-                switch(this.Model.DefaultTransport.Value)
+                switch (this.Model.CredentialStorage.Value)
                 {
-                    case TransportTypes.AzureIoTHub:
-                    case TransportTypes.AzureServiceBus:
-                    case TransportTypes.AzureEventHub:
-                        this.Model.AccessKey = _secureStorage.Retrieve(this.Model.Id);
-                        break;
-                    case TransportTypes.RestHttp:
-                    case TransportTypes.RestHttps:
-                    case TransportTypes.MQTT:
-                        if(!this.Model.Anonymous)
+                    case CredentialsStorage.Prompt:
                         {
-                            this.Model.Password = _secureStorage.Retrieve(this.Model.Id);
+                            switch (this.Model.DefaultTransport.Value)
+                            {
+                                case TransportTypes.AzureIoTHub:
+                                case TransportTypes.AzureServiceBus:
+                                case TransportTypes.AzureEventHub:
+                                    PromptForAccessKey();
+                                    break;
+                                case TransportTypes.RestHttp:
+                                case TransportTypes.RestHttps:
+                                case TransportTypes.MQTT:
+                                    PromptForPassword();
+                                    break;
+
+                            }
+
+                        }
+                        break;
+                    case CredentialsStorage.OnDevice:
+                        {
+                            switch (this.Model.DefaultTransport.Value)
+                            {
+                                case TransportTypes.AzureIoTHub:
+                                case TransportTypes.AzureServiceBus:
+                                case TransportTypes.AzureEventHub:
+                                    this.Model.AccessKey = _secureStorage.Retrieve(this.Model.Id);
+                                    break;
+                                case TransportTypes.RestHttp:
+                                case TransportTypes.RestHttps:
+                                case TransportTypes.MQTT:
+                                    if (!this.Model.Anonymous)
+                                    {
+                                        this.Model.Password = _secureStorage.Retrieve(this.Model.Id);
+                                    }
+                                    break;
+
+                            }
                         }
                         break;
                 }
@@ -183,35 +209,32 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
         #endregion
 
         #region Handle Messages from Server
-        public async Task<bool> PromptForPassword()
+        public async void PromptForPassword()
         {
-            var result = await Popups.PromptForStringAsync(Resources.SimulatorCoreResources.Simulator_PromptPassword);
-            if (String.IsNullOrEmpty(result))
-            {
-                await Popups.ShowAsync(Resources.SimulatorCoreResources.Simulator_PasswordIsRequired);
-                return false;
-            }
-            else
-            {
-                this.Model.Password = result;
-                return true;
-            }
+            await ViewModelNavigation.NavigateAndPickAsync<PasswordEntryViewModel>(this, SetPassword, CancelCredentialsEntry);
         }
 
-        public async Task<bool> PromptForAccessKey()
+
+        public void CancelCredentialsEntry()
         {
-            var result = await Popups.PromptForStringAsync(Resources.SimulatorCoreResources.Simulator_PromptAccessKey);
-            if (String.IsNullOrEmpty(result))
-            {
-                await Popups.ShowAsync(Resources.SimulatorCoreResources.Simulator_AccessKeyIsRequired);
-                return false;
-            }
-            else
-            {
-                this.Model.AccessKey = result;
-                return true;
-            }
+            this.CloseScreen();
         }
+
+        public async void PromptForAccessKey()
+        {
+            await ViewModelNavigation.NavigateAndPickAsync<PasswordEntryViewModel>(this, SetAccessKey, CancelCredentialsEntry);
+        }
+
+        public void SetAccessKey(object password)
+        {
+            this.Model.AccessKey = password.ToString();
+        }
+
+        public void SetPassword(object password)
+        {
+            this.Model.Password = password.ToString();
+        }
+
 
         private async Task ReceiveDataFromAzure()
         {
@@ -295,25 +318,13 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                                             break;*/
 
                     case TransportTypes.AzureIoTHub:
-                        {
-                            if (String.IsNullOrEmpty(Model.AccessKey))
-                            {
-                                if (!await PromptForAccessKey()) return;
-                            }
-
-                            var connectionString = $"HostName={Model.DefaultEndPoint};DeviceId={Model.DeviceId};SharedAccessKey={Model.AccessKey}";
-                            _azureIoTHubClient = DeviceClient.CreateFromConnectionString(connectionString, Microsoft.Azure.Devices.Client.TransportType.Amqp_Tcp_Only);
-                            await _azureIoTHubClient.OpenAsync();
-                            ReceivingTask = Task.Run(ReceiveDataFromAzure);
-                            SetConnectedState();
-                        }
+                        var connectionString = $"HostName={Model.DefaultEndPoint};DeviceId={Model.DeviceId};SharedAccessKey={Model.AccessKey}";
+                        _azureIoTHubClient = DeviceClient.CreateFromConnectionString(connectionString, Microsoft.Azure.Devices.Client.TransportType.Amqp_Tcp_Only);
+                        await _azureIoTHubClient.OpenAsync();
+                        ReceivingTask = Task.Run(ReceiveDataFromAzure);
+                        SetConnectedState();
                         break;
                     case TransportTypes.MQTT:
-                        if (!Model.Anonymous && String.IsNullOrEmpty(Model.Password))
-                        {
-                            if (!await PromptForPassword()) return;
-                        }
-
                         _mqttClient = SLWIOC.Create<IMQTTDeviceClient>();
                         _mqttClient.ShowDiagnostics = true;
                         _mqttClient.BrokerHostName = Model.DefaultEndPoint;

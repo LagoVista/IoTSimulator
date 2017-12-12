@@ -120,6 +120,9 @@
   <data name="AppName" xml:space="preserve">
     <value>IoT Simulator</value>
   </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="Common_Connect" xml:space="preserve">
     <value>Connect</value>
   </data>
@@ -147,6 +150,9 @@
   <data name="Common_Messages" xml:space="preserve">
     <value>Messages</value>
   </data>
+  <data name="Common_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
   <data name="Common_Password" xml:space="preserve">
     <value>Password</value>
   </data>
@@ -167,6 +173,18 @@
   </data>
   <data name="MessageHeader_Title" xml:space="preserve">
     <value>Message Header</value>
+  </data>
+  <data name="PasswordEntry_PasswordOrAccessKey" xml:space="preserve">
+    <value>Password or Access Key to Connect to Resource</value>
+  </data>
+  <data name="PasswordEntry_PasswordOrAccessKey_wm" xml:space="preserve">
+    <value>-please enter password or watermark-</value>
+  </data>
+  <data name="PasswordEntry_Required" xml:space="preserve">
+    <value>* Required</value>
+  </data>
+  <data name="PasswordEntry_Title" xml:space="preserve">
+    <value>Credentials Entry</value>
   </data>
   <data name="SendMessage_Apply" xml:space="preserve">
     <value>Apply</value>

@@ -83,6 +83,7 @@ namespace LagoVista.Simulator
             navigation.Add<MessageEditorViewModel, Views.Messages.MessageEditorView>();
             navigation.Add<SendMessageViewModel, Views.Messages.SendMessageView>();
             navigation.Add<MessageHeaderViewModel, Views.Messages.MessageHeaderView>();
+            navigation.Add<PasswordEntryViewModel, Views.Simulator.PasswordEntryView>();
             navigation.Add<DynamicAttributeViewModel, Views.Messages.DynamicAttributeView>();
 
             navigation.Add<SplashViewModel, Views.SplashView>();
