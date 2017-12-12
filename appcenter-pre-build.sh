@@ -1,19 +1,14 @@
 #!/usr/bin/env bash
 
-if [ "$APPCENTER_BRANCH" == "dev" ];
-then
-    plutil -replace "Loc IoT Sim" -string "Dev IoT Sim" $APPCENTER_SOURCE_DIRECTORY/src/LagoVista.Simulator.iOS/Info.plist
-    plutil -replace com.software-logistics.dev.simlocal -string com.software-logistics.dev.simdev $APPCENTER_SOURCE_DIRECTORY/src/LagoVista.Simulator.iOS/Info.plist
-fi
+plutil -replace CFBundleName -string $APPNAME $APPCENTER_SOURCE_DIRECTORY/src/LagoVista.Simulator.iOS/Info.plist
+plutil -replace CFBundleId -string $APPBUNDLEID $APPCENTER_SOURCE_DIRECTORY/src/LagoVista.Simulator.iOS/Info.plist
 
-if [ "$APPCENTER_BRANCH" == "stage" ];
-then
-    plutil -replace "Loc IoT Sim" -string "Stg IoT Sim" $APPCENTER_SOURCE_DIRECTORY/src/LagoVista.Simulator.iOS/Info.plist
-    plutil -replace com.software-logistics.dev.local -string com.software-logistics.dev.simstg $APPCENTER_SOURCE_DIRECTORY/src/LagoVista.Simulator.iOS/Info.plist
-fi
+# within the script, the branch name identifies the server to be used, however it must always be upper case
+val=$(echo "$APPCENTER_BRANCH" | tr '[:lower:]' '[:upper:]' )
 
-if [ "$APPCENTER_BRANCH" == "master" ];
-then
-    plutil -replace "Loc IoT Sim" -string "IoT Simulator" $APPCENTER_SOURCE_DIRECTORY/src/LagoVista.Simulator.iOS/Info.plist
-    plutil -replace com.software-logistics.dev.local -string com.software-logistics.iot-simulator $APPCENTER_SOURCE_DIRECTORY/src/LagoVista.Simulator.iOS/Info.plist
-fi
+# set the proper environment, conditional compile statements in clode will be used to pickup the correct server uri
+sed -i '' 's/#define ENV.*/#define ENV_'"$val"'/' $APPCENTER_SOURCE_DIRECTORY/src/LagoVista.Simulator/App.xaml.cs
+
+# set the correct app center id for environment
+sed -i '' 's/MOBILE_CENTER_KEY.*/MOBILE_CENTER_KEY = \"'"$APPCENTERID"'\";/' $APPCENTER_SOURCE_DIRECTORY/src/LagoVista.Simulator.iOS/AppDelegate.cs
+
