@@ -9,6 +9,11 @@ val=$(echo "$APPCENTER_BRANCH" | tr '[:lower:]' '[:upper:]' )
 # set the proper environment, conditional compile statements in clode will be used to pickup the correct server uri
 sed -i '' 's/#define ENV.*/#define ENV_'"$val"'/' $APPCENTER_SOURCE_DIRECTORY/src/LagoVista.Simulator/App.xaml.cs
 
+echo hello there
+
 # set the correct app center id for environment
-sed -i '' 's/MOBILE_CENTER_KEY.*/MOBILE_CENTER_KEY = \"'"$APPCENTERID"'\";/' $APPCENTER_SOURCE_DIRECTORY/src/LagoVista.Simulator.iOS/AppDelegate.cs
+sed -i '' 's/public const string MOBILE_CENTER_KEY = .*/public const string MOBILE_CENTER_KEY = \"'"$APPCENTERID"'\";/' $APPCENTER_SOURCE_DIRECTORY/src/LagoVista.Simulator.iOS/AppDelegate.cs
+
+# set the correct app center id for environment
+sed -i '' 's/public const string MOBILE_CENTER_KEY = .*/public const string MOBILE_CENTER_KEY = \"'"$APPCENTERID"'\";/' $APPCENTER_SOURCE_DIRECTORY/src/LagoVista.Droid.Simulator/MainActivity.cs
 
