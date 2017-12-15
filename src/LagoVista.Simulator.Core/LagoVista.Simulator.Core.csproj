@@ -1,8 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard1.3</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <NetStandardImplicitPackageVersion>2.0.1</NetStandardImplicitPackageVersion>
     <DebugType>Full</DebugType>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='iOS Build|AnyCPU'" />
   <ItemGroup>
@@ -17,16 +18,18 @@
     <None Remove="ViewModels\Orgs\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="LagoVista.Client.Core" Version="1.2.205-alpha1737" />
-    <PackageReference Include="LagoVista.Core" Version="1.2.181-alpha1716" />
-    <PackageReference Include="LagoVista.Core.Authentication" Version="1.2.181-alpha1716" />
-    <PackageReference Include="LagoVista.Core.Networking" Version="1.2.181-alpha1716" />
-    <PackageReference Include="LagoVista.IoT.DeviceAdmin" Version="1.2.181-alpha1716" />
-    <PackageReference Include="LagoVista.IoT.Simulator.Admin" Version="1.2.181-alpha1716" />
-    <PackageReference Include="LagoVista.MQTT.Core" Version="1.2.205-alpha1737" />
-    <PackageReference Include="LagoVista.UserAdmin" Version="1.2.181-alpha1716" />
+    <PackageReference Include="LagoVista.Client.Core" Version="1.2.211-alpha1527" />
+    <PackageReference Include="LagoVista.Core" Version="1.2.211-alpha1209" />
+    <PackageReference Include="LagoVista.Core.Authentication" Version="1.2.211-alpha1209" />
+    <PackageReference Include="LagoVista.Core.Networking" Version="1.2.211-alpha1209" />
+    <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models" Version="1.2.211-alpha1209" />
+    <PackageReference Include="LagoVista.IoT.Logging" Version="1.2.211-alpha1209" />
+    <PackageReference Include="LagoVista.IoT.Simulator.Models" Version="1.2.211-alpha1209" />
+    <PackageReference Include="LagoVista.MQTT.Core" Version="1.2.211-alpha1836" />
+    <PackageReference Include="LagoVista.UserAdmin.Models" Version="1.2.211-alpha1209" />
+    <PackageReference Include="LagoVista.XPlat" Version="1.2.211-alpha1828" />
     <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.6.0" />
-    <PackageReference Include="Microsoft.Azure.EventHubs" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Azure.EventHubs" Version="1.1.0" />
     <PackageReference Include="Microsoft.Azure.ServiceBus" Version="1.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.1-beta1" />
   </ItemGroup>
