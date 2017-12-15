@@ -12,9 +12,9 @@
     <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models" Version="1.2.211-alpha1209" />
     <PackageReference Include="LagoVista.IoT.Logging" Version="1.2.211-alpha1209" />
     <PackageReference Include="LagoVista.IoT.Simulator.Models" Version="1.2.211-alpha1209" />
-    <PackageReference Include="LagoVista.MQTT.Core" Version="1.2.211-alpha1836" />
+    <PackageReference Include="LagoVista.MQTT.Core" Version="1.2.212-alpha1203" />
     <PackageReference Include="LagoVista.UserAdmin.Models" Version="1.2.211-alpha1209" />
-    <PackageReference Include="LagoVista.XPlat" Version="1.2.211-alpha1828" />
+    <PackageReference Include="LagoVista.XPlat" Version="1.2.212-alpha1425" />
     <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.6.0" />
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
     <PackageReference Include="LagoVista.Core" Version="1.2.211-alpha1209" />

@@ -14,6 +14,7 @@
     <AssemblyName>LagoVista.Simulator.iOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,7 +58,7 @@
     </IpaPackageName>
     <CodesignProvision>
     </CodesignProvision>
-    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchLink>None</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -273,14 +274,20 @@
     <Reference Include="LagoVista.IoT.Simulator.Models, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\LagoVista.IoT.Simulator.Models.1.2.211-alpha1209\lib\netstandard1.2\LagoVista.IoT.Simulator.Models.dll</HintPath>
     </Reference>
+    <Reference Include="LagoVista.MQTT.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\LagoVista.MQTT.Core.1.2.212-alpha1203\lib\Xamarin.iOS10\LagoVista.MQTT.Core.dll</HintPath>
+    </Reference>
     <Reference Include="LagoVista.MQTT.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\LagoVista.MQTT.Core.1.2.211-alpha1836\lib\Xamarin.iOS10\LagoVista.MQTT.iOS.dll</HintPath>
+      <HintPath>..\..\packages\LagoVista.MQTT.Core.1.2.212-alpha1203\lib\Xamarin.iOS10\LagoVista.MQTT.iOS.dll</HintPath>
     </Reference>
     <Reference Include="LagoVista.UserAdmin.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\LagoVista.UserAdmin.Models.1.2.211-alpha1209\lib\netstandard1.2\LagoVista.UserAdmin.Models.dll</HintPath>
     </Reference>
+    <Reference Include="LagoVista.XPlat.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\LagoVista.XPlat.1.2.212-alpha1203\lib\Xamarin.iOS10\LagoVista.XPlat.Core.dll</HintPath>
+    </Reference>
     <Reference Include="LagoVista.XPlat.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\LagoVista.XPlat.1.2.211-alpha1828\lib\Xamarin.iOS10\LagoVista.XPlat.iOS.dll</HintPath>
+      <HintPath>..\..\packages\LagoVista.XPlat.1.2.212-alpha1203\lib\Xamarin.iOS10\LagoVista.XPlat.iOS.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.Amqp, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Azure.Amqp.2.1.3\lib\netstandard1.3\Microsoft.Azure.Amqp.dll</HintPath>
@@ -420,10 +427,10 @@
     <BundleResource Include="Resources\Icon-167.png" />
     <BundleResource Include="Resources\Default-Landscape.png" />
     <BundleResource Include="Resources\Default-Landscape%402x.png" />
-    <Content Include="Resources\nuviot.png" />
-    <Content Include="Resources\nuviot%402x.png" />
-    <Content Include="Resources\softwarelogistics.png" />
-    <Content Include="Resources\splashbg.jpg" />
+    <BundleResource Include="Resources\nuviot.png" />
+    <BundleResource Include="Resources\nuviot%402x.png" />
+    <BundleResource Include="Resources\softwarelogistics.png" />
+    <BundleResource Include="Resources\splashbg.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\Contents.json">
