@@ -5,11 +5,16 @@
     <DebugType>Full</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="LagoVista.Client.Core" Version="1.2.205-alpha1737" />
-    <PackageReference Include="LagoVista.MQTT.Core" Version="1.2.205-alpha1737" />
-    <PackageReference Include="LagoVista.XPlat" Version="1.2.208-alpha0816" />
+    <PackageReference Include="LagoVista.Client.Core" Version="1.2.211-alpha1527" />
+    <PackageReference Include="LagoVista.Core.Networking" Version="1.2.211-alpha1209" />
+    <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models" Version="1.2.211-alpha1209" />
+    <PackageReference Include="LagoVista.IoT.Simulator.Models" Version="1.2.211-alpha1209" />
+    <PackageReference Include="LagoVista.MQTT.Core" Version="1.2.212-alpha1203" />
+    <PackageReference Include="LagoVista.UserAdmin.Models" Version="1.2.211-alpha1209" />
+    <PackageReference Include="LagoVista.XPlat" Version="1.2.212-alpha1425" />
+    <PackageReference Include="Microsoft.Azure.EventHubs" Version="1.0.3" />
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
-    <PackageReference Include="LagoVista.Core" Version="1.2.181-alpha1716" />
+    <PackageReference Include="LagoVista.Core" Version="1.2.211-alpha1209" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LagoVista.Simulator.Core\LagoVista.Simulator.Core.csproj" />

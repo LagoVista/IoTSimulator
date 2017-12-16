@@ -1,7 +1,7 @@
 ﻿//#define ENV_LOCAL
 #define ENV_DEV
-//#define ENV_TEST
-//#define ENV_PROD
+//#define ENV_STAGE
+//#define ENV_MASTER
 
 using LagoVista.Client.Core;
 using LagoVista.Client.Core.Models;
@@ -39,7 +39,7 @@ namespace LagoVista.Simulator
 
         private void InitServices()
         {
-#if ENV_PROD
+#if ENV_MASTER
             var serverInfo = new ServerInfo()
             {
                 SSL = true,
@@ -57,11 +57,11 @@ namespace LagoVista.Simulator
                 SSL = false,
                 RootUrl = "localhost:5001",
             };
-#elif ENV_TEST
+#elif ENV_STAGE
             var serverInfo = new ServerInfo()
             {
                 SSL = true,
-                RootUrl = "test-api.nuviot.com",
+                RootUrl = "stage-api.nuviot.com",
             };
 #endif
 
@@ -83,6 +83,7 @@ namespace LagoVista.Simulator
             navigation.Add<MessageEditorViewModel, Views.Messages.MessageEditorView>();
             navigation.Add<SendMessageViewModel, Views.Messages.SendMessageView>();
             navigation.Add<MessageHeaderViewModel, Views.Messages.MessageHeaderView>();
+            navigation.Add<PasswordEntryViewModel, Views.Simulator.PasswordEntryView>();
             navigation.Add<DynamicAttributeViewModel, Views.Messages.DynamicAttributeView>();
 
             navigation.Add<SplashViewModel, Views.SplashView>();

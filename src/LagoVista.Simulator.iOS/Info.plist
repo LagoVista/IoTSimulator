@@ -23,9 +23,9 @@
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>IoT Simulator</string>
+	<string>Loc IoT Sim</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.software-logistics.iot-simulator</string>
+	<string>com.software-logistics.dev.local</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UIAppFonts</key>

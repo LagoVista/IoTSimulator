@@ -219,26 +219,41 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="LagoVista.Client.Core">
+      <Version>1.2.211-alpha1527</Version>
+    </PackageReference>
     <PackageReference Include="LagoVista.Core">
-      <Version>1.2.181-alpha1716</Version>
+      <Version>1.2.211-alpha1209</Version>
+    </PackageReference>
+    <PackageReference Include="LagoVista.Core.Authentication">
+      <Version>1.2.211-alpha1209</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Core.Networking">
-      <Version>1.2.181-alpha1716</Version>
+      <Version>1.2.211-alpha1209</Version>
     </PackageReference>
-    <PackageReference Include="LagoVista.IoT.DeviceAdmin">
-      <Version>1.2.181-alpha1716</Version>
+    <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models">
+      <Version>1.2.211-alpha1209</Version>
     </PackageReference>
-    <PackageReference Include="LagoVista.UserAdmin">
-      <Version>1.2.181-alpha1716</Version>
+    <PackageReference Include="LagoVista.IoT.Simulator.Models">
+      <Version>1.2.211-alpha1209</Version>
+    </PackageReference>
+    <PackageReference Include="LagoVista.MQTT.Core">
+      <Version>1.2.212-alpha1203</Version>
+    </PackageReference>
+    <PackageReference Include="LagoVista.UserAdmin.Models">
+      <Version>1.2.211-alpha1209</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.XPlat">
-      <Version>1.2.208-alpha0816</Version>
+      <Version>1.2.212-alpha1425</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Azure.EventHubs">
+      <Version>1.0.3</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Azure.Mobile.Analytics">
       <Version>0.17.1</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.0.4</Version>
+      <Version>6.0.5</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>11.0.1-beta1</Version>

@@ -79,7 +79,7 @@ namespace LagoVista.Simulator.Windows
                 SLWIOC.Register<ITCPClient, TCPClient>();
                 SLWIOC.Register<IUDPClient, UDPClient>();
 
-                SLWIOC.Register<IMqttNetworkChannel, MqttNetworkChannel>();
+//                SLWIOC.Register<IMqttNetworkChannel, MqttNetworkChannel>();
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated) { }
 
