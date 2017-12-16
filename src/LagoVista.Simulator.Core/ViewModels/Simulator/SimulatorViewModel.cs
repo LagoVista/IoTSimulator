@@ -151,22 +151,51 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                 await this.ViewModelNavigation.GoBackAsync();
             }
 
-            if(!EntityHeader.IsNullOrEmpty(this.Model.CredentialStorage) &&
-                this.Model.CredentialStorage.Value == CredentialsStorage.OnDevice)
+            if (!EntityHeader.IsNullOrEmpty(this.Model.CredentialStorage))
             {
-                switch(this.Model.DefaultTransport.Value)
+                switch (this.Model.CredentialStorage.Value)
                 {
-                    case TransportTypes.AzureIoTHub:
-                    case TransportTypes.AzureServiceBus:
-                    case TransportTypes.AzureEventHub:
-                        this.Model.AccessKey = _secureStorage.Retrieve(this.Model.Id);
-                        break;
-                    case TransportTypes.RestHttp:
-                    case TransportTypes.RestHttps:
-                    case TransportTypes.MQTT:
-                        if(!this.Model.Anonymous)
+                    case CredentialsStorage.OnDevice:
                         {
-                            this.Model.Password = _secureStorage.Retrieve(this.Model.Id);
+                            switch (this.Model.DefaultTransport.Value)
+                            {
+                                case TransportTypes.AzureIoTHub:
+                                case TransportTypes.AzureServiceBus:
+                                case TransportTypes.AzureEventHub:
+                                    this.Model.AccessKey = _secureStorage.Retrieve(this.Model.Id);
+                                    break;
+                                case TransportTypes.RestHttp:
+                                case TransportTypes.RestHttps:
+                                case TransportTypes.MQTT:
+                                    if (!this.Model.Anonymous)
+                                    {
+                                        this.Model.Password = _secureStorage.Retrieve(this.Model.Id);
+                                    }
+                                    break;
+                            }
+                        }
+                        break;
+                    case CredentialsStorage.Prompt:
+                        {
+                            switch (this.Model.DefaultTransport.Value)
+                            {
+                                case TransportTypes.AzureIoTHub:
+                                case TransportTypes.AzureServiceBus:
+                                case TransportTypes.AzureEventHub:
+                                   if(! await PromptForAccessKey())
+                                    {
+                                        await this.CloseScreenAsync();
+                                    }
+                                    break;
+                                case TransportTypes.RestHttp:
+                                case TransportTypes.RestHttps:
+                                case TransportTypes.MQTT:
+                                    if (!await PromptForPassword())
+                                    {
+                                        await this.CloseScreenAsync();
+                                    }
+                                    break;
+                            }
                         }
                         break;
                 }

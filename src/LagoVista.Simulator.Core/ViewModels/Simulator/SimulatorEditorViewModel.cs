@@ -69,7 +69,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                             this.Model.AccessKey = null;
 
                             break;
-                            
+
                     }
                 }
 
@@ -98,11 +98,11 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
         {
             View[nameof(Model.Key).ToFieldKey()].IsUserEditable = LaunchArgs.LaunchType == LaunchTypes.Create;
             View[nameof(Model.DefaultTransport).ToFieldKey()].IsEnabled = LaunchArgs.LaunchType == LaunchTypes.Create;
+
             form.AddViewCell(nameof(Model.Name));
             form.AddViewCell(nameof(Model.Key));
             form.AddViewCell(nameof(Model.DefaultTransport));
             form.AddViewCell(nameof(Model.DefaultEndPoint));
-            //            form.AddViewCell(nameof(Model.TLSSSL));
             form.AddViewCell(nameof(Model.DefaultPort));
             form.AddViewCell(nameof(Model.DeviceId));
             form.AddViewCell(nameof(Model.Anonymous));
@@ -189,7 +189,6 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             HideRow(nameof(Model.DefaultPayloadType));
             HideRow(nameof(Model.HubName));
             HideRow(nameof(Model.DefaultPort));
-            //HideRow(nameof(Model.TLSSSL));
             HideRow(nameof(Model.DefaultEndPoint));
             HideRow(nameof(Model.UserName));
             HideRow(nameof(Model.Anonymous));
