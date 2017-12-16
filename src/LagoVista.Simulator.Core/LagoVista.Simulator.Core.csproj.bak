@@ -1,0 +1,8 @@
+LagoVista.Client.Core=1.2.205-alpha1737
+LagoVista.Core=1.2.181-alpha1716
+LagoVista.Core.Authentication=1.2.181-alpha1716
+LagoVista.Core.Networking=1.2.181-alpha1716
+LagoVista.IoT.DeviceAdmin=1.2.181-alpha1716
+LagoVista.IoT.Simulator.Admin=1.2.181-alpha1716
+LagoVista.MQTT.Core=1.2.205-alpha1737
+LagoVista.UserAdmin=1.2.181-alpha1716

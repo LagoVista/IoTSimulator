@@ -25,7 +25,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>Loc IoT Sim</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.software-logistics.dev.local</string>
+	<string>com.software-logistics.iotsimulator.localdev</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UIAppFonts</key>
@@ -72,25 +72,24 @@
 		<string>Icon-Small.png</string>
 		<string>Icon-Small@2x.png</string>
 	</array>
-  <key>UILaunchStoryboardName</key>
-  <string>LaunchScreen</string>
-  <key>XSAppIconAssets</key>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>XSAppIconAssets</key>
 	<string>Resources/Media.xcassets/AppIcons.appiconset</string>
-  <key>XSLaunchImageAssets</key>
-  <string>Resources/Media.xcassets/LaunchImages.launchimage</string>
-  <key>CFBundleURLTypes</key>
-  <array>
-    <dict>
-      <key>CFBundleURLName</key>
-      <string>NuvIoT Handler</string>
-      <key>CFBundleURLSchemes</key>
-      <array>
-        <string>nuviot</string>        
-      </array>
-    </dict>
-  </array>
-
-  <key>CFBundleName</key>
+	<key>XSLaunchImageAssets</key>
+	<string>Resources/Media.xcassets/LaunchImages.launchimage</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>NuvIoT Handler</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>nuviot</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleName</key>
 	<string>IoT Simulator</string>
 	<key>UIBackgroundModes</key>
 	<array>

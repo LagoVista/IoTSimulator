@@ -33,6 +33,5 @@ namespace LagoVista.Simulator.iOS
             LagoVista.Simulator.App.Instance.HandleURIActivation(new Uri(url.AbsoluteString));
             return true;
         }
-
     }
 }
