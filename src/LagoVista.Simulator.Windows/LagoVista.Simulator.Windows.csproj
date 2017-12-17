@@ -144,7 +144,6 @@
     <Content Include="nuviot.png" />
     <Content Include="softwarelogistics.png" />
     <Content Include="splashbg.jpg" />
-    <None Include="LagoVista.Simulator.Windows_StoreKey.pfx" />
     <None Include="Package.StoreAssociation.xml" />
     <None Include="project.lock.json" />
   </ItemGroup>
@@ -312,6 +311,13 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

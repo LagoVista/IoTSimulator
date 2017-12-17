@@ -92,7 +92,6 @@
     <AndroidAsset Include="Assets\Resources\Font\RobotoRegular.ttf" />
     <AndroidAsset Include="Assets\Resources\Font\RobotoThin.ttf" />
     <AndroidAsset Include="Assets\Resources\Font\RobotoThinItalic.ttf" />
-    <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml">
       <SubType>Designer</SubType>
     </None>
