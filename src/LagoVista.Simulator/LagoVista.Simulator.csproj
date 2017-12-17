@@ -6,7 +6,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="LagoVista.Client.Core" Version="1.2.214-alpha1630" />
+    <PackageReference Include="LagoVista.Client.Core" Version="1.2.214-alpha1736" />
     <PackageReference Include="LagoVista.Core.Authentication" Version="1.2.214-alpha1112" />
     <PackageReference Include="LagoVista.Core.Networking" Version="1.2.214-alpha1112" />
     <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models" Version="1.2.214-alpha1112" />
@@ -14,7 +14,7 @@
     <PackageReference Include="LagoVista.IoT.Simulator.Models" Version="1.2.214-alpha1112" />
     <PackageReference Include="LagoVista.MQTT.Core" Version="1.2.212-alpha1203" />
     <PackageReference Include="LagoVista.UserAdmin.Models" Version="1.2.214-alpha1112" />
-    <PackageReference Include="LagoVista.XPlat" Version="1.2.214-alpha1630" />
+    <PackageReference Include="LagoVista.XPlat" Version="1.2.214-alpha1736" />
     <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.6.0" />
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
     <PackageReference Include="LagoVista.Core" Version="1.2.214-alpha1112" />

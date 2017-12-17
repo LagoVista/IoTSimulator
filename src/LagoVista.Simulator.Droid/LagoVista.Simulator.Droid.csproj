@@ -75,7 +75,7 @@
       <HintPath>..\..\packages\Xamarin.Forms.2.5.0.121934\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
     </Reference>
     <Reference Include="LagoVista.Client.Core, Version=1.2.1.1, Culture=neutral, PublicKeyToken=d788b1c9b90dabea, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\LagoVista.Client.Core.1.2.214-alpha1630\lib\netstandard1.3\LagoVista.Client.Core.dll</HintPath>
+      <HintPath>..\..\packages\LagoVista.Client.Core.1.2.214-alpha1736\lib\netstandard1.3\LagoVista.Client.Core.dll</HintPath>
     </Reference>
     <Reference Include="LagoVista.Core, Version=0.8.0.0, Culture=neutral, PublicKeyToken=2698135e9954a85d, processorArchitecture=MSIL">
       <HintPath>..\..\packages\LagoVista.Core.Networking.1.2.214-alpha1112\lib\netstandard1.2\LagoVista.Core.dll</HintPath>
@@ -105,10 +105,10 @@
       <HintPath>..\..\packages\LagoVista.UserAdmin.Models.1.2.214-alpha1112\lib\netstandard1.2\LagoVista.UserAdmin.Models.dll</HintPath>
     </Reference>
     <Reference Include="LagoVista.XPlat.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\LagoVista.XPlat.1.2.214-alpha1630\lib\MonoAndroid10\LagoVista.XPlat.Core.dll</HintPath>
+      <HintPath>..\..\packages\LagoVista.XPlat.1.2.214-alpha1736\lib\MonoAndroid10\LagoVista.XPlat.Core.dll</HintPath>
     </Reference>
     <Reference Include="LagoVista.XPlat.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\LagoVista.XPlat.1.2.214-alpha1630\lib\MonoAndroid10\LagoVista.XPlat.Droid.dll</HintPath>
+      <HintPath>..\..\packages\LagoVista.XPlat.1.2.214-alpha1736\lib\MonoAndroid10\LagoVista.XPlat.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.Amqp, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Azure.Amqp.2.1.3\lib\monoandroid\Microsoft.Azure.Amqp.dll</HintPath>
@@ -305,32 +305,32 @@
     <Compile Include="SplashScreen.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Resources\Font\iconizeentypoplus.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\iconizefontawesome.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\iconizeionicons.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\iconizematerial.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\iconizemeteocons.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\iconizesimplelineicons.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\iconizetypicons.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\iconizeweathericons.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\RobotoBlack.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\RobotoBlackItalic.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\RobotoBold.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\RobotoBoldItalic.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\RobotoCondensedBold.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\RobotoCondensedBoldItalic.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\RobotoCondensedItalic.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\RobotoCondensedLight.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\RobotoCondensedLightItalic.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\RobotoCondensedRegular.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\RobotoItalic.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\RobotoLight.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\RobotoLightItalic.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\RobotoMedium.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\RobotoMediumItalic.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\RobotoRegular.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\RobotoThin.ttf" />
-    <AndroidAsset Include="Assets\Resources\Font\RobotoThinItalic.ttf" />
+    <AndroidAsset Include="Assets\font\iconizeentypoplus.ttf" />
+    <AndroidAsset Include="Assets\font\iconizefontawesome.ttf" />
+    <AndroidAsset Include="Assets\font\iconizeionicons.ttf" />
+    <AndroidAsset Include="Assets\font\iconizematerial.ttf" />
+    <AndroidAsset Include="Assets\font\iconizemeteocons.ttf" />
+    <AndroidAsset Include="Assets\font\iconizesimplelineicons.ttf" />
+    <AndroidAsset Include="Assets\font\iconizetypicons.ttf" />
+    <AndroidAsset Include="Assets\font\iconizeweathericons.ttf" />
+    <AndroidAsset Include="Assets\font\RobotoBlack.ttf" />
+    <AndroidAsset Include="Assets\font\RobotoBlackItalic.ttf" />
+    <AndroidAsset Include="Assets\font\RobotoBold.ttf" />
+    <AndroidAsset Include="Assets\font\RobotoBoldItalic.ttf" />
+    <AndroidAsset Include="Assets\font\RobotoCondensedBold.ttf" />
+    <AndroidAsset Include="Assets\font\RobotoCondensedBoldItalic.ttf" />
+    <AndroidAsset Include="Assets\font\RobotoCondensedItalic.ttf" />
+    <AndroidAsset Include="Assets\font\RobotoCondensedLight.ttf" />
+    <AndroidAsset Include="Assets\font\RobotoCondensedLightItalic.ttf" />
+    <AndroidAsset Include="Assets\font\RobotoCondensedRegular.ttf" />
+    <AndroidAsset Include="Assets\font\RobotoItalic.ttf" />
+    <AndroidAsset Include="Assets\font\RobotoLight.ttf" />
+    <AndroidAsset Include="Assets\font\RobotoLightItalic.ttf" />
+    <AndroidAsset Include="Assets\font\RobotoMedium.ttf" />
+    <AndroidAsset Include="Assets\font\RobotoMediumItalic.ttf" />
+    <AndroidAsset Include="Assets\font\RobotoRegular.ttf" />
+    <AndroidAsset Include="Assets\font\RobotoThin.ttf" />
+    <AndroidAsset Include="Assets\font\RobotoThinItalic.ttf" />
     <None Include="app.config" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
