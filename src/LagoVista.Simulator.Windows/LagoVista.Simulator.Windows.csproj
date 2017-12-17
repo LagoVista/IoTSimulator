@@ -226,7 +226,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="LagoVista.Client.Core">
-      <Version>1.2.214-alpha1201</Version>
+      <Version>1.2.214-alpha1630</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Core">
       <Version>1.2.214-alpha1112</Version>
@@ -240,6 +240,9 @@
     <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models">
       <Version>1.2.214-alpha1112</Version>
     </PackageReference>
+    <PackageReference Include="LagoVista.IoT.Logging">
+      <Version>1.2.214-alpha1112</Version>
+    </PackageReference>
     <PackageReference Include="LagoVista.IoT.Simulator.Models">
       <Version>1.2.214-alpha1112</Version>
     </PackageReference>
@@ -250,7 +253,7 @@
       <Version>1.2.214-alpha1112</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.XPlat">
-      <Version>1.2.214-alpha1201</Version>
+      <Version>1.2.214-alpha1630</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Azure.EventHubs">
       <Version>1.0.3</Version>

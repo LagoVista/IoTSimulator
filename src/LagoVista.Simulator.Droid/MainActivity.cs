@@ -2,7 +2,7 @@
 using Android.Content.PM;
 using Android.OS;
 using System.Reflection;
-using static LagoVista.Droid.Simulator.Resource;
+using static LagoVista.Simulator.Droid.Resource;
 
 namespace LagoVista.Simulator.Droid
 {

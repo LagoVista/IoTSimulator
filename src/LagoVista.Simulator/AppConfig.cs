@@ -1,12 +1,6 @@
 ﻿using LagoVista.Core.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using LagoVista.Core.Models;
-using System.Reflection;
 
 namespace LagoVista.Simulator
 {
@@ -20,7 +14,6 @@ namespace LagoVista.Simulator
                 case Device.iOS: PlatformType = PlatformTypes.iPhone; break;
                 case Device.UWP: PlatformType = PlatformTypes.WindowsUWP; break;
             }
-
         }
 
         public PlatformTypes PlatformType { get; private set; }

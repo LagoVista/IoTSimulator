@@ -12,7 +12,7 @@ using Android.Widget;
 using Android.Content.PM;
 using LagoVista.Simulator.Droid;
 
-namespace LagoVista.Droid.Simulator
+namespace LagoVista.Simulator.Droid
 {
     [Activity(Label = "IoT Simulator", MainLauncher =true, NoHistory = true, Theme = "@style/Theme.Splash", ConfigurationChanges = ConfigChanges.ScreenLayout | ConfigChanges.Orientation )]
     public class SplashScreen : Activity
