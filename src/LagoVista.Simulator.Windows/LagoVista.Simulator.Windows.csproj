@@ -201,9 +201,7 @@
     <Content Include="Assets\Icons\Upload_100px.png" />
     <Content Include="Assets\NuvIoT-128x128W.png" />
     <Content Include="Assets\NuvIoT-256x256W.png" />
-    <Content Include="Assets\Settings_100px.png" />
     <Content Include="Properties\Default.rd.xml" />
-    <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.scale-200.png" />
@@ -228,31 +226,31 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="LagoVista.Client.Core">
-      <Version>1.2.211-alpha1527</Version>
+      <Version>1.2.214-alpha1201</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Core">
-      <Version>1.2.211-alpha1209</Version>
+      <Version>1.2.214-alpha1112</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Core.Authentication">
-      <Version>1.2.211-alpha1209</Version>
+      <Version>1.2.214-alpha1112</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Core.Networking">
-      <Version>1.2.211-alpha1209</Version>
+      <Version>1.2.214-alpha1112</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models">
-      <Version>1.2.211-alpha1209</Version>
+      <Version>1.2.214-alpha1112</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.IoT.Simulator.Models">
-      <Version>1.2.211-alpha1209</Version>
+      <Version>1.2.214-alpha1112</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.MQTT.Core">
       <Version>1.2.212-alpha1203</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.UserAdmin.Models">
-      <Version>1.2.211-alpha1209</Version>
+      <Version>1.2.214-alpha1112</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.XPlat">
-      <Version>1.2.212-alpha1425</Version>
+      <Version>1.2.214-alpha1201</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Azure.EventHubs">
       <Version>1.0.3</Version>

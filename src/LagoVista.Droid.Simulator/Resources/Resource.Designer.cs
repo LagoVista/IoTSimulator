@@ -911,32 +911,6 @@ namespace LagoVista.Droid.Simulator
 			global::LagoVista.XPlat.Droid.Resource.Drawable.notification_template_icon_low_bg = global::LagoVista.Droid.Simulator.Resource.Drawable.notification_template_icon_low_bg;
 			global::LagoVista.XPlat.Droid.Resource.Drawable.notification_tile_bg = global::LagoVista.Droid.Simulator.Resource.Drawable.notification_tile_bg;
 			global::LagoVista.XPlat.Droid.Resource.Drawable.notify_panel_notification_icon_bg = global::LagoVista.Droid.Simulator.Resource.Drawable.notify_panel_notification_icon_bg;
-			global::LagoVista.XPlat.Droid.Resource.Font.iconizeentypoplus = global::LagoVista.Droid.Simulator.Resource.Font.iconizeentypoplus;
-			global::LagoVista.XPlat.Droid.Resource.Font.iconizefontawesome = global::LagoVista.Droid.Simulator.Resource.Font.iconizefontawesome;
-			global::LagoVista.XPlat.Droid.Resource.Font.iconizeionicons = global::LagoVista.Droid.Simulator.Resource.Font.iconizeionicons;
-			global::LagoVista.XPlat.Droid.Resource.Font.iconizematerial = global::LagoVista.Droid.Simulator.Resource.Font.iconizematerial;
-			global::LagoVista.XPlat.Droid.Resource.Font.iconizemeteocons = global::LagoVista.Droid.Simulator.Resource.Font.iconizemeteocons;
-			global::LagoVista.XPlat.Droid.Resource.Font.iconizesimplelineicons = global::LagoVista.Droid.Simulator.Resource.Font.iconizesimplelineicons;
-			global::LagoVista.XPlat.Droid.Resource.Font.iconizetypicons = global::LagoVista.Droid.Simulator.Resource.Font.iconizetypicons;
-			global::LagoVista.XPlat.Droid.Resource.Font.iconizeweathericons = global::LagoVista.Droid.Simulator.Resource.Font.iconizeweathericons;
-			global::LagoVista.XPlat.Droid.Resource.Font.RobotoBlack = global::LagoVista.Droid.Simulator.Resource.Font.RobotoBlack;
-			global::LagoVista.XPlat.Droid.Resource.Font.RobotoBlackItalic = global::LagoVista.Droid.Simulator.Resource.Font.RobotoBlackItalic;
-			global::LagoVista.XPlat.Droid.Resource.Font.RobotoBold = global::LagoVista.Droid.Simulator.Resource.Font.RobotoBold;
-			global::LagoVista.XPlat.Droid.Resource.Font.RobotoBoldItalic = global::LagoVista.Droid.Simulator.Resource.Font.RobotoBoldItalic;
-			global::LagoVista.XPlat.Droid.Resource.Font.RobotoCondensedBold = global::LagoVista.Droid.Simulator.Resource.Font.RobotoCondensedBold;
-			global::LagoVista.XPlat.Droid.Resource.Font.RobotoCondensedBoldItalic = global::LagoVista.Droid.Simulator.Resource.Font.RobotoCondensedBoldItalic;
-			global::LagoVista.XPlat.Droid.Resource.Font.RobotoCondensedItalic = global::LagoVista.Droid.Simulator.Resource.Font.RobotoCondensedItalic;
-			global::LagoVista.XPlat.Droid.Resource.Font.RobotoCondensedLight = global::LagoVista.Droid.Simulator.Resource.Font.RobotoCondensedLight;
-			global::LagoVista.XPlat.Droid.Resource.Font.RobotoCondensedLightItalic = global::LagoVista.Droid.Simulator.Resource.Font.RobotoCondensedLightItalic;
-			global::LagoVista.XPlat.Droid.Resource.Font.RobotoCondensedRegular = global::LagoVista.Droid.Simulator.Resource.Font.RobotoCondensedRegular;
-			global::LagoVista.XPlat.Droid.Resource.Font.RobotoItalic = global::LagoVista.Droid.Simulator.Resource.Font.RobotoItalic;
-			global::LagoVista.XPlat.Droid.Resource.Font.RobotoLight = global::LagoVista.Droid.Simulator.Resource.Font.RobotoLight;
-			global::LagoVista.XPlat.Droid.Resource.Font.RobotoLightItalic = global::LagoVista.Droid.Simulator.Resource.Font.RobotoLightItalic;
-			global::LagoVista.XPlat.Droid.Resource.Font.RobotoMedium = global::LagoVista.Droid.Simulator.Resource.Font.RobotoMedium;
-			global::LagoVista.XPlat.Droid.Resource.Font.RobotoMediumItalic = global::LagoVista.Droid.Simulator.Resource.Font.RobotoMediumItalic;
-			global::LagoVista.XPlat.Droid.Resource.Font.RobotoRegular = global::LagoVista.Droid.Simulator.Resource.Font.RobotoRegular;
-			global::LagoVista.XPlat.Droid.Resource.Font.RobotoThin = global::LagoVista.Droid.Simulator.Resource.Font.RobotoThin;
-			global::LagoVista.XPlat.Droid.Resource.Font.RobotoThinItalic = global::LagoVista.Droid.Simulator.Resource.Font.RobotoThinItalic;
 			global::LagoVista.XPlat.Droid.Resource.Id.action0 = global::LagoVista.Droid.Simulator.Resource.Id.action0;
 			global::LagoVista.XPlat.Droid.Resource.Id.action_bar = global::LagoVista.Droid.Simulator.Resource.Id.action_bar;
 			global::LagoVista.XPlat.Droid.Resource.Id.action_bar_activity_content = global::LagoVista.Droid.Simulator.Resource.Id.action_bar_activity_content;
@@ -4387,26 +4361,26 @@ namespace LagoVista.Droid.Simulator
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
+			// aapt resource value: 0x7f020111
+			public const int avd_hide_password_1 = 2130837777;
+			
 			// aapt resource value: 0x7f020112
-			public const int avd_hide_password_1 = 2130837778;
+			public const int avd_hide_password_2 = 2130837778;
 			
 			// aapt resource value: 0x7f020113
-			public const int avd_hide_password_2 = 2130837779;
-			
-			// aapt resource value: 0x7f020114
-			public const int avd_hide_password_3 = 2130837780;
+			public const int avd_hide_password_3 = 2130837779;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
+			// aapt resource value: 0x7f020114
+			public const int avd_show_password_1 = 2130837780;
+			
 			// aapt resource value: 0x7f020115
-			public const int avd_show_password_1 = 2130837781;
+			public const int avd_show_password_2 = 2130837781;
 			
 			// aapt resource value: 0x7f020116
-			public const int avd_show_password_2 = 2130837782;
-			
-			// aapt resource value: 0x7f020117
-			public const int avd_show_password_3 = 2130837783;
+			public const int avd_show_password_3 = 2130837782;
 			
 			// aapt resource value: 0x7f020055
 			public const int design_bottom_navigation_item_background = 2130837589;
@@ -4862,118 +4836,115 @@ namespace LagoVista.Droid.Simulator
 			public const int ic_vol_type_tv_light = 2130837739;
 			
 			// aapt resource value: 0x7f0200ec
-			public const int icon = 2130837740;
+			public const int mr_button_connected_dark = 2130837740;
 			
 			// aapt resource value: 0x7f0200ed
-			public const int mr_button_connected_dark = 2130837741;
+			public const int mr_button_connected_light = 2130837741;
 			
 			// aapt resource value: 0x7f0200ee
-			public const int mr_button_connected_light = 2130837742;
+			public const int mr_button_connecting_dark = 2130837742;
 			
 			// aapt resource value: 0x7f0200ef
-			public const int mr_button_connecting_dark = 2130837743;
+			public const int mr_button_connecting_light = 2130837743;
 			
 			// aapt resource value: 0x7f0200f0
-			public const int mr_button_connecting_light = 2130837744;
+			public const int mr_button_dark = 2130837744;
 			
 			// aapt resource value: 0x7f0200f1
-			public const int mr_button_dark = 2130837745;
+			public const int mr_button_light = 2130837745;
 			
 			// aapt resource value: 0x7f0200f2
-			public const int mr_button_light = 2130837746;
+			public const int mr_dialog_close_dark = 2130837746;
 			
 			// aapt resource value: 0x7f0200f3
-			public const int mr_dialog_close_dark = 2130837747;
+			public const int mr_dialog_close_light = 2130837747;
 			
 			// aapt resource value: 0x7f0200f4
-			public const int mr_dialog_close_light = 2130837748;
+			public const int mr_dialog_material_background_dark = 2130837748;
 			
 			// aapt resource value: 0x7f0200f5
-			public const int mr_dialog_material_background_dark = 2130837749;
+			public const int mr_dialog_material_background_light = 2130837749;
 			
 			// aapt resource value: 0x7f0200f6
-			public const int mr_dialog_material_background_light = 2130837750;
+			public const int mr_group_collapse = 2130837750;
 			
 			// aapt resource value: 0x7f0200f7
-			public const int mr_group_collapse = 2130837751;
+			public const int mr_group_expand = 2130837751;
 			
 			// aapt resource value: 0x7f0200f8
-			public const int mr_group_expand = 2130837752;
+			public const int mr_media_pause_dark = 2130837752;
 			
 			// aapt resource value: 0x7f0200f9
-			public const int mr_media_pause_dark = 2130837753;
+			public const int mr_media_pause_light = 2130837753;
 			
 			// aapt resource value: 0x7f0200fa
-			public const int mr_media_pause_light = 2130837754;
+			public const int mr_media_play_dark = 2130837754;
 			
 			// aapt resource value: 0x7f0200fb
-			public const int mr_media_play_dark = 2130837755;
+			public const int mr_media_play_light = 2130837755;
 			
 			// aapt resource value: 0x7f0200fc
-			public const int mr_media_play_light = 2130837756;
+			public const int mr_media_stop_dark = 2130837756;
 			
 			// aapt resource value: 0x7f0200fd
-			public const int mr_media_stop_dark = 2130837757;
+			public const int mr_media_stop_light = 2130837757;
 			
 			// aapt resource value: 0x7f0200fe
-			public const int mr_media_stop_light = 2130837758;
+			public const int mr_vol_type_audiotrack_dark = 2130837758;
 			
 			// aapt resource value: 0x7f0200ff
-			public const int mr_vol_type_audiotrack_dark = 2130837759;
+			public const int mr_vol_type_audiotrack_light = 2130837759;
 			
 			// aapt resource value: 0x7f020100
-			public const int mr_vol_type_audiotrack_light = 2130837760;
+			public const int navigation_empty_icon = 2130837760;
 			
 			// aapt resource value: 0x7f020101
-			public const int navigation_empty_icon = 2130837761;
+			public const int notification_action_background = 2130837761;
 			
 			// aapt resource value: 0x7f020102
-			public const int notification_action_background = 2130837762;
+			public const int notification_bg = 2130837762;
 			
 			// aapt resource value: 0x7f020103
-			public const int notification_bg = 2130837763;
+			public const int notification_bg_low = 2130837763;
 			
 			// aapt resource value: 0x7f020104
-			public const int notification_bg_low = 2130837764;
+			public const int notification_bg_low_normal = 2130837764;
 			
 			// aapt resource value: 0x7f020105
-			public const int notification_bg_low_normal = 2130837765;
+			public const int notification_bg_low_pressed = 2130837765;
 			
 			// aapt resource value: 0x7f020106
-			public const int notification_bg_low_pressed = 2130837766;
+			public const int notification_bg_normal = 2130837766;
 			
 			// aapt resource value: 0x7f020107
-			public const int notification_bg_normal = 2130837767;
+			public const int notification_bg_normal_pressed = 2130837767;
 			
 			// aapt resource value: 0x7f020108
-			public const int notification_bg_normal_pressed = 2130837768;
-			
-			// aapt resource value: 0x7f020109
-			public const int notification_icon_background = 2130837769;
-			
-			// aapt resource value: 0x7f020110
-			public const int notification_template_icon_bg = 2130837776;
-			
-			// aapt resource value: 0x7f020111
-			public const int notification_template_icon_low_bg = 2130837777;
-			
-			// aapt resource value: 0x7f02010a
-			public const int notification_tile_bg = 2130837770;
-			
-			// aapt resource value: 0x7f02010b
-			public const int notify_panel_notification_icon_bg = 2130837771;
-			
-			// aapt resource value: 0x7f02010c
-			public const int nuviot = 2130837772;
-			
-			// aapt resource value: 0x7f02010d
-			public const int softwarelogistics = 2130837773;
-			
-			// aapt resource value: 0x7f02010e
-			public const int splashbg = 2130837774;
+			public const int notification_icon_background = 2130837768;
 			
 			// aapt resource value: 0x7f02010f
-			public const int splashscreen = 2130837775;
+			public const int notification_template_icon_bg = 2130837775;
+			
+			// aapt resource value: 0x7f020110
+			public const int notification_template_icon_low_bg = 2130837776;
+			
+			// aapt resource value: 0x7f020109
+			public const int notification_tile_bg = 2130837769;
+			
+			// aapt resource value: 0x7f02010a
+			public const int notify_panel_notification_icon_bg = 2130837770;
+			
+			// aapt resource value: 0x7f02010b
+			public const int nuviot = 2130837771;
+			
+			// aapt resource value: 0x7f02010c
+			public const int softwarelogistics = 2130837772;
+			
+			// aapt resource value: 0x7f02010d
+			public const int splashbg = 2130837773;
+			
+			// aapt resource value: 0x7f02010e
+			public const int splashscreen = 2130837774;
 			
 			static Drawable()
 			{
@@ -4981,97 +4952,6 @@ namespace LagoVista.Droid.Simulator
 			}
 			
 			private Drawable()
-			{
-			}
-		}
-		
-		public partial class Font
-		{
-			
-			// aapt resource value: 0x7f030000
-			public const int iconizeentypoplus = 2130903040;
-			
-			// aapt resource value: 0x7f030001
-			public const int iconizefontawesome = 2130903041;
-			
-			// aapt resource value: 0x7f030002
-			public const int iconizeionicons = 2130903042;
-			
-			// aapt resource value: 0x7f030003
-			public const int iconizematerial = 2130903043;
-			
-			// aapt resource value: 0x7f030004
-			public const int iconizemeteocons = 2130903044;
-			
-			// aapt resource value: 0x7f030005
-			public const int iconizesimplelineicons = 2130903045;
-			
-			// aapt resource value: 0x7f030006
-			public const int iconizetypicons = 2130903046;
-			
-			// aapt resource value: 0x7f030007
-			public const int iconizeweathericons = 2130903047;
-			
-			// aapt resource value: 0x7f030008
-			public const int RobotoBlack = 2130903048;
-			
-			// aapt resource value: 0x7f030009
-			public const int RobotoBlackItalic = 2130903049;
-			
-			// aapt resource value: 0x7f03000a
-			public const int RobotoBold = 2130903050;
-			
-			// aapt resource value: 0x7f03000b
-			public const int RobotoBoldItalic = 2130903051;
-			
-			// aapt resource value: 0x7f03000c
-			public const int RobotoCondensedBold = 2130903052;
-			
-			// aapt resource value: 0x7f03000d
-			public const int RobotoCondensedBoldItalic = 2130903053;
-			
-			// aapt resource value: 0x7f03000e
-			public const int RobotoCondensedItalic = 2130903054;
-			
-			// aapt resource value: 0x7f03000f
-			public const int RobotoCondensedLight = 2130903055;
-			
-			// aapt resource value: 0x7f030010
-			public const int RobotoCondensedLightItalic = 2130903056;
-			
-			// aapt resource value: 0x7f030011
-			public const int RobotoCondensedRegular = 2130903057;
-			
-			// aapt resource value: 0x7f030012
-			public const int RobotoItalic = 2130903058;
-			
-			// aapt resource value: 0x7f030013
-			public const int RobotoLight = 2130903059;
-			
-			// aapt resource value: 0x7f030014
-			public const int RobotoLightItalic = 2130903060;
-			
-			// aapt resource value: 0x7f030015
-			public const int RobotoMedium = 2130903061;
-			
-			// aapt resource value: 0x7f030016
-			public const int RobotoMediumItalic = 2130903062;
-			
-			// aapt resource value: 0x7f030017
-			public const int RobotoRegular = 2130903063;
-			
-			// aapt resource value: 0x7f030018
-			public const int RobotoThin = 2130903064;
-			
-			// aapt resource value: 0x7f030019
-			public const int RobotoThinItalic = 2130903065;
-			
-			static Font()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Font()
 			{
 			}
 		}
@@ -5922,6 +5802,22 @@ namespace LagoVista.Droid.Simulator
 			}
 			
 			private Layout()
+			{
+			}
+		}
+		
+		public partial class Mipmap
+		{
+			
+			// aapt resource value: 0x7f030000
+			public const int icon = 2130903040;
+			
+			static Mipmap()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Mipmap()
 			{
 			}
 		}

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagoVista.Simulator.Windows", "src\LagoVista.Simulator.Windows\LagoVista.Simulator.Windows.csproj", "{42696275-B7C9-4553-87F8-D635B8A27C97}"
 EndProject
@@ -12,6 +12,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagoVista.Simulator.iOS", "src\LagoVista.Simulator.iOS\LagoVista.Simulator.iOS.csproj", "{EC06F587-499C-4247-BA95-0D9703A8D772}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagoVista.Droid.Simulator", "src\LagoVista.Droid.Simulator\LagoVista.Droid.Simulator.csproj", "{FC5CA425-5659-4A42-AD3B-E8514FA05961}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3AC3F308-8DBE-49F6-9016-DED28264D322}"
+	ProjectSection(SolutionItems) = preProject
+		appcenter-post-clone.ps1 = appcenter-post-clone.ps1
+		appcenter-pre-build.sh = appcenter-pre-build.sh
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
