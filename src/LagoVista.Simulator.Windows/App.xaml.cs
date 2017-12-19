@@ -1,14 +1,9 @@
-﻿using LagoVista.Client;
-using LagoVista.Client.Core;
-using LagoVista.Client.Core.Net;
-using LagoVista.Core.Interfaces;
+﻿using LagoVista.Client.Core;
 using LagoVista.Core.IOC;
-using LagoVista.Core.Networking.Interfaces;
 using LagoVista.Core.PlatformSupport;
 using LagoVista.Core.UWP.Services;
 using LagoVista.MQTT.Core;
-using LagoVista.MQTT.Core.Clients;
-using LagoVista.XPlat.UWP;
+using LagoVista.MQTT.UWP;
 using LagoVista.XPlat.UWP.Network;
 using System;
 using System.Diagnostics;
@@ -79,7 +74,7 @@ namespace LagoVista.Simulator.Windows
                 SLWIOC.Register<ITCPClient, TCPClient>();
                 SLWIOC.Register<IUDPClient, UDPClient>();
 
-//                SLWIOC.Register<IMqttNetworkChannel, MqttNetworkChannel>();
+                SLWIOC.Register<IMqttNetworkChannel, MqttNetworkChannel>();
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated) { }
 

@@ -1,6 +1,7 @@
 ﻿using Foundation;
 using LagoVista.Client.Core.Auth;
 using LagoVista.Core.IOC;
+using LagoVista.MQTT.Core;
 using LagoVista.XPlat.iOS.Services;
 using System;
 using UIKit;
@@ -14,8 +15,8 @@ namespace LagoVista.Simulator.iOS
         private const string MOBILE_CENTER_KEY = "f9ae5b45-bc21-43ff-af8a-60a66fc48c6c";
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
-        {
-            SLWIOC.RegisterSingleton<ISecureStorage, SecureStorage>();
+        {       
+            SLWIOC.Register<IMqttNetworkChannel, MqttNetworkChannel>();
 
             LagoVista.XPlat.iOS.Startup.Init(app, MOBILE_CENTER_KEY);
 

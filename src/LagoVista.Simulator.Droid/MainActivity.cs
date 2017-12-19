@@ -1,6 +1,9 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using LagoVista.Core.IOC;
+using LagoVista.MQTT.Core;
+using LagoVista.MQTT.Droid;
 using System.Reflection;
 using static LagoVista.Simulator.Droid.Resource;
 
@@ -18,6 +21,8 @@ namespace LagoVista.Simulator.Droid
 
             //https://play.google.com/apps/publish/?dev_acc=12258406958683843289
             LagoVista.XPlat.Droid.Startup.Init(BaseContext, MOBILE_CENTER_KEY);
+
+            SLWIOC.Register<IMqttNetworkChannel, MqttNetworkChannel>();
 
             base.OnCreate(bundle);
 

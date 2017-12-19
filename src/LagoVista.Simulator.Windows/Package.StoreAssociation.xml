@@ -358,34 +358,30 @@
     <Language Code="zu-za" InMinimumRequirementSet="true" />
   </SupportedLocales>
   <ProductReservedInfo>
-    <MainPackageIdentityName>com.software-logistics.iotsimulator</MainPackageIdentityName>
+    <MainPackageIdentityName>SoftwareLogisticsLLC.IoTSimulator-LocalDev</MainPackageIdentityName>
     <ReservedNames>
-      <ReservedName>IoT Simulator</ReservedName>
+      <ReservedName>IoT Simulator - Stage</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames>
-    <MainPackageIdentityName>SoftwareLogisticsLLC.AmbersArmy</MainPackageIdentityName>
-    <MainPackageIdentityName>SoftwareLogisticsLLC.AzureIoTDeviceManager</MainPackageIdentityName>
-    <MainPackageIdentityName>SoftwareLogisticsLLC.BevTra</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.ByteMaster</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.ByteMasterManCaveController</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.ByteMasterTechDemo</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.EventKonnect</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.HarmanHWKHub</MainPackageIdentityName>
-    <MainPackageIdentityName>SoftwareLogisticsLLC.IoTSimulaor</MainPackageIdentityName>
+    <MainPackageIdentityName>SoftwareLogisticsLLC.IoTDeviceManager</MainPackageIdentityName>
+    <MainPackageIdentityName>SoftwareLogisticsLLC.IoTPlatformManager</MainPackageIdentityName>
+    <MainPackageIdentityName>SoftwareLogisticsLLC.IoTPlatformManager-Dev</MainPackageIdentityName>
+    <MainPackageIdentityName>SoftwareLogisticsLLC.IoTSimulator</MainPackageIdentityName>
+    <MainPackageIdentityName>SoftwareLogisticsLLC.IoTSimulator-Dev</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.IPCameraUltimate</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.ISYAutomationPro</MainPackageIdentityName>
-    <MainPackageIdentityName>SoftwareLogisticsLLC.KineticCare</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.LagoVistaIoT</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.NuvIoTSimulator</MainPackageIdentityName>
-    <MainPackageIdentityName>SoftwareLogisticsLLC.RxHelper</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.SeaWolf</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.TankBot</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.TankBotFirmware</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.YahamaAVRController</MainPackageIdentityName>
-    <MainPackageIdentityName>SoftwareLogisticsLLC.YahooMail-TempDevClient</MainPackageIdentityName>
-    <MainPackageIdentityName>SoftwareLogisticsLLC.YahooMailClientDev</MainPackageIdentityName>
-    <MainPackageIdentityName>SoftwareLogisticsLLC.YahooMailTechnologyDemo</MainPackageIdentityName>
   </AccountPackageIdentityNames>
-  <PackageInfoList LandingUrl="https://developer.microsoft.com/dashboard/Application?appId=9NWH3926ZT2R" />
+  <PackageInfoList LandingUrl="https://developer.microsoft.com/dashboard/Application?appId=9MTZTG915FN5" />
 </StoreAssociation>

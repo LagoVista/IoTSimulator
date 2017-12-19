@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="com.software-logistics.iotsimulator" Publisher="CN=610EF21F-3A3C-4783-B4BF-B7C267BC0CA0" Version="1.0.1217.1044" />
-  <mp:PhoneIdentity PhoneProductId="6f3922ec-d981-4fb2-b927-e59006f02af1" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="SoftwareLogisticsLLC.IoTSimulator-LocalDev" Publisher="CN=610EF21F-3A3C-4783-B4BF-B7C267BC0CA0" Version="1.1.0.1044" />
+  <mp:PhoneIdentity PhoneProductId="02d053c2-5bbc-4afe-bc4a-d5be2b6ea76f" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>IoT Simulator</DisplayName>
+    <DisplayName>IoT Simulator - Stage</DisplayName>
     <PublisherDisplayName>Software Logistics LLC</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="LagoVista.Simulator.Windows.App">
-      <uap:VisualElements DisplayName="IoT Simulator" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="A free simulator provided Software Logistics to simulate IoT devices." BackgroundColor="transparent">
+      <uap:VisualElements DisplayName="IoT Simulator - Stage" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="A free simulator provided Software Logistics to simulate IoT devices." BackgroundColor="transparent">
         <uap:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\BadgeLogo.png" />
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="IoT Simulator" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png">
           <uap:ShowNameOnTiles>
