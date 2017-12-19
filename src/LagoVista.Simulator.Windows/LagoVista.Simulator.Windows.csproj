@@ -253,7 +253,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="LagoVista.Client.Core">
-      <Version>1.2.215-alpha1838</Version>
+      <Version>1.2.216-alpha1559</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Core">
       <Version>1.2.214-alpha1112</Version>
@@ -280,7 +280,7 @@
       <Version>1.2.214-alpha1112</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.XPlat">
-      <Version>1.2.215-alpha1838</Version>
+      <Version>1.2.216-alpha1559</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Azure.EventHubs">
       <Version>1.0.3</Version>
