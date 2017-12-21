@@ -25,7 +25,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>IoT Simulator</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.software-logistics.iotsimulator.dev</string>
+	<string>com.software-logistics.iotsimulator.localdev</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UIAppFonts</key>
