@@ -14,6 +14,8 @@ namespace LagoVista.Simulator
                 case Device.iOS: PlatformType = PlatformTypes.iPhone; break;
                 case Device.UWP: PlatformType = PlatformTypes.WindowsUWP; break;
             }
+
+            WebAddress = "https://www.IoTAppStudio.com";
         }
 
         public PlatformTypes PlatformType { get; private set; }
@@ -24,9 +26,10 @@ namespace LagoVista.Simulator
 
         public string AppName => "IoT Simulator";
 
-        public string AppLogo => "";
+        public string AppLogo => "appicon.png";
 
-        public string CompanyLogo => "";
+        public string CompanyLogo => "slsys.png";
+
 #if DEBUG
         public bool EmitTestingCode => true;
 #else
@@ -37,5 +40,15 @@ namespace LagoVista.Simulator
         public string ClientType => "mobileapp";
 
         public VersionInfo Version { get; set; }
+
+        public string CompanyName => "Software Logistics, LLC";
+
+        public string CompanySiteLink => "https://support.nuviot.com/help.html#/information/company";
+
+        public string AppDescription => "IoT Simulator is a free product provided by Software Logistics, LLC to simulate devices that send data to server side IoT applications built with IoT App Studio.\r\n\r\nAlthough we hope you decide that IoT App Studio will meet your needs to develop your IoT applications, we place no restrictions on using this simualtor to tests apps on other platforms.";
+
+        public string TermsAndConditionsLink => "https://app.termly.io/document/terms-of-use-for-saas/90eaf71a-610a-435e-95b1-c94b808f8aca";
+
+        public string PrivacyStatementLink => "https://app.termly.io/document/privacy-policy-for-website/f0b67cde-2a08-4fe8-a35e-5e4571545d00";
     }
 }

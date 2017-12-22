@@ -254,25 +254,25 @@
       <HintPath>..\..\packages\DotNetty.Transport.0.4.7\lib\netstandard1.3\DotNetty.Transport.dll</HintPath>
     </Reference>
     <Reference Include="LagoVista.Client.Core, Version=1.2.1.1, Culture=neutral, PublicKeyToken=d788b1c9b90dabea, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\LagoVista.Client.Core.1.2.218-alpha1653\lib\netstandard1.3\LagoVista.Client.Core.dll</HintPath>
+      <HintPath>..\..\packages\LagoVista.Client.Core.1.2.219-alpha1721\lib\netstandard1.3\LagoVista.Client.Core.dll</HintPath>
     </Reference>
     <Reference Include="LagoVista.Core, Version=0.8.0.0, Culture=neutral, PublicKeyToken=2698135e9954a85d, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\LagoVista.Core.Authentication.1.2.214-alpha1112\lib\netstandard1.2\LagoVista.Core.dll</HintPath>
+      <HintPath>..\..\packages\LagoVista.Core.Networking.1.2.219-alpha1648\lib\netstandard1.2\LagoVista.Core.dll</HintPath>
     </Reference>
     <Reference Include="LagoVista.Core.Authentication, Version=0.8.0.0, Culture=neutral, PublicKeyToken=dcf35d1740df1edc, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\LagoVista.Core.Authentication.1.2.214-alpha1112\lib\netstandard1.2\LagoVista.Core.Authentication.dll</HintPath>
+      <HintPath>..\..\packages\LagoVista.Core.Authentication.1.2.219-alpha1648\lib\netstandard1.2\LagoVista.Core.Authentication.dll</HintPath>
     </Reference>
     <Reference Include="LagoVista.Core.Networking, Version=0.8.0.0, Culture=neutral, PublicKeyToken=650a46bd96014ff6, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\LagoVista.Core.Authentication.1.2.214-alpha1112\lib\netstandard1.2\LagoVista.Core.Networking.dll</HintPath>
+      <HintPath>..\..\packages\LagoVista.Core.Networking.1.2.219-alpha1648\lib\netstandard1.2\LagoVista.Core.Networking.dll</HintPath>
     </Reference>
     <Reference Include="LagoVista.IoT.DeviceAdmin.Models, Version=1.2.211.1131, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\LagoVista.IoT.DeviceAdmin.Models.1.2.214-alpha1112\lib\netstandard1.2\LagoVista.IoT.DeviceAdmin.Models.dll</HintPath>
+      <HintPath>..\..\packages\LagoVista.IoT.DeviceAdmin.Models.1.2.219-alpha1648\lib\netstandard1.2\LagoVista.IoT.DeviceAdmin.Models.dll</HintPath>
     </Reference>
     <Reference Include="LagoVista.IoT.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\LagoVista.IoT.Logging.1.2.214-alpha1112\lib\netstandard1.2\LagoVista.IoT.Logging.dll</HintPath>
+      <HintPath>..\..\packages\LagoVista.IoT.Logging.1.2.219-alpha1648\lib\netstandard1.2\LagoVista.IoT.Logging.dll</HintPath>
     </Reference>
     <Reference Include="LagoVista.IoT.Simulator.Models, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\LagoVista.IoT.Simulator.Models.1.2.214-alpha1112\lib\netstandard1.2\LagoVista.IoT.Simulator.Models.dll</HintPath>
+      <HintPath>..\..\packages\LagoVista.IoT.Simulator.Models.1.2.219-alpha1648\lib\netstandard1.2\LagoVista.IoT.Simulator.Models.dll</HintPath>
     </Reference>
     <Reference Include="LagoVista.MQTT.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\LagoVista.MQTT.1.2.216-alpha1541\lib\Xamarin.iOS10\LagoVista.MQTT.Core.dll</HintPath>
@@ -281,13 +281,13 @@
       <HintPath>..\..\packages\LagoVista.MQTT.1.2.216-alpha1541\lib\Xamarin.iOS10\LagoVista.MQTT.iOS.dll</HintPath>
     </Reference>
     <Reference Include="LagoVista.UserAdmin.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\LagoVista.UserAdmin.Models.1.2.214-alpha1112\lib\netstandard1.2\LagoVista.UserAdmin.Models.dll</HintPath>
+      <HintPath>..\..\packages\LagoVista.UserAdmin.Models.1.2.219-alpha1648\lib\netstandard1.2\LagoVista.UserAdmin.Models.dll</HintPath>
     </Reference>
     <Reference Include="LagoVista.XPlat.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\LagoVista.XPlat.1.2.218-alpha1653\lib\Xamarin.iOS10\LagoVista.XPlat.Core.dll</HintPath>
+      <HintPath>..\..\packages\LagoVista.XPlat.1.2.219-alpha1721\lib\Xamarin.iOS10\LagoVista.XPlat.Core.dll</HintPath>
     </Reference>
     <Reference Include="LagoVista.XPlat.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\LagoVista.XPlat.1.2.218-alpha1653\lib\Xamarin.iOS10\LagoVista.XPlat.iOS.dll</HintPath>
+      <HintPath>..\..\packages\LagoVista.XPlat.1.2.219-alpha1721\lib\Xamarin.iOS10\LagoVista.XPlat.iOS.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.Amqp, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Azure.Amqp.2.1.3\lib\netstandard1.3\Microsoft.Azure.Amqp.dll</HintPath>

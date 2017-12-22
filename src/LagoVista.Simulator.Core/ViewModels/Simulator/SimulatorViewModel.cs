@@ -32,9 +32,11 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
         ISecureStorage _secureStorage;
         DeviceClient _azureIoTHubClient;
         bool _isConnected;
+        bool _isEditing;
 
         Task ReceivingTask;
         #endregion
+
 
         #region Constructor
         public SimulatorViewModel(ISecureStorage secureStorage)
@@ -116,6 +118,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                 await DisconnectAsync();
             }
             await ViewModelNavigation.NavigateAndEditAsync<SimulatorEditorViewModel>(this, Model.Id);
+            _isEditing = true;
         }
 
         public override async Task<bool> CanCancelAsync()
@@ -149,6 +152,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             if (!result.Successful)
             {
                 await this.ViewModelNavigation.GoBackAsync();
+                return;
             }
 
             if (!EntityHeader.IsNullOrEmpty(this.Model.CredentialStorage))
@@ -198,9 +202,10 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
 
         public override async Task ReloadedAsync()
         {
-            if (!_isConnected)
+            if (!_isConnected && _isEditing)
             {
-                await PerformNetworkOperation(LoadSimulator);
+                await InitAsync();
+                _isEditing = false;
             }
         }
         #endregion
@@ -230,6 +235,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
         public void SetPassword(object password)
         {
             this.Model.Password = password.ToString();
+            this.Model.Name = "IT WAS EDITED!";
         }
 
 

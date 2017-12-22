@@ -16,8 +16,6 @@ namespace LagoVista.Simulator.iOS
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {       
-            SLWIOC.Register<IMqttNetworkChannel, MqttNetworkChannel>();
-
             LagoVista.XPlat.iOS.Startup.Init(app, MOBILE_CENTER_KEY);
 
             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;

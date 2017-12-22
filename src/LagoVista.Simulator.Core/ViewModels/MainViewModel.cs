@@ -8,6 +8,7 @@ using LagoVista.Client.Core.ViewModels.Auth;
 using LagoVista.Client.Core.ViewModels.Orgs;
 using System.Linq;
 using System.Resources;
+using LagoVista.Client.Core.ViewModels.Other;
 
 [assembly: NeutralResourcesLanguage("en")]
 
@@ -40,6 +41,12 @@ namespace LagoVista.Simulator.Core.ViewModels
                     Command = new RelayCommand(() => ViewModelNavigation.NavigateAsync<InviteUserViewModel>(this)),
                     Name = ClientResources.MainMenu_InviteUser,
                     FontIconKey = "fa-user"
+                },                
+                new MenuItem()
+                {
+                    Command = new RelayCommand(() => ViewModelNavigation.NavigateAsync<AboutViewModel>(this)),
+                    Name = "About",
+                    FontIconKey = "fa-info"
                 },
                 new MenuItem()
                 {

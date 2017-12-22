@@ -155,14 +155,14 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             {
                 switch (View[nameof(Model.DefaultTransport).ToFieldKey()].Value)
                 {
-                    case LagoVista.IoT.Simulator.Admin.Models.Simulator.Transport_MQTT: return "http://support.nuviot.com/help.html#/Simulator/MQTT.md";
-                    case LagoVista.IoT.Simulator.Admin.Models.Simulator.Transport_Azure_EventHub: return "http://support.nuviot.com/help.html#/Simulator/AzureEventHub.md";
-                    case LagoVista.IoT.Simulator.Admin.Models.Simulator.Transport_AzureServiceBus: return "http://support.nuviot.com/help.html#/Simulator/AzureServiceBus.md";
-                    case LagoVista.IoT.Simulator.Admin.Models.Simulator.Transport_IOT_HUB: return "http://support.nuviot.com/help.html#/Simulator/AzureIoTHub.md";
+                    case LagoVista.IoT.Simulator.Admin.Models.Simulator.Transport_MQTT: return "http://support.nuviot.com/help.html#/simulator/mqtt";
+                    case LagoVista.IoT.Simulator.Admin.Models.Simulator.Transport_Azure_EventHub: return "http://support.nuviot.com/help.html#/simulator/azureeventhub";
+                    case LagoVista.IoT.Simulator.Admin.Models.Simulator.Transport_AzureServiceBus: return "http://support.nuviot.com/help.html#/simulator/azureservicebus";
+                    case LagoVista.IoT.Simulator.Admin.Models.Simulator.Transport_IOT_HUB: return "http://support.nuviot.com/help.html#/simulator/azureiothub";
                     case LagoVista.IoT.Simulator.Admin.Models.Simulator.Transport_RestHttp:
-                    case LagoVista.IoT.Simulator.Admin.Models.Simulator.Transport_RestHttps: return "http://support.nuviot.com/help.html#/Simulator/REST.md";
-                    case LagoVista.IoT.Simulator.Admin.Models.Simulator.Transport_TCP: return "http://support.nuviot.com/help.html#/Simulator/TCP.md";
-                    case LagoVista.IoT.Simulator.Admin.Models.Simulator.Transport_UDP: return "http://support.nuviot.com/help.html#/Simulator/UDP.md";
+                    case LagoVista.IoT.Simulator.Admin.Models.Simulator.Transport_RestHttps: return "http://support.nuviot.com/help.html#/simulator/rest";
+                    case LagoVista.IoT.Simulator.Admin.Models.Simulator.Transport_TCP: return "http://support.nuviot.com/help.html#/simulator/tcp";
+                    case LagoVista.IoT.Simulator.Admin.Models.Simulator.Transport_UDP: return "http://support.nuviot.com/help.html#/simulator/udp";
                 }
             }
 

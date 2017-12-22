@@ -96,6 +96,7 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <Content Include="add.png" />
+    <Content Include="Assets\appicon.png" />
     <Content Include="Assets\BadgeLogo.scale-100.png" />
     <Content Include="Assets\BadgeLogo.scale-125.png" />
     <Content Include="Assets\BadgeLogo.scale-150.png" />
@@ -106,6 +107,7 @@
     <Content Include="Assets\LargeTile.scale-150.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\slsys.png" />
     <Content Include="Assets\SmallTile.scale-100.png" />
     <Content Include="Assets\SmallTile.scale-125.png" />
     <Content Include="Assets\SmallTile.scale-150.png" />
@@ -253,34 +255,34 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="LagoVista.Client.Core">
-      <Version>1.2.218-alpha1653</Version>
+      <Version>1.2.219-alpha1721</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Core">
-      <Version>1.2.214-alpha1112</Version>
+      <Version>1.2.219-alpha1648</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Core.Authentication">
-      <Version>1.2.214-alpha1112</Version>
+      <Version>1.2.219-alpha1648</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Core.Networking">
-      <Version>1.2.214-alpha1112</Version>
+      <Version>1.2.219-alpha1648</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models">
-      <Version>1.2.214-alpha1112</Version>
+      <Version>1.2.219-alpha1648</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.IoT.Logging">
-      <Version>1.2.214-alpha1112</Version>
+      <Version>1.2.219-alpha1648</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.IoT.Simulator.Models">
-      <Version>1.2.214-alpha1112</Version>
+      <Version>1.2.219-alpha1648</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.MQTT">
       <Version>1.2.216-alpha1541</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.UserAdmin.Models">
-      <Version>1.2.214-alpha1112</Version>
+      <Version>1.2.219-alpha1648</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.XPlat">
-      <Version>1.2.218-alpha1653</Version>
+      <Version>1.2.219-alpha1721</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Azure.EventHubs">
       <Version>1.0.3</Version>

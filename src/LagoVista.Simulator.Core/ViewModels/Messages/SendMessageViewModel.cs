@@ -260,37 +260,6 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
         #endregion
 
         #region Send Messages for protocols
-        public async Task<bool> PromptForPassword()
-        {
-            var result = await Popups.PromptForStringAsync(Resources.SimulatorCoreResources.Simulator_PromptPassword);
-            if (String.IsNullOrEmpty(result))
-            {
-                await Popups.ShowAsync(Resources.SimulatorCoreResources.Simulator_PasswordIsRequired);
-                return false;
-            }
-            else
-            {
-                this.Simulator.Password = result;
-                return true;
-            }
-        }
-
-        public async Task<bool> PromptForAccessKey()
-        {
-            var result = await Popups.PromptForStringAsync(Resources.SimulatorCoreResources.Simulator_PromptAccessKey);
-            if (String.IsNullOrEmpty(result))
-            {
-                await Popups.ShowAsync(Resources.SimulatorCoreResources.Simulator_AccessKeyIsRequired);
-                return false;
-            }
-            else
-            {
-                this.Simulator.AccessKey = result;
-                return true;
-            }
-        }
-
-
         private async Task SendTCPMessage()
         {
             var buffer = GetMessageBytes();
@@ -306,9 +275,10 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
 
         private async Task SendServiceBusMessage()
         {
-            if(String.IsNullOrEmpty(this.Simulator.AccessKey))
+            if (String.IsNullOrEmpty(Simulator.AccessKey))
             {
-                if (!await PromptForAccessKey()) return;
+                await Popups.ShowAsync("Access Key is missing");
+                return;
             }
 
             var connectionString = $"Endpoint=sb://{Simulator.DefaultEndPoint}.servicebus.windows.net/;SharedAccessKeyName={Simulator.AccessKeyName};SharedAccessKey={Simulator.AccessKey}";
@@ -339,9 +309,10 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
 
         private async Task SendEventHubMessage()
         {
-            if (String.IsNullOrEmpty(this.Simulator.AccessKey))
+            if (String.IsNullOrEmpty(Simulator.AccessKey))
             {
-                if (!await PromptForAccessKey()) return;
+                await Popups.ShowAsync("Access Key is missing");
+                return;
             }
 
             var connectionString = $"Endpoint=sb://{Simulator.DefaultEndPoint}.servicebus.windows.net/;SharedAccessKeyName={Simulator.AccessKeyName};SharedAccessKey={Simulator.AccessKey}";
@@ -381,18 +352,19 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
 
         private async Task SendRESTRequest()
         {
-            if (String.IsNullOrEmpty(this.Simulator.Password) && !this.Simulator.Anonymous)
-            {
-                if (!await PromptForAccessKey()) return;
-            }
-
             using (var client = new HttpClient())
             {
                 var protocol = MsgTemplate.Transport.Value == TransportTypes.RestHttps ? "https" : "http";
                 var uri = $"{protocol}://{Simulator.DefaultEndPoint}:{Simulator.DefaultPort}{ReplaceTokens(MsgTemplate.PathAndQueryString)}";
 
-                if(Simulator.BasicAuth)
+                if(!this.Simulator.Anonymous)
                 {
+                    if(String.IsNullOrEmpty(Simulator.Password))
+                    {
+                        await Popups.ShowAsync("Password is missing");
+                        return;
+                    }
+
                     var authCreds = Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(Simulator.UserName + ":" + Simulator.Password));
                     client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", authCreds);
                 }

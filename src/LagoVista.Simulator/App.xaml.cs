@@ -77,9 +77,7 @@ namespace LagoVista.Simulator
             {
                 MainViewModel = typeof(MainViewModel)
             };
-
-            _appConfig.WebAddress = serverInfo.RootUrl;
-           
+            
             SLWIOC.RegisterSingleton<IClientAppInfo>(clientAppInfo);
             SLWIOC.RegisterSingleton<IAppConfig>(_appConfig);
 

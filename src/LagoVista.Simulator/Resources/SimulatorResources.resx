@@ -178,7 +178,7 @@
     <value>Password or Access Key to Connect to Resource</value>
   </data>
   <data name="PasswordEntry_PasswordOrAccessKey_wm" xml:space="preserve">
-    <value>-please enter password or watermark-</value>
+    <value>-please enter password or access key-</value>
   </data>
   <data name="PasswordEntry_Required" xml:space="preserve">
     <value>* Required</value>
