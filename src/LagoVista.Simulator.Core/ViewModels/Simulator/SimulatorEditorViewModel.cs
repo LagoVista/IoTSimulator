@@ -40,10 +40,6 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
 
             return await PerformNetworkOperation(async () =>
             {
-                /* capture original password and access key */
-                var tempPassword = this.Model.Password;
-                var tempAccessKey = this.Model.AccessKey;
-
                 if (!EntityHeader.IsNullOrEmpty(this.Model.CredentialStorage))
                 {
                     switch (this.Model.CredentialStorage.Value)
@@ -81,19 +77,11 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
 
                 if (LaunchArgs.LaunchType == LaunchTypes.Create)
                 {
-                    var result = await FormRestClient.AddAsync("/api/simulator", this.Model);
-                    /* now restore access key/password so we can use the simulator */
-                    this.Model.AccessKey = tempAccessKey;
-                    this.Model.Password = tempPassword;
-                    return result;
+                    return await FormRestClient.AddAsync("/api/simulator", this.Model);
                 }
                 else
                 {
-                    var result = await FormRestClient.UpdateAsync("/api/simulator", this.Model);
-                    /* now restore access key/password so we can use the simulator */
-                    this.Model.AccessKey = tempAccessKey;
-                    this.Model.Password = tempPassword;
-                    return result;
+                    return await FormRestClient.UpdateAsync("/api/simulator", this.Model);
                 }
             });
         }
@@ -113,6 +101,14 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             View[nameof(Model.Key).ToFieldKey()].IsUserEditable = LaunchArgs.LaunchType == LaunchTypes.Create;
             View[nameof(Model.DefaultTransport).ToFieldKey()].IsEnabled = LaunchArgs.LaunchType == LaunchTypes.Create;
 
+            var frmField = FormField.Create("EditPassword",
+                new LagoVista.Core.Attributes.FormFieldAttribute(FieldType: LagoVista.Core.Attributes.FieldTypes.EntityHeaderPicker));
+
+            frmField.Label = "Password";
+            frmField.Watermark = "-edit password-";
+
+            View.Add("editPassword", frmField);
+
             form.AddViewCell(nameof(Model.Name));
             form.AddViewCell(nameof(Model.Key));
             form.AddViewCell(nameof(Model.DefaultTransport));
@@ -124,6 +120,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             form.AddViewCell(nameof(Model.UserName));
             form.AddViewCell(nameof(Model.CredentialStorage));
             form.AddViewCell(nameof(Model.Password));
+            form.AddViewCell("EditPassword");
             form.AddViewCell(nameof(Model.AccessKeyName));
             form.AddViewCell(nameof(Model.AccessKey));
             form.AddViewCell(nameof(Model.HubName));

@@ -202,9 +202,27 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
 
         public override async Task ReloadedAsync()
         {
-            if (!_isConnected && !_isEditing)
+            /* If we are editing, reload the simulator, otherwise don't bother, we are coming back from sending a message */
+            if (_isEditing)
             {
+                /* If prompted for creds, make sure they are restored after reloading the sim after editing 
+                   if they are on the server, it will grab them, if they are stored localliy it will grab them. */
+                String pwd = null, accessKey = null;
+                if (this.Model.CredentialStorage.Value == CredentialsStorage.Prompt)
+                {
+                    pwd = this.Model.Password;
+                    accessKey = this.Model.AccessKey;
+                }
+
                 await InitAsync();
+
+                if (this.Model.CredentialStorage.Value == CredentialsStorage.Prompt)
+                {
+                    this.Model.Password = pwd;
+                    this.Model.AccessKey = accessKey;
+                }
+
+
                 _isEditing = false;
             }
         }
