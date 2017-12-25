@@ -255,34 +255,34 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="LagoVista.Client.Core">
-      <Version>1.2.219-alpha1721</Version>
+      <Version>1.2.222-alpha1725</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Core">
-      <Version>1.2.219-alpha1648</Version>
+      <Version>1.2.222-alpha0754</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Core.Authentication">
-      <Version>1.2.219-alpha1648</Version>
+      <Version>1.2.222-alpha0754</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Core.Networking">
-      <Version>1.2.219-alpha1648</Version>
+      <Version>1.2.222-alpha0754</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models">
-      <Version>1.2.219-alpha1648</Version>
+      <Version>1.2.222-alpha0754</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.IoT.Logging">
-      <Version>1.2.219-alpha1648</Version>
+      <Version>1.2.222-alpha0754</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.IoT.Simulator.Models">
-      <Version>1.2.219-alpha1648</Version>
+      <Version>1.2.222-alpha0754</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.MQTT">
       <Version>1.2.216-alpha1541</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.UserAdmin.Models">
-      <Version>1.2.219-alpha1648</Version>
+      <Version>1.2.222-alpha0754</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.XPlat">
-      <Version>1.2.219-alpha1721</Version>
+      <Version>1.2.222-alpha1725</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Azure.EventHubs">
       <Version>1.0.3</Version>

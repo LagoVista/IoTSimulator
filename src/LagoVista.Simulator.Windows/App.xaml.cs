@@ -70,7 +70,6 @@ namespace LagoVista.Simulator.Windows
 
                 LagoVista.Core.UWP.Startup.Init(this, rootFrame.Dispatcher, MOBILE_CENTER_KEY);
 
-                SLWIOC.RegisterSingleton<IDeviceInfo>(new DeviceInfo());
                 SLWIOC.Register<ITCPClient, TCPClient>();
                 SLWIOC.Register<IUDPClient, UDPClient>();
 

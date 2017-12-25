@@ -38,6 +38,13 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                 }
             }
 
+            var validationResult = Validator.Validate(this.Model);
+            if(!validationResult.Successful)
+            {
+                await this.ShowValidationErrorsAsync(validationResult);
+                return InvokeResult.FromError("Please correct errors");
+            }
+
             return await PerformNetworkOperation(async () =>
             {
                 if (!EntityHeader.IsNullOrEmpty(this.Model.CredentialStorage))
@@ -102,9 +109,10 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             View[nameof(Model.DefaultTransport).ToFieldKey()].IsEnabled = LaunchArgs.LaunchType == LaunchTypes.Create;
 
             var frmField = FormField.Create("EditPassword",
-                new LagoVista.Core.Attributes.FormFieldAttribute(FieldType: LagoVista.Core.Attributes.FieldTypes.EntityHeaderPicker));
+                new LagoVista.Core.Attributes.FormFieldAttribute(FieldType: LagoVista.Core.Attributes.FieldTypes.LinkButton));
 
-            frmField.Label = "Password";
+            frmField.Label = "Edit Password";
+            frmField.Name = "EditPassword";
             frmField.Watermark = "-edit password-";
 
             View.Add("editPassword", frmField);

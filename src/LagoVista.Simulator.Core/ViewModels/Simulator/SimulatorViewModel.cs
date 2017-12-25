@@ -166,14 +166,28 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                                 case TransportTypes.AzureIoTHub:
                                 case TransportTypes.AzureServiceBus:
                                 case TransportTypes.AzureEventHub:
-                                    this.Model.AccessKey = _secureStorage.Retrieve(this.Model.Id);
+                                    if (_secureStorage.Contains(this.Model.Id))
+                                    {
+                                        this.Model.AccessKey = _secureStorage.Retrieve(this.Model.Id);
+                                    }
+                                    else
+                                    {
+                                        PromptForAccessKey();
+                                    }
                                     break;
                                 case TransportTypes.RestHttp:
                                 case TransportTypes.RestHttps:
                                 case TransportTypes.MQTT:
                                     if (!this.Model.Anonymous)
                                     {
-                                        this.Model.Password = _secureStorage.Retrieve(this.Model.Id);
+                                        if (_secureStorage.Contains(this.Model.Id))
+                                        {
+                                            this.Model.Password = _secureStorage.Retrieve(this.Model.Id);
+                                        }
+                                        else
+                                        {
+                                            PromptForPassword();
+                                        }
                                     }
                                     break;
                             }

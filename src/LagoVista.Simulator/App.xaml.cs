@@ -77,7 +77,11 @@ namespace LagoVista.Simulator
             {
                 MainViewModel = typeof(MainViewModel)
             };
-            
+
+            DeviceInfo.Register();
+
+            var deviceInfo = SLWIOC.Get<IDeviceInfo>();
+
             SLWIOC.RegisterSingleton<IClientAppInfo>(clientAppInfo);
             SLWIOC.RegisterSingleton<IAppConfig>(_appConfig);
 
