@@ -38,8 +38,12 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                 }
             }
 
-            return await PerformNetworkOperation(() =>
+            return await PerformNetworkOperation(async () =>
             {
+                /* capture original password and access key */
+                var tempPassword = this.Model.Password;
+                var tempAccessKey = this.Model.AccessKey;
+
                 if (!EntityHeader.IsNullOrEmpty(this.Model.CredentialStorage))
                 {
                     switch (this.Model.CredentialStorage.Value)
@@ -61,10 +65,12 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                                     break;
                             }
 
+                            /* If we store locally or on the device set to null so they won't be sent to the server */
                             this.Model.Password = null;
                             this.Model.AccessKey = null;
                             break;
                         case CredentialsStorage.Prompt:
+                            /* If we prompt the user each time for the access key password, set to null so won't send to server */
                             this.Model.Password = null;
                             this.Model.AccessKey = null;
 
@@ -75,11 +81,19 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
 
                 if (LaunchArgs.LaunchType == LaunchTypes.Create)
                 {
-                    return FormRestClient.AddAsync("/api/simulator", this.Model);
+                    var result = await FormRestClient.AddAsync("/api/simulator", this.Model);
+                    /* now restore access key/password so we can use the simulator */
+                    this.Model.AccessKey = tempAccessKey;
+                    this.Model.Password = tempPassword;
+                    return result;
                 }
                 else
                 {
-                    return FormRestClient.UpdateAsync("/api/simulator", this.Model);
+                    var result = await FormRestClient.UpdateAsync("/api/simulator", this.Model);
+                    /* now restore access key/password so we can use the simulator */
+                    this.Model.AccessKey = tempAccessKey;
+                    this.Model.Password = tempPassword;
+                    return result;
                 }
             });
         }

@@ -202,7 +202,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
 
         public override async Task ReloadedAsync()
         {
-            if (!_isConnected && _isEditing)
+            if (!_isConnected && !_isEditing)
             {
                 await InitAsync();
                 _isEditing = false;
@@ -235,9 +235,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
         public void SetPassword(object password)
         {
             this.Model.Password = password.ToString();
-            this.Model.Name = "IT WAS EDITED!";
         }
-
 
         private async Task ReceiveDataFromAzure()
         {
