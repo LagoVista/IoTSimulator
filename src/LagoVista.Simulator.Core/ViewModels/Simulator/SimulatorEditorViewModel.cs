@@ -11,6 +11,8 @@ using System.Linq;
 using LagoVista.Client.Core.Resources;
 using LagoVista.Core.Models;
 using LagoVista.Client.Core.Auth;
+using LagoVista.Simulator.Core.Resources;
+using LagoVista.Core.Commanding;
 
 namespace LagoVista.Simulator.Core.ViewModels.Simulator
 {
@@ -18,9 +20,14 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
     {
         ISecureStorage _secureStorage;
 
+        const string EDIT_PASSWORD_CONTROL = "EditPassword";
+        const string EDIT_ACCESSKEY_CONTROL = "EditAccessKey";
+
         public SimulatorEditorViewModel(ISecureStorage secureStorage)
         {
             _secureStorage = secureStorage;
+            EditPasswordCommand = new RelayCommand(EditPassword);
+            EditAccessKeyCommand = new RelayCommand(EditAccessKey);
         }
 
         public async override Task<InvokeResult> SaveRecordAsync()
@@ -108,7 +115,24 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             });
         }
 
-        public override bool CanSave()
+        public void EditPassword(object obj)
+        {
+            FormAdapter.ShowView(nameof(Model.Password));
+            FormAdapter.HideView(EDIT_PASSWORD_CONTROL);
+        }
+
+        public RelayCommand EditPasswordCommand { get; private set; }
+
+
+        public void EditAccessKey(object obj)
+        {
+            FormAdapter.ShowView(nameof(Model.AccessKey));
+            FormAdapter.HideView(EDIT_ACCESSKEY_CONTROL);
+        }
+
+        public RelayCommand EditAccessKeyCommand { get; private set; }
+
+        public override bool CanSave()                                                                                                                                        
         {
             return true;
         }
@@ -123,14 +147,21 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             View[nameof(Model.Key).ToFieldKey()].IsUserEditable = LaunchArgs.LaunchType == LaunchTypes.Create;
             View[nameof(Model.DefaultTransport).ToFieldKey()].IsEnabled = LaunchArgs.LaunchType == LaunchTypes.Create;
 
-            var frmField = FormField.Create("EditPassword",
-                new LagoVista.Core.Attributes.FormFieldAttribute(FieldType: LagoVista.Core.Attributes.FieldTypes.LinkButton));
+            var frmEditPasswordLink = FormField.Create(EDIT_PASSWORD_CONTROL, new LagoVista.Core.Attributes.FormFieldAttribute(FieldType: LagoVista.Core.Attributes.FieldTypes.LinkButton));
+            frmEditPasswordLink.Label = SimulatorCoreResources.SimulatorEdit_EditPassword;
+            frmEditPasswordLink.Name = EDIT_PASSWORD_CONTROL.ToFieldKey();
+            frmEditPasswordLink.Watermark = SimulatorCoreResources.SimulatorEdit_EditPassword_Link;
+            frmEditPasswordLink.Command = EditPasswordCommand;
+            frmEditPasswordLink.IsVisible = false;
+            View.Add(EDIT_PASSWORD_CONTROL.ToFieldKey(), frmEditPasswordLink);
 
-            frmField.Label = "Edit Password";
-            frmField.Name = "EditPassword";
-            frmField.Watermark = "-edit password-";
-
-            View.Add("editPassword", frmField);
+            var frmEditAccessKey = FormField.Create(EDIT_PASSWORD_CONTROL, new LagoVista.Core.Attributes.FormFieldAttribute(FieldType: LagoVista.Core.Attributes.FieldTypes.LinkButton));
+            frmEditAccessKey.Label = SimulatorCoreResources.SimulatorEdit_EditAccessKey;
+            frmEditAccessKey.Name = EDIT_ACCESSKEY_CONTROL.ToFieldKey();
+            frmEditAccessKey.Watermark = SimulatorCoreResources.SimulatorEdit_EditAccesKey_Link;
+            frmEditAccessKey.Command = EditAccessKeyCommand;
+            frmEditAccessKey.IsVisible = false;
+            View.Add(EDIT_ACCESSKEY_CONTROL.ToFieldKey(), frmEditAccessKey);
 
             form.AddViewCell(nameof(Model.Name));
             form.AddViewCell(nameof(Model.Key));
@@ -143,8 +174,9 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             form.AddViewCell(nameof(Model.UserName));
             form.AddViewCell(nameof(Model.CredentialStorage));
             form.AddViewCell(nameof(Model.Password));
-            form.AddViewCell("EditPassword");
+            form.AddViewCell(EDIT_PASSWORD_CONTROL);
             form.AddViewCell(nameof(Model.AccessKeyName));
+            form.AddViewCell(EDIT_ACCESSKEY_CONTROL);
             form.AddViewCell(nameof(Model.AccessKey));
             form.AddViewCell(nameof(Model.HubName));
             form.AddViewCell(nameof(Model.QueueName));
@@ -211,6 +243,21 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                 {
                     ShowFieldsForTransport((TransportTypes)Enum.Parse(typeof(TransportTypes), value, true));
                 }
+                else if (name == nameof(Model.Anonymous))
+                {
+                    if(value == "true")
+                    {
+                        HideRow(nameof(Model.UserName));
+                        HideRow(nameof(Model.Password));
+                        HideRow(nameof(Model.CredentialStorage));
+                    }
+                    else
+                    {
+                        ShowRow(nameof(Model.UserName));
+                        ShowRow(nameof(Model.Password));
+                        ShowRow(nameof(Model.CredentialStorage));
+                    }
+                }
             }
             else
             {
@@ -233,6 +280,8 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             HideRow(nameof(Model.AccessKey));
             HideRow(nameof(Model.Subscription));
             HideRow(nameof(Model.CredentialStorage));
+            HideRow(EDIT_ACCESSKEY_CONTROL);
+            HideRow(EDIT_PASSWORD_CONTROL);
         }
 
         private void SetForAzureServiceBus()
@@ -240,9 +289,19 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             ShowRow(nameof(Model.DefaultPayloadType));
             ShowRow(nameof(Model.DefaultEndPoint));
             ShowRow(nameof(Model.AccessKeyName));
-            ShowRow(nameof(Model.AccessKey));
             ShowRow(nameof(Model.QueueName));
             ShowRow(nameof(Model.CredentialStorage));
+
+            if (LaunchArgs.LaunchType == LaunchTypes.Edit)
+            {
+                ShowRow(EDIT_ACCESSKEY_CONTROL);
+                HideRow(nameof(Model.AccessKey));
+            }
+            else
+            {
+                ShowRow(nameof(Model.AccessKey));
+                HideRow(EDIT_ACCESSKEY_CONTROL);
+            }
         }
 
         private void SetForAzureEventHub()
@@ -250,17 +309,37 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             ShowRow(nameof(Model.DefaultPayloadType));
             ShowRow(nameof(Model.DefaultEndPoint));
             ShowRow(nameof(Model.AccessKeyName));
-            ShowRow(nameof(Model.AccessKey));
             ShowRow(nameof(Model.HubName));
             ShowRow(nameof(Model.CredentialStorage));
+
+            if (LaunchArgs.LaunchType == LaunchTypes.Edit)
+            {
+                ShowRow(EDIT_ACCESSKEY_CONTROL);
+                HideRow(nameof(Model.AccessKey));
+            }
+            else
+            {
+                ShowRow(nameof(Model.AccessKey));
+                HideRow(EDIT_ACCESSKEY_CONTROL);
+            }
         }
 
         private void SetForIoTHub()
         {
             ShowRow(nameof(Model.DefaultEndPoint));
-            ShowRow(nameof(Model.AccessKey));
             ShowRow(nameof(Model.DefaultPayloadType));
             ShowRow(nameof(Model.CredentialStorage));
+
+            if (LaunchArgs.LaunchType == LaunchTypes.Edit)
+            {
+                ShowRow(EDIT_ACCESSKEY_CONTROL);
+                HideRow(nameof(Model.AccessKey));
+            }
+            else
+            {
+                ShowRow(nameof(Model.AccessKey));
+                HideRow(EDIT_ACCESSKEY_CONTROL);
+            }
         }
 
         private void SetForMQTT()
@@ -271,10 +350,32 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             ShowRow(nameof(Model.DefaultEndPoint));
             ShowRow(nameof(Model.DefaultPayloadType));
             ShowRow(nameof(Model.Subscription));
-            ShowRow(nameof(Model.UserName));
-            ShowRow(nameof(Model.Password));
-            ShowRow(nameof(Model.Anonymous));
-            ShowRow(nameof(Model.CredentialStorage));
+
+            if (Model.Anonymous)
+            {
+                HideRow(nameof(Model.UserName));
+                HideRow(nameof(Model.Password));
+                HideRow(nameof(Model.CredentialStorage));
+                HideRow(EDIT_PASSWORD_CONTROL);
+            }
+            else
+            {
+                ShowRow(nameof(Model.UserName));
+
+                ShowRow(nameof(Model.CredentialStorage));
+
+                if (LaunchArgs.LaunchType == LaunchTypes.Edit)
+                {
+                    ShowRow(EDIT_PASSWORD_CONTROL);
+                    HideRow(nameof(Model.Password));
+                }
+                else
+                {
+                    ShowRow(nameof(Model.Password));
+                    HideRow(EDIT_PASSWORD_CONTROL);
+                }
+            }
+
         }
 
         private void SetForTCP()
@@ -282,7 +383,6 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             ShowRow(nameof(Model.DefaultPayloadType));
             ShowRow(nameof(Model.DefaultEndPoint));
             ShowRow(nameof(Model.DefaultPort));
-
         }
 
         private void SetForUDP()
@@ -301,9 +401,31 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
 
             ShowRow(nameof(Model.DefaultEndPoint));
             ShowRow(nameof(Model.DefaultPort));
-            ShowRow(nameof(Model.UserName));
-            ShowRow(nameof(Model.Password));
-            ShowRow(nameof(Model.CredentialStorage));
+
+            if (Model.Anonymous)
+            {
+                HideRow(nameof(Model.UserName));
+                HideRow(nameof(Model.Password));
+                HideRow(nameof(Model.CredentialStorage));
+                HideRow(EDIT_PASSWORD_CONTROL);
+            }
+            else
+            {
+                ShowRow(nameof(Model.UserName));                
+                ShowRow(nameof(Model.CredentialStorage));
+
+                if (LaunchArgs.LaunchType == LaunchTypes.Edit)
+                {
+                    HideRow(nameof(Model.Password));
+                    ShowRow(EDIT_PASSWORD_CONTROL);
+                    
+                }
+                else
+                {
+                    ShowRow(nameof(Model.Password));
+                    HideRow(EDIT_PASSWORD_CONTROL);
+                }
+            }
         }
     }
 }

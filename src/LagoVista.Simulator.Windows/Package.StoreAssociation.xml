@@ -358,9 +358,9 @@
     <Language Code="zu-za" InMinimumRequirementSet="true" />
   </SupportedLocales>
   <ProductReservedInfo>
-    <MainPackageIdentityName>SoftwareLogisticsLLC.IoTSimulator-LocalDev</MainPackageIdentityName>
+    <MainPackageIdentityName>SoftwareLogisticsLLC.IoTSimulator-Dev</MainPackageIdentityName>
     <ReservedNames>
-      <ReservedName>IoT Simulator - Stage</ReservedName>
+      <ReservedName>IoT Simulator - Dev</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames>
@@ -370,10 +370,13 @@
     <MainPackageIdentityName>SoftwareLogisticsLLC.EventKonnect</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.HarmanHWKHub</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.IoTDeviceManager</MainPackageIdentityName>
+    <MainPackageIdentityName>SoftwareLogisticsLLC.IoTDeviceManager-Dev</MainPackageIdentityName>
+    <MainPackageIdentityName>SoftwareLogisticsLLC.IoTDeviceManager-Stage</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.IoTPlatformManager</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.IoTPlatformManager-Dev</MainPackageIdentityName>
+    <MainPackageIdentityName>SoftwareLogisticsLLC.IoTPlatformManager-Stage</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.IoTSimulator</MainPackageIdentityName>
-    <MainPackageIdentityName>SoftwareLogisticsLLC.IoTSimulator-Dev</MainPackageIdentityName>
+    <MainPackageIdentityName>SoftwareLogisticsLLC.IoTSimulator-Stage</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.IPCameraUltimate</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.ISYAutomationPro</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.LagoVistaIoT</MainPackageIdentityName>
@@ -383,5 +386,5 @@
     <MainPackageIdentityName>SoftwareLogisticsLLC.TankBotFirmware</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.YahamaAVRController</MainPackageIdentityName>
   </AccountPackageIdentityNames>
-  <PackageInfoList LandingUrl="https://developer.microsoft.com/dashboard/Application?appId=9MTZTG915FN5" />
+  <PackageInfoList LandingUrl="https://developer.microsoft.com/dashboard/Application?appId=9PP6NVTCC242" />
 </StoreAssociation>

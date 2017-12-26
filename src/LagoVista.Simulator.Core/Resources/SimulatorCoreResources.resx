@@ -160,6 +160,18 @@ To use this simulator you will need to re-enter the resource credentials.</value
   <data name="SendMessage_MessageSent" xml:space="preserve">
     <value>Message Sent</value>
   </data>
+  <data name="SimulatorEdit_EditAccesKey_Link" xml:space="preserve">
+    <value>-edit access key-</value>
+  </data>
+  <data name="SimulatorEdit_EditAccessKey" xml:space="preserve">
+    <value>Access Key</value>
+  </data>
+  <data name="SimulatorEdit_EditPassword" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="SimulatorEdit_EditPassword_Link" xml:space="preserve">
+    <value>-edit password-</value>
+  </data>
   <data name="SimulatorEdit_UnlockRequired" xml:space="preserve">
     <value>You have selected to store passwords and/or access keys on your device.  You need to create or unlock your secure storage before these values can be stored.</value>
   </data>

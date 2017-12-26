@@ -238,7 +238,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                 /* If prompted for creds, make sure they are restored after reloading the sim after editing 
                    if they are on the server, it will grab them, if they are stored localliy it will grab them. */
                 String pwd = null, accessKey = null;
-                if (this.Model.CredentialStorage.Value == CredentialsStorage.Prompt)
+                if (!EntityHeader.IsNullOrEmpty(this.Model.CredentialStorage) && this.Model.CredentialStorage.Value == CredentialsStorage.Prompt)
                 {
                     pwd = this.Model.Password;
                     accessKey = this.Model.AccessKey;
@@ -246,7 +246,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
 
                 await InitAsync();
 
-                if (this.Model.CredentialStorage.Value == CredentialsStorage.Prompt)
+                if (!EntityHeader.IsNullOrEmpty(this.Model.CredentialStorage) && this.Model.CredentialStorage.Value == CredentialsStorage.Prompt)
                 {
                     this.Model.Password = pwd;
                     this.Model.AccessKey = accessKey;

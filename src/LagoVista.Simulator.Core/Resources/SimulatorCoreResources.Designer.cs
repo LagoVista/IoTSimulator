@@ -255,6 +255,42 @@ namespace LagoVista.Simulator.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to -edit access key-.
+        /// </summary>
+        internal static string SimulatorEdit_EditAccesKey_Link {
+            get {
+                return ResourceManager.GetString("SimulatorEdit_EditAccesKey_Link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Access Key.
+        /// </summary>
+        internal static string SimulatorEdit_EditAccessKey {
+            get {
+                return ResourceManager.GetString("SimulatorEdit_EditAccessKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        internal static string SimulatorEdit_EditPassword {
+            get {
+                return ResourceManager.GetString("SimulatorEdit_EditPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -edit password-.
+        /// </summary>
+        internal static string SimulatorEdit_EditPassword_Link {
+            get {
+                return ResourceManager.GetString("SimulatorEdit_EditPassword_Link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have selected to store passwords and/or access keys on your device.  You need to create or unlock your secure storage before these values can be stored..
         /// </summary>
         internal static string SimulatorEdit_UnlockRequired {
