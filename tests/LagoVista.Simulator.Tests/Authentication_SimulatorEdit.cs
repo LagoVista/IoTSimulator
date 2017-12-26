@@ -6,17 +6,13 @@ using LagoVista.Core.PlatformSupport;
 using LagoVista.Core.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace LagoVista.Simulator.Tests
 {
     [TestClass]
-    public class AuthenticationStorageTests
+    public class Authentication_SimulatorEditTests
     {
         Mock<ISecureStorage> _secureStorage = new Mock<ISecureStorage>();
         Mock<INetworkService> _networkService = new Mock<INetworkService>();
@@ -35,7 +31,7 @@ namespace LagoVista.Simulator.Tests
         }
 
         [TestMethod]
-        public async Task PromptForPassword()
+        public async Task Password()
         {
             _networkService.Setup(nets => nets.IsInternetConnected).Returns(true);
             _restClient.Setup(rst => rst.GetAsync<DetailResponse<LagoVista.IoT.Simulator.Admin.Models.Simulator>>(It.IsAny<string>(), new CancellationTokenSource())).ReturnsAsync(new LagoVista.Core.Validation.InvokeResult<DetailResponse<IoT.Simulator.Admin.Models.Simulator>>()

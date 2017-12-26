@@ -96,6 +96,8 @@ namespace LagoVista.Simulator
             navigation.Add<SendMessageViewModel, Views.Messages.SendMessageView>();
             navigation.Add<MessageHeaderViewModel, Views.Messages.MessageHeaderView>();
             navigation.Add<PasswordEntryViewModel, Views.Simulator.PasswordEntryView>();
+            navigation.Add<UnlockStorageViewModel, Views.Simulator.UnlockStorageView>();
+            navigation.Add<SetStoragePasswordViewModel, Views.Simulator.SetStoragePasswordView>();
             navigation.Add<DynamicAttributeViewModel, Views.Messages.DynamicAttributeView>();
 
             navigation.Add<SplashViewModel, Views.SplashView>();
@@ -119,14 +121,13 @@ namespace LagoVista.Simulator
             }
             else
             {
-                var page = this.MainPage as LagoVistaNavigationPage;
-                if (page != null)
+                if (this.MainPage is LagoVistaNavigationPage page)
                 {
                     page.HandleURIActivation(uri);
                 }
                 else
                 {
-             
+
                     logger.AddCustomEvent(LogLevel.Error, "App_HandleURIActivation", "InvalidPageType - Not LagoVistaNavigationPage", new System.Collections.Generic.KeyValuePair<string, string>("type", this.MainPage.GetType().Name));
                 }
             }

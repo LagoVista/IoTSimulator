@@ -27,8 +27,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
         {
             if (IsCreate)
             {
-                var parent = LaunchArgs.ParentViewModel as MainViewModel;
-                if (parent != null)
+                if (LaunchArgs.ParentViewModel is MainViewModel parent)
                 {
                     if (parent.ListItems.Where(sim => sim.Key == this.Model.Key).Any())
                     {
@@ -36,6 +35,22 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                         return InvokeResult.FromErrors(ClientResources.Common_KeyInUse.ToErrorMessage());
                     }
                 }
+            }
+
+            if(!SecureStorage.IsUnlocked && 
+                !EntityHeader.IsNullOrEmpty(Model.CredentialStorage) && 
+                Model.CredentialStorage.Value == CredentialsStorage.OnDevice)
+            {
+                if(SecureStorage.IsSetup)
+                {
+                    await ViewModelNavigation.NavigateAsync<UnlockStorageViewModel>(this);
+                }
+                else
+                {
+                    await ViewModelNavigation.NavigateAsync<SetStoragePasswordViewModel>(this);
+                }
+
+                return InvokeResult.FromErrors(Resources.SimulatorCoreResources.SimulatorEdit_UnlockRequired.ToErrorMessage());
             }
 
             var validationResult = Validator.Validate(this.Model);
