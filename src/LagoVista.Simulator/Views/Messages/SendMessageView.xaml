@@ -68,7 +68,7 @@
                 <Label Text="{trs:Translate Simulator_ReceivedMessages}" TextColor="{StaticResource MenuBarForeground}" FontSize="20" Margin="10,0,0,0" VerticalOptions="Center" />
             </Grid>
 
-            <ListView ItemsSource="{Binding ReceivedMessageList}" SelectedItem="{Binding SelectedMessageTemplate, Mode=TwoWay}" Grid.Row="5" IsVisible="{Binding ReceivedMessagesVisible}" HasUnevenRows="True"   >
+            <ListView ItemsSource="{Binding ReceivedMessageList}" SelectedItem="{Binding SelectedMessageTemplate, Mode=TwoWay}" Grid.Row="5" IsVisible="{Binding ReceivedMessagesVisible}" HasUnevenRows="True"    >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -103,18 +103,18 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
-                <Label Text="{trs:Translate SendMessage_DynamicAttributes}" Style="{StaticResource SectionLabel}"/>
-                <ListView ItemsSource="{Binding MsgTemplate.DynamicAttributes}" Margin="10" Grid.Row="1"  >
+                <Label Text="{trs:Translate SendMessage_DynamicAttributes}" Style="{StaticResource SectionLabel}" FontSize="Large"/>
+                <ListView ItemsSource="{Binding MsgTemplate.DynamicAttributes}" Margin="10" Grid.Row="1" SeparatorVisibility="None" HasUnevenRows="true" x:Name="AttributeList" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
-                                <Grid>
+                            <ViewCell >
+                                <Grid Margin="0,0,0,10">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="auto" />
-                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="28" />
+                                        <RowDefinition Height="40" />
                                     </Grid.RowDefinitions>
-                                    <Label Text="{Binding Name}" />
-                                    <Entry Grid.Row="1" Text="{Binding DefaultValue}" />
+                                    <pge:Label Text="{Binding Name}" />
+                                    <pge:FormEntry Grid.Row="1" Text="{Binding DefaultValue}" />
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
@@ -126,7 +126,7 @@
                         <ColumnDefinition Width="200" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button Command="{Binding ApplySettingsCommand}" BackgroundColor="{StaticResource NuvIoTDark}" TextColor="White" Text="{trs:Translate SendMessage_Apply}" Grid.Column="1" />
+                    <Button Command="{Binding ApplySettingsCommand}" BackgroundColor="{StaticResource NuvIoTDark}" TextColor="White" Text="{trs:Translate SendMessage_Apply}" Margin="0,0,0,20" Grid.Column="1" />
                 </Grid>
             </Grid>
         </Grid>

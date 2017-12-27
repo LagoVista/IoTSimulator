@@ -18,6 +18,8 @@ namespace LagoVista.Simulator.iOS
         {       
             LagoVista.XPlat.iOS.Startup.Init(app, MOBILE_CENTER_KEY);
 
+            SLWIOC.Register<IMqttNetworkChannel, MqttNetworkChannel>();
+
             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;
             app.StatusBarHidden = false;
 

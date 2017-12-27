@@ -1,12 +1,4 @@
 ﻿using LagoVista.XPlat.Core;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace LagoVista.Simulator.Views.Messages
@@ -17,6 +9,7 @@ namespace LagoVista.Simulator.Views.Messages
         public SendMessageView()
         {
             InitializeComponent();
-        }
+            AttributeList.ItemSelected += (sndr, args) => AttributeList.SelectedItem = null;
+        }        
     }
 }

@@ -200,6 +200,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
 
         private void ShowFieldsForTransport(TransportTypes transportType)
         {
+            _currentTransport = transportType;
             HideAll();
             switch (transportType)
             {
@@ -235,12 +236,14 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             return "http://support.nuviot.com/help.html#/Simulator/Index.md";
         }
 
+        TransportTypes? _currentTransport;
+
         protected override void OptionSelected(string name, string value)
         {
             if (value != null)
             {
                 if (name == nameof(Model.DefaultTransport))
-                {
+                {                    
                     ShowFieldsForTransport((TransportTypes)Enum.Parse(typeof(TransportTypes), value, true));
                 }
                 else if (name == nameof(Model.Anonymous))
@@ -250,12 +253,19 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                         HideRow(nameof(Model.UserName));
                         HideRow(nameof(Model.Password));
                         HideRow(nameof(Model.CredentialStorage));
+                        HideRow(nameof(Model.BasicAuth));
                     }
                     else
                     {
                         ShowRow(nameof(Model.UserName));
                         ShowRow(nameof(Model.Password));
                         ShowRow(nameof(Model.CredentialStorage));
+                        
+                        if(_currentTransport.Value == TransportTypes.RestHttp ||
+                            _currentTransport.Value == TransportTypes.RestHttps)
+                        {
+                            ShowRow(nameof(Model.BasicAuth));
+                        }
                     }
                 }
             }
@@ -375,7 +385,6 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                     HideRow(EDIT_PASSWORD_CONTROL);
                 }
             }
-
         }
 
         private void SetForTCP()

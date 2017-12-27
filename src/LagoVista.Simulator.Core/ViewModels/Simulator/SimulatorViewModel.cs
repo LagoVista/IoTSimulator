@@ -463,7 +463,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                         }
                         else
                         {
-                            await Popups.ShowAsync($"{Resources.SimulatorCoreResources.Simulator_ErrorConnecting}: {result.Message}");
+                            await Popups.ShowAsync($"{Resources.SimulatorCoreResources.Simulator_ErrorConnecting}: {result.Result.ToString()}");
                         }
 
                         break;

@@ -459,6 +459,17 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
         #endregion
 
         #region Utitlity Methods
+        public override Task<bool> CanCancelAsync()
+        {
+            if(SettingsVisible)
+            {
+                SettingsVisible = false;
+                return Task.FromResult(false);
+            }
+
+            return base.CanCancelAsync();
+        }
+
         private byte[] GetMessageBytes()
         {
             if (EntityHeader.IsNullOrEmpty(MsgTemplate.PayloadType) || MsgTemplate.PayloadType.Value == PaylodTypes.Binary)
