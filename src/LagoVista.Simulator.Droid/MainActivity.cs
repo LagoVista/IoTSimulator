@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using System;
 using Android.Content.PM;
 using Android.OS;
 using LagoVista.Core.IOC;
@@ -6,6 +7,7 @@ using LagoVista.MQTT.Core;
 using LagoVista.MQTT.Droid;
 using System.Reflection;
 using static LagoVista.Simulator.Droid.Resource;
+using LagoVista.Core.Models;
 
 namespace LagoVista.Simulator.Droid
 {
@@ -27,18 +29,23 @@ namespace LagoVista.Simulator.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            
-            var version = typeof(App).GetTypeInfo().Assembly.GetName().Version;
 
-            var versionInfo = new LagoVista.Core.Models.VersionInfo()
+            var packageInfo = PackageManager.GetPackageInfo(PackageName, 0);
+
+            var versionParts = packageInfo.VersionName.Split('.');
+            var versionInfo = new VersionInfo();
+            if (versionParts.Length != 4)
             {
-                Major = version.Major,
-                Minor = version.Minor,
-                Revision = version.Revision,
-                Build = version.Build,
-            };
+                throw new Exception("Expecting android:versionName in AndroidManifest.xml to be a version conisting of four parts 1.0.218.1231 [Major].[Minor].[Build].[Revision]");
+            }
 
-            var app = new App();
+            /* if this blows up our versionName in AndroidManaifest.xml is borked...make sure all version numbers are intergers like 1.0.218.1231 */
+            versionInfo.Major = Convert.ToInt32(versionParts[0]);
+            versionInfo.Minor = Convert.ToInt32(versionParts[1]);
+            versionInfo.Build = Convert.ToInt32(versionParts[2]);
+            versionInfo.Revision = Convert.ToInt32(versionParts[3]);
+
+            var app = new App();            
             app.SetVersion(versionInfo);
 
             LoadApplication(app);

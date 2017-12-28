@@ -55,7 +55,6 @@ namespace LagoVista.Simulator.Windows
             base.OnActivated(args);
         }
 
-
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
             var rootFrame = Window.Current.Content as Frame;
@@ -65,7 +64,6 @@ namespace LagoVista.Simulator.Windows
                 rootFrame = new Frame();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
-
                 Xamarin.Forms.Forms.Init(e);
 
                 LagoVista.Core.UWP.Startup.Init(this, rootFrame.Dispatcher, MOBILE_CENTER_KEY);
