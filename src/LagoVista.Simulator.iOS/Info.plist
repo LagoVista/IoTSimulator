@@ -27,7 +27,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>com.software-logistics.iotsimulator.localdev</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>1.0.1.100</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Fonts/iconize-entypoplus.ttf</string>
@@ -95,5 +95,7 @@
 	<array>
 		<string>remote-notification</string>
 	</array>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.1.100</string>
 </dict>
 </plist>
