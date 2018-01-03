@@ -8,10 +8,10 @@
 #  APPCENTER_BRANCH dev, stage or master, used to identify environment to set URI and grab correct icons
 
 # Set to directory name within /src where native project lives
-iOSProjectName=LagoVista.DeviceManager.iOS
+iOSProjectName=LagoVista.Simulator.iOS
 
 # Set to directory name within /src where common Xamarin forms app lives
-appProjectName=LagoVista.DeviceManager
+appProjectName=LagoVista.Simulator
 
 # Version is pulled from a file in the root, it contains first two digits of full version, such as 1.0
 version=$(<$APPCENTER_SOURCE_DIRECTORY/version.txt)
@@ -34,11 +34,11 @@ fullVersion=$version.$buildNumber.$revision
 
 echo Setting Version
 echo $fullVersion
+cat $APPCENTER_SOURCE_DIRECTORY/src/$iOSProjectName/Info.plist
+
 plutil -replace CFBundleShortVersionString -string $fullVersion $APPCENTER_SOURCE_DIRECTORY/src/$iOSProjectName/Info.plist
 plutil -replace CFBundleVersion -string $fullVersion $APPCENTER_SOURCE_DIRECTORY/src/$iOSProjectName/Info.plist
 plutil -replace CFBundleIdentifier -string $APPBUNDLEID $APPCENTER_SOURCE_DIRECTORY/src/$iOSProjectName/Info.plist
-
-cat $APPCENTER_SOURCE_DIRECTORY/src/$iOSProjectName/Info.plist
 
 # within the script, the branch name identifies the server to be used, however it must always be upper case to match conditional compile in code
 val=$(echo "$APPCENTER_BRANCH" | tr '[:lower:]' '[:upper:]' )
