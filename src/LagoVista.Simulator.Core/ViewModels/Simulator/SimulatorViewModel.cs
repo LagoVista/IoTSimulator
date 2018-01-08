@@ -32,9 +32,11 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
         ISecureStorage _secureStorage;
         DeviceClient _azureIoTHubClient;
         bool _isConnected;
+        bool _isEditing;
 
         Task ReceivingTask;
         #endregion
+
 
         #region Constructor
         public SimulatorViewModel(ISecureStorage secureStorage)
@@ -116,6 +118,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                 await DisconnectAsync();
             }
             await ViewModelNavigation.NavigateAndEditAsync<SimulatorEditorViewModel>(this, Model.Id);
+            _isEditing = true;
         }
 
         public override async Task<bool> CanCancelAsync()
@@ -149,12 +152,63 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             if (!result.Successful)
             {
                 await this.ViewModelNavigation.GoBackAsync();
+                return;
             }
 
             if (!EntityHeader.IsNullOrEmpty(this.Model.CredentialStorage))
             {
                 switch (this.Model.CredentialStorage.Value)
                 {
+                    case CredentialsStorage.OnDevice:
+                        {
+                            switch (this.Model.DefaultTransport.Value)
+                            {
+                                case TransportTypes.AzureIoTHub:
+                                case TransportTypes.AzureServiceBus:
+                                case TransportTypes.AzureEventHub:
+                                    if (SecureStorage.IsUnlocked)
+                                    {
+                                        if (_secureStorage.Contains(this.Model.Id))
+                                        {
+                                            this.Model.AccessKey = _secureStorage.Retrieve(this.Model.Id);
+                                        }
+                                        else
+                                        {
+                                            await Popups.ShowAsync(Resources.SimulatorCoreResources.PasswordEntry_NotFound);
+                                            PromptForAccessKey();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        UnlockStorageAndGetAccessKey();
+                                    }
+                                    break;
+                                case TransportTypes.RestHttp:
+                                case TransportTypes.RestHttps:
+                                case TransportTypes.MQTT:
+                                    if (!this.Model.Anonymous)
+                                    {
+                                        if (SecureStorage.IsUnlocked)
+                                        {
+                                            if (SecureStorage.Contains(this.Model.Id))
+                                            {
+                                                this.Model.Password = _secureStorage.Retrieve(this.Model.Id);
+                                            }
+                                            else
+                                            {
+                                                await Popups.ShowAsync(Resources.SimulatorCoreResources.PasswordEntry_NotFound);
+                                                PromptForPassword();
+                                            }
+                                        }
+                                        else
+                                        {
+                                            UnlockStorageAndGetpassword();
+                                        }
+                                    }
+                                    break;
+                            }
+                        }
+                        break;
                     case CredentialsStorage.Prompt:
                         {
                             switch (this.Model.DefaultTransport.Value)
@@ -169,29 +223,6 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                                 case TransportTypes.MQTT:
                                     PromptForPassword();
                                     break;
-
-                            }
-
-                        }
-                        break;
-                    case CredentialsStorage.OnDevice:
-                        {
-                            switch (this.Model.DefaultTransport.Value)
-                            {
-                                case TransportTypes.AzureIoTHub:
-                                case TransportTypes.AzureServiceBus:
-                                case TransportTypes.AzureEventHub:
-                                    this.Model.AccessKey = _secureStorage.Retrieve(this.Model.Id);
-                                    break;
-                                case TransportTypes.RestHttp:
-                                case TransportTypes.RestHttps:
-                                case TransportTypes.MQTT:
-                                    if (!this.Model.Anonymous)
-                                    {
-                                        this.Model.Password = _secureStorage.Retrieve(this.Model.Id);
-                                    }
-                                    break;
-
                             }
                         }
                         break;
@@ -201,41 +232,123 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
 
         public override async Task ReloadedAsync()
         {
-            if (!_isConnected)
+            /* If we are editing, reload the simulator, otherwise don't bother, we are coming back from sending a message */
+            if (_isEditing)
             {
-                await PerformNetworkOperation(LoadSimulator);
+                /* If prompted for creds, make sure they are restored after reloading the sim after editing 
+                   if they are on the server, it will grab them, if they are stored localliy it will grab them. */
+                String pwd = null, accessKey = null;
+                if (!EntityHeader.IsNullOrEmpty(this.Model.CredentialStorage) && this.Model.CredentialStorage.Value == CredentialsStorage.Prompt)
+                {
+                    pwd = this.Model.Password;
+                    accessKey = this.Model.AccessKey;
+                }
+
+                await InitAsync();
+
+                if (!EntityHeader.IsNullOrEmpty(this.Model.CredentialStorage) && this.Model.CredentialStorage.Value == CredentialsStorage.Prompt)
+                {
+                    this.Model.Password = pwd;
+                    this.Model.AccessKey = accessKey;
+                }
+
+
+                _isEditing = false;
             }
         }
         #endregion
 
-        #region Handle Messages from Server
+        #region Added security for simulators.
+        public async void UnlockStorageAndGetpassword()
+        {
+            if (!SecureStorage.IsSetup)
+            {
+                await ViewModelNavigation.NavigateAndPickAsync<SetStoragePasswordViewModel>(this, StorageUnlocked, CancelCredentialsEntry);
+            }
+            else
+            {
+                await ViewModelNavigation.NavigateAndPickAsync<UnlockStorageViewModel>(this, StorageUnlocked, CancelCredentialsEntry);
+            }
+        }
+
+        public async void UnlockStorageAndGetAccessKey()
+        {
+            if (!SecureStorage.IsSetup)
+            {
+                await ViewModelNavigation.NavigateAndPickAsync<SetStoragePasswordViewModel>(this, StorageUnlocked, CancelCredentialsEntry);
+            }
+            else
+            {
+                await ViewModelNavigation.NavigateAndPickAsync<UnlockStorageViewModel>(this, StorageUnlocked, CancelCredentialsEntry);
+            }
+        }
+
+        public void StorageUnlocked(object ob)
+        {
+            if (Model.DefaultTransport.Value == TransportTypes.AzureEventHub ||
+                Model.DefaultTransport.Value == TransportTypes.AzureIoTHub ||
+                Model.DefaultTransport.Value == TransportTypes.AzureServiceBus)
+            {
+                if (SecureStorage.Contains(Model.Id))
+                {
+                    Model.AccessKey = SecureStorage.Retrieve(Model.Id);
+                }
+                else
+                {
+                    PromptForAccessKey();
+                }
+            }
+            else if (Model.DefaultTransport.Value == TransportTypes.RestHttp ||
+                    Model.DefaultTransport.Value == TransportTypes.RestHttps ||
+                    Model.DefaultTransport.Value == TransportTypes.MQTT)
+            {
+                if (SecureStorage.Contains(Model.Id))
+                {
+                    Model.Password = SecureStorage.Retrieve(Model.Id);
+                }
+                else
+                {
+                    PromptForPassword();
+                }
+            }
+        }
+
         public async void PromptForPassword()
         {
             await ViewModelNavigation.NavigateAndPickAsync<PasswordEntryViewModel>(this, SetPassword, CancelCredentialsEntry);
         }
 
-
-        public void CancelCredentialsEntry()
-        {
-            this.CloseScreen();
-        }
-
         public async void PromptForAccessKey()
         {
+
             await ViewModelNavigation.NavigateAndPickAsync<PasswordEntryViewModel>(this, SetAccessKey, CancelCredentialsEntry);
         }
 
         public void SetAccessKey(object password)
         {
             this.Model.AccessKey = password.ToString();
+            if (this.Model.CredentialStorage.Value == CredentialsStorage.OnDevice)
+            {
+                SecureStorage.Store(Model.Id, Model.AccessKey);
+            }
         }
 
         public void SetPassword(object password)
         {
             this.Model.Password = password.ToString();
+            if(this.Model.CredentialStorage.Value == CredentialsStorage.OnDevice)
+            {
+                SecureStorage.Store(Model.Id, Model.Password);
+            }
         }
 
+        public void CancelCredentialsEntry()
+        {
+            this.CloseScreen();
+        }
+        #endregion
 
+        #region
         private async Task ReceiveDataFromAzure()
         {
             while (_azureIoTHubClient != null)
@@ -350,7 +463,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                         }
                         else
                         {
-                            await Popups.ShowAsync($"{Resources.SimulatorCoreResources.Simulator_ErrorConnecting}: {result.Message}");
+                            await Popups.ShowAsync($"{Resources.SimulatorCoreResources.Simulator_ErrorConnecting}: {result.Result.ToString()}");
                         }
 
                         break;

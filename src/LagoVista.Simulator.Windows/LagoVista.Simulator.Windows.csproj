@@ -11,14 +11,14 @@
     <AssemblyName>LagoVista.Simulator.Windows</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.15063.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.16299.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <PackageCertificateKeyFile>LagoVista.Simulator.Windows_StoreKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>781400CD9B85D7A93678541F0D09D4180714538B</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>AB3E8963F2F5D07AE29BF238D96AA0D75D70D57D</PackageCertificateThumbprint>
     <RuntimeIdentifiers>win10-arm;win10-arm-aot;win10-x86;win10-x86-aot;win10-x64;win10-x64-aot</RuntimeIdentifiers>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
@@ -96,12 +96,18 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <Content Include="add.png" />
-    <Content Include="Assets\Fonts\iconize-fontawesome.ttf" />
+    <Content Include="Assets\appicon.png" />
+    <Content Include="Assets\BadgeLogo.scale-100.png" />
+    <Content Include="Assets\BadgeLogo.scale-125.png" />
+    <Content Include="Assets\BadgeLogo.scale-150.png" />
+    <Content Include="Assets\BadgeLogo.scale-200.png" />
+    <Content Include="Assets\BadgeLogo.scale-400.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-125.png" />
     <Content Include="Assets\LargeTile.scale-150.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\slsys.png" />
     <Content Include="Assets\SmallTile.scale-100.png" />
     <Content Include="Assets\SmallTile.scale-125.png" />
     <Content Include="Assets\SmallTile.scale-150.png" />
@@ -128,6 +134,11 @@
     <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-125.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
@@ -135,6 +146,8 @@
     <Content Include="nuviot.png" />
     <Content Include="softwarelogistics.png" />
     <Content Include="splashbg.jpg" />
+    <Content Include="Assets\Fonts\iconize-entypoplus.ttf" />
+    <Content Include="Assets\Fonts\iconize-fontawesome.ttf" />
     <Content Include="Assets\Fonts\iconize-ionicons.ttf" />
     <Content Include="Assets\Fonts\iconize-material.ttf" />
     <Content Include="Assets\Fonts\iconize-meteocons.ttf" />
@@ -159,7 +172,6 @@
     <Content Include="Assets\Fonts\RobotoCondensed-Light.ttf" />
     <Content Include="Assets\Fonts\RobotoCondensed-LightItalic.ttf" />
     <Content Include="Assets\Fonts\RobotoCondensed-Regular.ttf" />
-    <Content Include="Assets\Fonts\iconize-entypoplus.ttf" />
     <None Include="LagoVista.Simulator.Windows_StoreKey.pfx" />
     <None Include="Package.StoreAssociation.xml" />
     <None Include="project.lock.json" />
@@ -218,14 +230,11 @@
     <Content Include="Assets\Icons\Upload_100px.png" />
     <Content Include="Assets\NuvIoT-128x128W.png" />
     <Content Include="Assets\NuvIoT-256x256W.png" />
-    <Content Include="Assets\Settings_100px.png" />
     <Content Include="Properties\Default.rd.xml" />
-    <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
@@ -245,43 +254,53 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="LagoVista.Client.Core">
+      <Version>1.2.226-alpha1506</Version>
+    </PackageReference>
     <PackageReference Include="LagoVista.Core">
-      <Version>
-      </Version>
+      <Version>1.2.224-alpha1826</Version>
+    </PackageReference>
+    <PackageReference Include="LagoVista.Core.Authentication">
+      <Version>1.2.224-alpha1826</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Core.Networking">
-      <Version>
-      </Version>
+      <Version>1.2.224-alpha1826</Version>
     </PackageReference>
-    <PackageReference Include="LagoVista.Core.UWP">
-      <Version>
-      </Version>
+    <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models">
+      <Version>1.2.224-alpha1826</Version>
     </PackageReference>
-    <PackageReference Include="LagoVista.IoT.DeviceAdmin">
-      <Version>
-      </Version>
+    <PackageReference Include="LagoVista.IoT.Logging">
+      <Version>1.2.224-alpha1826</Version>
     </PackageReference>
-    <PackageReference Include="LagoVista.UserAdmin">
-      <Version>
-      </Version>
+    <PackageReference Include="LagoVista.IoT.Simulator.Models">
+      <Version>1.2.224-alpha1826</Version>
     </PackageReference>
-    <PackageReference Include="LagoVista.UWP.UI">
-      <Version>
-      </Version>
+    <PackageReference Include="LagoVista.MQTT">
+      <Version>1.2.224-alpha1201</Version>
+    </PackageReference>
+    <PackageReference Include="LagoVista.UserAdmin.Models">
+      <Version>1.2.224-alpha1826</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.XPlat">
-      <Version>
-      </Version>
+      <Version>1.2.226-alpha1506</Version>
     </PackageReference>
-    <PackageReference Include="LagoVista.XPlat.Core">
-      <Version>
-      </Version>
+    <PackageReference Include="Microsoft.Azure.EventHubs">
+      <Version>1.0.3</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Azure.Mobile.Analytics">
       <Version>0.17.1</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.Azure.Mobile.Crashes">
+      <Version>0.17.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Azure.Mobile.Distribute">
+      <Version>0.17.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Azure.Mobile.Push">
+      <Version>0.17.1</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.0.4</Version>
+      <Version>6.0.5</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>11.0.1-beta1</Version>
@@ -331,6 +350,13 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

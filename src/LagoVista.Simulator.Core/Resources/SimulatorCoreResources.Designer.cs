@@ -80,6 +80,55 @@ namespace LagoVista.Simulator.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to We could not find your password or access key in the devices secure storage.
+        ///
+        ///It is possible that you (or someone else) created this simulator on a different device.
+        ///
+        ///To use this simulator you will need to re-enter the resource credentials..
+        /// </summary>
+        internal static string PasswordEntry_NotFound {
+            get {
+                return ResourceManager.GetString("PasswordEntry_NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password and Confirm Password must match..
+        /// </summary>
+        internal static string SecureStorage_PasswordConfirmPasswordMisMatch {
+            get {
+                return ResourceManager.GetString("SecureStorage_PasswordConfirmPasswordMisMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password must be between 6 and 20 characters and include only include alpha numeric values and the special characters !@#$%^&amp;*.
+        /// </summary>
+        internal static string SecureStorage_PasswordFormat {
+            get {
+                return ResourceManager.GetString("SecureStorage_PasswordFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password is required.
+        /// </summary>
+        internal static string SecureStorage_PasswordIsRequired {
+            get {
+                return ResourceManager.GetString("SecureStorage_PasswordIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorry, you have entered an incorrect password to unlock your password storage..
+        /// </summary>
+        internal static string SecureStorage_WrongPassword {
+            get {
+                return ResourceManager.GetString("SecureStorage_WrongPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Could Not Send Message.
         /// </summary>
         internal static string SendMessage_CouldNotSendMessage {
@@ -202,6 +251,82 @@ namespace LagoVista.Simulator.Core.Resources {
         internal static string Simulator_PromptPassword {
             get {
                 return ResourceManager.GetString("Simulator_PromptPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -edit access key-.
+        /// </summary>
+        internal static string SimulatorEdit_EditAccesKey_Link {
+            get {
+                return ResourceManager.GetString("SimulatorEdit_EditAccesKey_Link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Access Key.
+        /// </summary>
+        internal static string SimulatorEdit_EditAccessKey {
+            get {
+                return ResourceManager.GetString("SimulatorEdit_EditAccessKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        internal static string SimulatorEdit_EditPassword {
+            get {
+                return ResourceManager.GetString("SimulatorEdit_EditPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -edit password-.
+        /// </summary>
+        internal static string SimulatorEdit_EditPassword_Link {
+            get {
+                return ResourceManager.GetString("SimulatorEdit_EditPassword_Link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have selected to store passwords and/or access keys on your device.  You need to create or unlock your secure storage before these values can be stored..
+        /// </summary>
+        internal static string SimulatorEdit_UnlockRequired {
+            get {
+                return ResourceManager.GetString("SimulatorEdit_UnlockRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to reset your secure storage password? 
+        ///
+        ///If you do so, any password or access keys for accessing server side resources with your simulators will need to be rentered. 
+        ///
+        ///This cannot be un-done.
+        /// </summary>
+        internal static string UnlockPassword_ResetPassword_Prompt {
+            get {
+                return ResourceManager.GetString("UnlockPassword_ResetPassword_Prompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset Password?.
+        /// </summary>
+        internal static string UnlockPassword_ResetPassword_Title {
+            get {
+                return ResourceManager.GetString("UnlockPassword_ResetPassword_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorry, you have entered an incorrect password to unlock your devices secure storage..
+        /// </summary>
+        internal static string UnlockPassword_WrongPassword {
+            get {
+                return ResourceManager.GetString("UnlockPassword_WrongPassword", resourceCulture);
             }
         }
     }

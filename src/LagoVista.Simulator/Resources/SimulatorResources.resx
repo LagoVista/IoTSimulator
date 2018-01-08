@@ -175,16 +175,48 @@
     <value>Message Header</value>
   </data>
   <data name="PasswordEntry_PasswordOrAccessKey" xml:space="preserve">
-    <value>Password or Access Key to Connect to Resource</value>
+    <value>Please enter the password or access key to connect to this server side resource.</value>
   </data>
   <data name="PasswordEntry_PasswordOrAccessKey_wm" xml:space="preserve">
-    <value>-please enter password or watermark-</value>
+    <value>-password or access key-</value>
   </data>
   <data name="PasswordEntry_Required" xml:space="preserve">
     <value>* Required</value>
   </data>
   <data name="PasswordEntry_Title" xml:space="preserve">
     <value>Credentials Entry</value>
+  </data>
+  <data name="SecureStorage_ConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="SecureStorage_ConfirmPassword_wm" xml:space="preserve">
+    <value>-confirm the password-</value>
+  </data>
+  <data name="SecureStorage_EnterPassword" xml:space="preserve">
+    <value>Passwords and Access Keys are stored on the device in password protected secure storage
+
+No passwords are ever sent to our servers unless you chose to store credentials in the cloud.
+
+Please enter the password you created to access your secure storage.</value>
+  </data>
+  <data name="SecureStorage_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="SecureStorage_Password_wm" xml:space="preserve">
+    <value>-enter a password-</value>
+  </data>
+  <data name="SecureStorage_SetPasswordHelp" xml:space="preserve">
+    <value>Your passwords and access keys for accessing resources with your  simulators are stored securely on your device.
+
+You will need to create a password to secure simulator passwords and access keys.  
+
+If you forget your password you will lose access to any stored simulator passwords or access keys.</value>
+  </data>
+  <data name="SecureStorage_UnlockStorage" xml:space="preserve">
+    <value>Unlock Storage</value>
+  </data>
+  <data name="SecureStore_ResetPassword" xml:space="preserve">
+    <value>Reset Password</value>
   </data>
   <data name="SendMessage_Apply" xml:space="preserve">
     <value>Apply</value>
@@ -203,6 +235,9 @@
   </data>
   <data name="SendMessage_Title" xml:space="preserve">
     <value>Message Sender</value>
+  </data>
+  <data name="SetStoragePassword_Title" xml:space="preserve">
+    <value>Secure Storage</value>
   </data>
   <data name="SimulatorEditor_Title" xml:space="preserve">
     <value>Simulator Editor</value>
@@ -230,6 +265,9 @@
   </data>
   <data name="Simulator_Title" xml:space="preserve">
     <value>Simulator</value>
+  </data>
+  <data name="UnlockStorage_Title" xml:space="preserve">
+    <value>Unlock Secure Storage</value>
   </data>
   <data name="Welcome_Title" xml:space="preserve">
     <value>Welcome - IoT Simulator</value>

@@ -1,4 +1,10 @@
-LagoVista.Client.Core=1.2.205-alpha1737
-LagoVista.MQTT.Core=1.2.205-alpha1737
-LagoVista.XPlat=1.2.205-alpha1737
-LagoVista.Core=1.2.181-alpha1716
+LagoVista.Client.Core=1.2.214-alpha1736
+LagoVista.Core.Authentication=1.2.214-alpha1112
+LagoVista.Core.Networking=1.2.214-alpha1112
+LagoVista.IoT.DeviceAdmin.Models=1.2.214-alpha1112
+LagoVista.IoT.Logging=1.2.214-alpha1112
+LagoVista.IoT.Simulator.Models=1.2.214-alpha1112
+LagoVista.MQTT.Core=1.2.212-alpha1203
+LagoVista.UserAdmin.Models=1.2.214-alpha1112
+LagoVista.XPlat=1.2.214-alpha1736
+LagoVista.Core=1.2.214-alpha1112

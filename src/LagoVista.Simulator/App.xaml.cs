@@ -21,12 +21,14 @@ using LagoVista.Core.PlatformSupport;
 using System.Resources;
 using LagoVista.MQTT.Core.Clients;
 using LagoVista.Core.Networking.Interfaces;
+using LagoVista.Core.Models;
 
 namespace LagoVista.Simulator
 {
     public partial class App : Application
     {
         static App _instance;
+        AppConfig _appConfig;
 
         public App()
         {
@@ -39,30 +41,36 @@ namespace LagoVista.Simulator
 
         private void InitServices()
         {
+            _appConfig = new AppConfig();
+
 #if ENV_MASTER
             var serverInfo = new ServerInfo()
             {
                 SSL = true,
                 RootUrl = "api.nuviot.com",
             };
+            _appConfig.Environment = Environments.Production;
 #elif ENV_DEV
             var serverInfo = new ServerInfo()
             {
                 SSL = true,
                 RootUrl = "dev-api.nuviot.com",
             };
+            _appConfig.Environment = Environments.Development;
 #elif ENV_LOCAL
             var serverInfo = new ServerInfo()
             {
                 SSL = false,
                 RootUrl = "localhost:5001",
             };
+            _appConfig.Environment = Environments.Local;
 #elif ENV_STAGE
             var serverInfo = new ServerInfo()
             {
                 SSL = true,
                 RootUrl = "stage-api.nuviot.com",
             };
+            _appConfig.Environment = Environments.Staging;
 #endif
 
             var clientAppInfo = new ClientAppInfo()
@@ -70,8 +78,12 @@ namespace LagoVista.Simulator
                 MainViewModel = typeof(MainViewModel)
             };
 
+            DeviceInfo.Register();
+
+            var deviceInfo = SLWIOC.Get<IDeviceInfo>();
+
             SLWIOC.RegisterSingleton<IClientAppInfo>(clientAppInfo);
-            SLWIOC.RegisterSingleton<IAppConfig>(new AppConfig());
+            SLWIOC.RegisterSingleton<IAppConfig>(_appConfig);
 
             var navigation = new ViewModelNavigation(this);
             LagoVista.XPlat.Core.Startup.Init(this, navigation);
@@ -84,6 +96,8 @@ namespace LagoVista.Simulator
             navigation.Add<SendMessageViewModel, Views.Messages.SendMessageView>();
             navigation.Add<MessageHeaderViewModel, Views.Messages.MessageHeaderView>();
             navigation.Add<PasswordEntryViewModel, Views.Simulator.PasswordEntryView>();
+            navigation.Add<UnlockStorageViewModel, Views.Simulator.UnlockStorageView>();
+            navigation.Add<SetStoragePasswordViewModel, Views.Simulator.SetStoragePasswordView>();
             navigation.Add<DynamicAttributeViewModel, Views.Messages.DynamicAttributeView>();
 
             navigation.Add<SplashViewModel, Views.SplashView>();
@@ -107,18 +121,22 @@ namespace LagoVista.Simulator
             }
             else
             {
-                var page = this.MainPage as LagoVistaNavigationPage;
-                if (page != null)
+                if (this.MainPage is LagoVistaNavigationPage page)
                 {
                     page.HandleURIActivation(uri);
                 }
                 else
                 {
-             
+
                     logger.AddCustomEvent(LogLevel.Error, "App_HandleURIActivation", "InvalidPageType - Not LagoVistaNavigationPage", new System.Collections.Generic.KeyValuePair<string, string>("type", this.MainPage.GetType().Name));
                 }
             }
 
+        }
+
+        public void SetVersion(VersionInfo info)
+        {
+            _appConfig.Version = info;
         }
 
         protected override void OnStart()

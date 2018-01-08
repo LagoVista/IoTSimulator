@@ -1,14 +1,9 @@
-﻿using LagoVista.Client;
-using LagoVista.Client.Core;
-using LagoVista.Client.Core.Net;
-using LagoVista.Core.Interfaces;
+﻿using LagoVista.Client.Core;
 using LagoVista.Core.IOC;
-using LagoVista.Core.Networking.Interfaces;
 using LagoVista.Core.PlatformSupport;
 using LagoVista.Core.UWP.Services;
 using LagoVista.MQTT.Core;
-using LagoVista.MQTT.Core.Clients;
-using LagoVista.XPlat.UWP;
+using LagoVista.MQTT.UWP;
 using LagoVista.XPlat.UWP.Network;
 using System;
 using System.Diagnostics;
@@ -60,7 +55,6 @@ namespace LagoVista.Simulator.Windows
             base.OnActivated(args);
         }
 
-
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
             var rootFrame = Window.Current.Content as Frame;
@@ -70,12 +64,10 @@ namespace LagoVista.Simulator.Windows
                 rootFrame = new Frame();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
-
                 Xamarin.Forms.Forms.Init(e);
 
                 LagoVista.Core.UWP.Startup.Init(this, rootFrame.Dispatcher, MOBILE_CENTER_KEY);
 
-                SLWIOC.RegisterSingleton<IDeviceInfo>(new DeviceInfo());
                 SLWIOC.Register<ITCPClient, TCPClient>();
                 SLWIOC.Register<IUDPClient, UDPClient>();
 
