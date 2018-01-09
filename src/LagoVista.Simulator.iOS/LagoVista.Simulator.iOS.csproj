@@ -58,7 +58,7 @@
     </IpaPackageName>
     <CodesignProvision>
     </CodesignProvision>
-    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchLink>None</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -70,6 +70,7 @@
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>None</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -274,6 +275,9 @@
     <Reference Include="Microsoft.Azure.Amqp, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Azure.Amqp.2.1.1\lib\netstandard1.3\Microsoft.Azure.Amqp.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Azure.Devices.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Azure.Devices.Client.1.4.0\lib\netstandard1.3\Microsoft.Azure.Devices.Client.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Azure.Devices.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Azure.Devices.Shared.1.4.0\lib\netstandard1.3\Microsoft.Azure.Devices.Shared.dll</HintPath>
     </Reference>
@@ -418,6 +422,9 @@
     <BundleResource Include="Resources\splashbg.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\AppStoreIcon.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>

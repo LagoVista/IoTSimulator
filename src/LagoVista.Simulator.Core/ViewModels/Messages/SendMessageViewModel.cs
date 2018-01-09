@@ -288,7 +288,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
 
         private async Task SendServiceBusMessage()
         {
-#if SERVICeBUS
+#if SERVICEBUS
             if (String.IsNullOrEmpty(Simulator.AccessKey))
             {
                 await Popups.ShowAsync("Access Key is missing");

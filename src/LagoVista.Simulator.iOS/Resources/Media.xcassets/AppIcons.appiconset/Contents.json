@@ -23,7 +23,8 @@
     {
       "scale": "1x",
       "size": "1024x1024",
-      "idiom": "ios-marketing"
+      "idiom": "ios-marketing",
+      "filename": "AppStoreIcon.png"
     },
     {
       "scale": "2x",
