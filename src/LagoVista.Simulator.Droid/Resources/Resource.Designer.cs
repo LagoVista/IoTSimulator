@@ -2168,7 +2168,7 @@ namespace LagoVista.Simulator.Droid
 			global::LagoVista.XPlat.Droid.Resource.Styleable.ViewStubCompat_android_id = global::LagoVista.Simulator.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::LagoVista.XPlat.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId = global::LagoVista.Simulator.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
 			global::LagoVista.XPlat.Droid.Resource.Styleable.ViewStubCompat_android_layout = global::LagoVista.Simulator.Droid.Resource.Styleable.ViewStubCompat_android_layout;
-			global::Microsoft.Azure.Amqp.Amqp.Resource.String.ApplicationName = global::LagoVista.Simulator.Droid.Resource.String.ApplicationName;
+			global::Microsoft.Azure.Amqp.Resource.String.ApplicationName = global::LagoVista.Simulator.Droid.Resource.String.ApplicationName;
 			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_dialog_actioned_on_disabled_toast = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_dialog_actioned_on_disabled_toast;
 			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_download_progress_number_format = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_download_progress_number_format;
 			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_downloading_mandatory_update = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_downloading_mandatory_update;
