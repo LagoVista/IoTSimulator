@@ -1173,6 +1173,7 @@ namespace LagoVista.Simulator.Droid
 			global::LagoVista.XPlat.Droid.Resource.Layout.select_dialog_singlechoice_material = global::LagoVista.Simulator.Droid.Resource.Layout.select_dialog_singlechoice_material;
 			global::LagoVista.XPlat.Droid.Resource.Layout.support_simple_spinner_dropdown_item = global::LagoVista.Simulator.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
 			global::LagoVista.XPlat.Droid.Resource.String.ApplicationName = global::LagoVista.Simulator.Droid.Resource.String.ApplicationName;
+			global::LagoVista.XPlat.Droid.Resource.String.Hello = global::LagoVista.Simulator.Droid.Resource.String.Hello;
 			global::LagoVista.XPlat.Droid.Resource.String.abc_action_bar_home_description = global::LagoVista.Simulator.Droid.Resource.String.abc_action_bar_home_description;
 			global::LagoVista.XPlat.Droid.Resource.String.abc_action_bar_home_description_format = global::LagoVista.Simulator.Droid.Resource.String.abc_action_bar_home_description_format;
 			global::LagoVista.XPlat.Droid.Resource.String.abc_action_bar_home_subtitle_description_format = global::LagoVista.Simulator.Droid.Resource.String.abc_action_bar_home_subtitle_description_format;
@@ -2167,7 +2168,7 @@ namespace LagoVista.Simulator.Droid
 			global::LagoVista.XPlat.Droid.Resource.Styleable.ViewStubCompat_android_id = global::LagoVista.Simulator.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::LagoVista.XPlat.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId = global::LagoVista.Simulator.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
 			global::LagoVista.XPlat.Droid.Resource.Styleable.ViewStubCompat_android_layout = global::LagoVista.Simulator.Droid.Resource.Styleable.ViewStubCompat_android_layout;
-			global::Microsoft.Azure.Amqp.Resource.String.ApplicationName = global::LagoVista.Simulator.Droid.Resource.String.ApplicationName;
+			global::Microsoft.Azure.Amqp.Amqp.Resource.String.ApplicationName = global::LagoVista.Simulator.Droid.Resource.String.ApplicationName;
 			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_dialog_actioned_on_disabled_toast = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_dialog_actioned_on_disabled_toast;
 			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_download_progress_number_format = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_download_progress_number_format;
 			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_downloading_mandatory_update = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_downloading_mandatory_update;
@@ -2189,6 +2190,8 @@ namespace LagoVista.Simulator.Droid
 			global::Microsoft.Azure.Mobile.Push.Android.Resource.Integer.google_play_services_version = global::LagoVista.Simulator.Droid.Resource.Integer.google_play_services_version;
 			global::Microsoft.Azure.Mobile.Push.Android.Resource.String.common_google_play_services_unknown_issue = global::LagoVista.Simulator.Droid.Resource.String.common_google_play_services_unknown_issue;
 			global::Microsoft.Azure.Mobile.Push.Android.Resource.String.library_name = global::LagoVista.Simulator.Droid.Resource.String.library_name;
+			global::PCLCrypto.Resource.String.ApplicationName = global::LagoVista.Simulator.Droid.Resource.String.ApplicationName;
+			global::PCLCrypto.Resource.String.Hello = global::LagoVista.Simulator.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::LagoVista.Simulator.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -5822,8 +5825,11 @@ namespace LagoVista.Simulator.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f090052
-			public const int ApplicationName = 2131296338;
+			// aapt resource value: 0x7f090040
+			public const int ApplicationName = 2131296320;
+			
+			// aapt resource value: 0x7f09003f
+			public const int Hello = 2131296319;
 			
 			// aapt resource value: 0x7f090016
 			public const int abc_action_bar_home_description = 2131296278;
@@ -5918,8 +5924,8 @@ namespace LagoVista.Simulator.Droid
 			// aapt resource value: 0x7f090028
 			public const int abc_toolbar_collapse_description = 2131296296;
 			
-			// aapt resource value: 0x7f090053
-			public const int app_name = 2131296339;
+			// aapt resource value: 0x7f090054
+			public const int app_name = 2131296340;
 			
 			// aapt resource value: 0x7f090037
 			public const int appbar_scrolling_view_behavior = 2131296311;
@@ -5933,62 +5939,62 @@ namespace LagoVista.Simulator.Droid
 			// aapt resource value: 0x7f090000
 			public const int common_google_play_services_unknown_issue = 2131296256;
 			
-			// aapt resource value: 0x7f09003f
-			public const int library_name = 2131296319;
-			
-			// aapt resource value: 0x7f090040
-			public const int mobile_center_distribute_dialog_actioned_on_disabled_toast = 2131296320;
-			
 			// aapt resource value: 0x7f090041
-			public const int mobile_center_distribute_download_progress_number_format = 2131296321;
+			public const int library_name = 2131296321;
 			
 			// aapt resource value: 0x7f090042
-			public const int mobile_center_distribute_downloading_mandatory_update = 2131296322;
+			public const int mobile_center_distribute_dialog_actioned_on_disabled_toast = 2131296322;
 			
 			// aapt resource value: 0x7f090043
-			public const int mobile_center_distribute_install = 2131296323;
+			public const int mobile_center_distribute_download_progress_number_format = 2131296323;
 			
 			// aapt resource value: 0x7f090044
-			public const int mobile_center_distribute_install_ready_message = 2131296324;
+			public const int mobile_center_distribute_downloading_mandatory_update = 2131296324;
 			
 			// aapt resource value: 0x7f090045
-			public const int mobile_center_distribute_install_ready_title = 2131296325;
+			public const int mobile_center_distribute_install = 2131296325;
 			
 			// aapt resource value: 0x7f090046
-			public const int mobile_center_distribute_notification_category = 2131296326;
+			public const int mobile_center_distribute_install_ready_message = 2131296326;
 			
 			// aapt resource value: 0x7f090047
-			public const int mobile_center_distribute_unknown_sources_dialog_message = 2131296327;
+			public const int mobile_center_distribute_install_ready_title = 2131296327;
 			
 			// aapt resource value: 0x7f090048
-			public const int mobile_center_distribute_unknown_sources_dialog_settings = 2131296328;
+			public const int mobile_center_distribute_notification_category = 2131296328;
 			
 			// aapt resource value: 0x7f090049
-			public const int mobile_center_distribute_update_dialog_download = 2131296329;
+			public const int mobile_center_distribute_unknown_sources_dialog_message = 2131296329;
 			
 			// aapt resource value: 0x7f09004a
-			public const int mobile_center_distribute_update_dialog_message_mandatory = 2131296330;
+			public const int mobile_center_distribute_unknown_sources_dialog_settings = 2131296330;
 			
 			// aapt resource value: 0x7f09004b
-			public const int mobile_center_distribute_update_dialog_message_optional = 2131296331;
+			public const int mobile_center_distribute_update_dialog_download = 2131296331;
 			
 			// aapt resource value: 0x7f09004c
-			public const int mobile_center_distribute_update_dialog_postpone = 2131296332;
+			public const int mobile_center_distribute_update_dialog_message_mandatory = 2131296332;
 			
 			// aapt resource value: 0x7f09004d
-			public const int mobile_center_distribute_update_dialog_title = 2131296333;
+			public const int mobile_center_distribute_update_dialog_message_optional = 2131296333;
 			
 			// aapt resource value: 0x7f09004e
-			public const int mobile_center_distribute_update_dialog_view_release_notes = 2131296334;
+			public const int mobile_center_distribute_update_dialog_postpone = 2131296334;
 			
 			// aapt resource value: 0x7f09004f
-			public const int mobile_center_distribute_update_failed_dialog_ignore = 2131296335;
+			public const int mobile_center_distribute_update_dialog_title = 2131296335;
 			
 			// aapt resource value: 0x7f090050
-			public const int mobile_center_distribute_update_failed_dialog_reinstall = 2131296336;
+			public const int mobile_center_distribute_update_dialog_view_release_notes = 2131296336;
 			
 			// aapt resource value: 0x7f090051
-			public const int mobile_center_distribute_update_failed_dialog_title = 2131296337;
+			public const int mobile_center_distribute_update_failed_dialog_ignore = 2131296337;
+			
+			// aapt resource value: 0x7f090052
+			public const int mobile_center_distribute_update_failed_dialog_reinstall = 2131296338;
+			
+			// aapt resource value: 0x7f090053
+			public const int mobile_center_distribute_update_failed_dialog_title = 2131296339;
 			
 			// aapt resource value: 0x7f090001
 			public const int mr_button_content_description = 2131296257;

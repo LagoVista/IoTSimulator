@@ -15,7 +15,10 @@
     <PackageReference Include="LagoVista.MQTT" Version="1.2.224-alpha1201" />
     <PackageReference Include="LagoVista.UserAdmin.Models" Version="1.2.224-alpha1826" />
     <PackageReference Include="LagoVista.XPlat" Version="1.2.226-alpha1506" />
-    <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.6.1" />
+    <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.4.0" />
+    <PackageReference Include="Microsoft.Azure.Devices.Shared" Version="1.4.0" />
+    <PackageReference Include="Microsoft.Azure.EventHubs" Version="1.0.3" />
+    <PackageReference Include="Microsoft.Azure.ServiceBus" Version="1.0.0" />
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
     <PackageReference Include="LagoVista.Core" Version="1.2.224-alpha1826" />
   </ItemGroup>

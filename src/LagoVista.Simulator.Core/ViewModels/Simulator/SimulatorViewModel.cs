@@ -1,7 +1,9 @@
-﻿using LagoVista.Client;
+﻿//#define IOTHUB
+//#define SERVICEBUS
+#define EVENTHUB
+
 using LagoVista.Client.Core;
 using LagoVista.Client.Core.Auth;
-using LagoVista.Client.Core.Net;
 using LagoVista.Client.Core.ViewModels;
 using LagoVista.Core.Commanding;
 using LagoVista.Core.IOC;
@@ -13,8 +15,14 @@ using LagoVista.Core.Validation;
 using LagoVista.Core.ViewModels;
 using LagoVista.IoT.Simulator.Admin.Models;
 using LagoVista.Simulator.Core.Models;
+#if IOTHUB
 using Microsoft.Azure.Devices.Client;
+#endif
+
+#if EVENTHUB
 using Microsoft.Azure.EventHubs;
+#endif
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -25,20 +33,21 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
 {
     public class SimulatorViewModel : AppViewModelBase
     {
-        #region Fields
+#region Fields
         IMQTTDeviceClient _mqttClient;
         ITCPClient _tcpClient;
         IUDPClient _udpClient;
         ISecureStorage _secureStorage;
+#if IOTHUB
         DeviceClient _azureIoTHubClient;
+#endif
         bool _isConnected;
         bool _isEditing;
 
         Task ReceivingTask;
-        #endregion
+#endregion
 
-
-        #region Constructor
+#region Constructor
         public SimulatorViewModel(ISecureStorage secureStorage)
         {
             ConnectCommand = new RelayCommand(Connect);
@@ -48,9 +57,9 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             ReceivedMessageList = new ObservableCollection<ReceivedMessage>();
             _secureStorage = secureStorage;
         }
-        #endregion        
+#endregion
 
-        #region Utility Methods
+#region Utility Methods
         private bool HasPersistentConnection()
         {
             switch (Model.DefaultTransport.Value)
@@ -85,9 +94,9 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             ReceivedMessagesVisible = false;
             MessageTemplatesVisible = false;
         }
-        #endregion
+#endregion
 
-        #region View Life Cycle
+#region View Life Cycle
         private async Task<InvokeResult> LoadSimulator()
         {
             var simulatorResponse = await RestClient.GetAsync<DetailResponse<LagoVista.IoT.Simulator.Admin.Models.Simulator>>($"/api/simulator/{LaunchArgs.ChildId}");
@@ -256,9 +265,9 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                 _isEditing = false;
             }
         }
-        #endregion
+#endregion
 
-        #region Added security for simulators.
+#region Added security for simulators.
         public async void UnlockStorageAndGetpassword()
         {
             if (!SecureStorage.IsSetup)
@@ -346,11 +355,12 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
         {
             this.CloseScreen();
         }
-        #endregion
+#endregion
 
-        #region
+#region
         private async Task ReceiveDataFromAzure()
         {
+#if IOTHUB
             while (_azureIoTHubClient != null)
             {
                 var message = await _azureIoTHubClient.ReceiveAsync();
@@ -372,6 +382,9 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                     }
                 }
             }
+#else
+            await Task.FromResult(default(object));
+#endif
         }
 
         private void StartReceiveThread()
@@ -407,9 +420,9 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             msg.MessageId = e.MessageId;
             DispatcherServices.Invoke(() => ReceivedMessageList.Insert(0, msg));
         }
-        #endregion
+#endregion
 
-        #region Connect to specified protocol
+#region Connect to specified protocol
         public async void Connect()
         {
             try
@@ -431,11 +444,13 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                                             break;*/
 
                     case TransportTypes.AzureIoTHub:
+#if IOTHUB
                         var connectionString = $"HostName={Model.DefaultEndPoint};DeviceId={Model.DeviceId};SharedAccessKey={Model.AccessKey}";
                         _azureIoTHubClient = DeviceClient.CreateFromConnectionString(connectionString, Microsoft.Azure.Devices.Client.TransportType.Amqp_Tcp_Only);
                         await _azureIoTHubClient.OpenAsync();
                         ReceivingTask = Task.Run(ReceiveDataFromAzure);
                         SetConnectedState();
+#endif
                         break;
                     case TransportTypes.MQTT:
                         _mqttClient = SLWIOC.Create<IMQTTDeviceClient>();
@@ -493,12 +508,14 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                     _mqttClient = null;
                 }
 
+#if IOTHUB
                 if (_azureIoTHubClient != null)
                 {
                     await _azureIoTHubClient.CloseAsync();
                     _azureIoTHubClient.Dispose();
                     _azureIoTHubClient = null;
                 }
+#endif
 
                 if (_tcpClient != null)
                 {
@@ -522,9 +539,9 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                 IsBusy = false;
             }
         }
-        #endregion
+#endregion
 
-        #region Disconnect from Current Transport
+#region Disconnect from Current Transport
         public async void Disconnect()
         {
             await DisconnectAsync();
@@ -539,12 +556,14 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                     ConnectButtonVisible = true;
                     break;*/
                 case TransportTypes.AzureIoTHub:
+#if IOTHUB
                     if (_azureIoTHubClient != null)
                     {
                         await _azureIoTHubClient.CloseAsync();
                         _azureIoTHubClient.Dispose();
                         _azureIoTHubClient = null;
                     }
+#endif
 
                     ConnectButtonVisible = true;
                     break;
@@ -580,9 +599,9 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
 
             RightMenuIcon = Client.Core.ViewModels.RightMenuIcon.None;
         }
-        #endregion
+#endregion
 
-        #region Message Support
+#region Message Support
         List<MessageTemplate> _messageTemplates;
         public List<MessageTemplate> MessageTemplates
         {
@@ -628,7 +647,9 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                         if (_mqttClient != null) launchArgs.Parameters.Add("mqttclient", _mqttClient);
                         if (_tcpClient != null) launchArgs.Parameters.Add("tcpclient", _tcpClient);
                         if (_udpClient != null) launchArgs.Parameters.Add("udpclient", _udpClient);
+#if IOTHUB
                         if (_azureIoTHubClient != null) launchArgs.Parameters.Add("azureIotHubClient", _azureIoTHubClient);
+#endif
                     }
 
                     launchArgs.Parameters.Add("receviedmessages", ReceivedMessageList);
@@ -641,17 +662,17 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                 RaisePropertyChanged();
             }
         }
-        #endregion
+#endregion
 
-        #region Command Support
+#region Command Support
         public RelayCommand ConnectCommand { get; set; }
         public RelayCommand DisconnectCommand { get; set; }
 
         public RelayCommand ShowReceivedMessagesCommand { get; set; }
         public RelayCommand ShowMessageTemplatesCommand { get; set; }
-        #endregion
+#endregion
 
-        #region Properties and Methods to Control Rendering
+#region Properties and Methods to Control Rendering
         public void ShowReceivedMessages()
         {
             ReceivedMessagesVisible = true;
@@ -758,6 +779,6 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             get { return _model; }
             set { Set(ref _model, value); }
         }
-        #endregion
+#endregion
     }
 }

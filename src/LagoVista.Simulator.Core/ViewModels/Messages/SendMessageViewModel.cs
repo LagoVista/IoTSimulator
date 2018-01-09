@@ -1,13 +1,26 @@
-﻿using LagoVista.Client.Core.Net;
+﻿#define IOTHUB
+#define SERVICEBUS
+#define EVENTHUB
+
+using LagoVista.Client.Core.Net;
 using LagoVista.Client.Core.ViewModels;
 using LagoVista.Core.Commanding;
 using LagoVista.Core.Models;
 using LagoVista.Core.Networking.Interfaces;
 using LagoVista.IoT.Simulator.Admin.Models;
 using LagoVista.Simulator.Core.Resources;
+#if IOTHUB
 using Microsoft.Azure.Devices.Client;
+#endif
+
+#if EVENTHUB
 using Microsoft.Azure.EventHubs;
+#endif
+
+#if SERVICEBUS
 using Microsoft.Azure.ServiceBus;
+#endif 
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -45,21 +58,21 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
             ReceivedMessageList = LaunchArgs.GetParam<ObservableCollection<ReceivedMessage>>("receviedmessages");
 
             BuildRequestContent();
-            
-            switch(Simulator.DefaultTransport.Value)
+
+            switch (Simulator.DefaultTransport.Value)
             {
-//                case TransportTypes.AMQP:
+                //                case TransportTypes.AMQP:
                 case TransportTypes.MQTT:
                 case TransportTypes.AzureIoTHub:
                 case TransportTypes.TCP:
                 case TransportTypes.UDP:
-  //              case TransportTypes.RabbitMQ:
+                    //              case TransportTypes.RabbitMQ:
                     ViewSelectorVisible = true;
                     break;
                 case TransportTypes.AzureEventHub:
                 case TransportTypes.AzureServiceBus:
                 case TransportTypes.RestHttp:
-                case TransportTypes.RestHttps:                    
+                case TransportTypes.RestHttps:
                     ViewSelectorVisible = false;
                     break;
             }
@@ -209,7 +222,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
 
                     break;
                 case TransportTypes.MQTT:
-                    sentContent.AppendLine($"Host         : {Simulator.DefaultEndPoint}");                    
+                    sentContent.AppendLine($"Host         : {Simulator.DefaultEndPoint}");
                     sentContent.AppendLine($"Port         : {MsgTemplate.Port}");
                     sentContent.AppendLine($"Topics");
                     sentContent.AppendLine($"Publish      : {ReplaceTokens(MsgTemplate.Topic)}");
@@ -275,6 +288,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
 
         private async Task SendServiceBusMessage()
         {
+#if SERVICeBUS
             if (String.IsNullOrEmpty(Simulator.AccessKey))
             {
                 await Popups.ShowAsync("Access Key is missing");
@@ -305,10 +319,14 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
             await client.CloseAsync();
             
             ReceivedContennt = $"{DateTime.Now} {SimulatorCoreResources.SendMessage_MessagePublished}"; 
+#else
+            await Task.FromResult(default(object));
+#endif
         }
 
         private async Task SendEventHubMessage()
         {
+#if EVENTHUB
             if (String.IsNullOrEmpty(Simulator.AccessKey))
             {
                 await Popups.ShowAsync("Access Key is missing");
@@ -321,15 +339,23 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
             var client = EventHubClient.CreateFromConnectionString(connectionStringBuilder.ToString());
             await client.SendAsync(new EventData(GetMessageBytes()));
             ReceivedContennt = $"{DateTime.Now} {SimulatorCoreResources.SendMessage_MessageSent}";
+
+#else
+            await Task.FromResult(default(object));
+#endif
         }
 
         private async Task SendIoTHubMessage()
         {
+#if IOTHUB
             var textPayload = ReplaceTokens(MsgTemplate.TextPayload);
             var msg = new Microsoft.Azure.Devices.Client.Message(GetMessageBytes());
             await LaunchArgs.GetParam<DeviceClient>("azureIotHubClient").SendEventAsync(msg);
 
-            ReceivedContennt = $"{DateTime.Now} {SimulatorCoreResources.SendMessage_MessagePublished}"; 
+            ReceivedContennt = $"{DateTime.Now} {SimulatorCoreResources.SendMessage_MessagePublished}";
+#else
+            await Task.FromResult(default(object));
+#endif
         }
 
         private async Task SendMQTTMessage()
@@ -357,9 +383,9 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
                 var protocol = MsgTemplate.Transport.Value == TransportTypes.RestHttps ? "https" : "http";
                 var uri = $"{protocol}://{Simulator.DefaultEndPoint}:{Simulator.DefaultPort}{ReplaceTokens(MsgTemplate.PathAndQueryString)}";
 
-                if(!this.Simulator.Anonymous)
+                if (!this.Simulator.Anonymous)
                 {
-                    if(String.IsNullOrEmpty(Simulator.Password))
+                    if (String.IsNullOrEmpty(Simulator.Password))
                     {
                         await Popups.ShowAsync("Password is missing");
                         return;
@@ -394,11 +420,11 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
                             break;
                     }
                 }
-                catch(HttpRequestException ex)
+                catch (HttpRequestException ex)
                 {
                     var fullResponseString = new StringBuilder();
                     fullResponseString.AppendLine(ex.Message);
-                    if(ex.InnerException != null)
+                    if (ex.InnerException != null)
                     {
                         fullResponseString.AppendLine(ex.InnerException.Message);
                     }
@@ -461,7 +487,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
         #region Utitlity Methods
         public override Task<bool> CanCancelAsync()
         {
-            if(SettingsVisible)
+            if (SettingsVisible)
             {
                 SettingsVisible = false;
                 return Task.FromResult(false);
