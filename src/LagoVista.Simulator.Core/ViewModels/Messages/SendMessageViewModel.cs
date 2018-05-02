@@ -34,12 +34,17 @@ using System.Diagnostics;
 using LagoVista.Simulator.Core.Models;
 using LagoVista.Client;
 using LagoVista.Client.Core;
+using System.Threading;
 
 namespace LagoVista.Simulator.Core.ViewModels.Messages
 {
     public class SendMessageViewModel : XPlatViewModel
     {
         Random _random = new Random();
+        Timer _timer;
+
+        int _pointIndex;
+
 
         #region Constructor and Initialization
         public SendMessageViewModel()
@@ -376,8 +381,15 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
             ReceivedContennt = $"{DateTime.Now} {SimulatorCoreResources.SendMessage_MessagePublished}";
         }
 
-        private async Task SendRESTRequest()
+        private async Task SendGeoMessage()
         {
+            var pointArray = this._message.TextPayload.Split('\r');
+            var geoLocation = pointArray[_pointIndex++];
+            var parts = geoLocation.Split(',');
+            var lat = Convert.ToDouble(parts[0]);
+            var lon = Convert.ToDouble(parts[1]);
+            var delay = Convert.ToInt32(parts[2]) * 1000;
+
             using (var client = new HttpClient())
             {
                 var protocol = MsgTemplate.Transport.Value == TransportTypes.RestHttps ? "https" : "http";
@@ -402,6 +414,9 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
                     client.DefaultRequestHeaders.Add(hdr.HeaderName, ReplaceTokens(hdr.Value));
                 }
 
+
+                var messageBody = ReplaceTokens(MsgTemplate.TextPayload);
+                messageBody = $"{{'latitude':{lat}, 'longitude':{lon}}}";
                 try
                 {
                     switch (MsgTemplate.HttpVerb)
@@ -410,10 +425,100 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
                             responseMessage = await client.GetAsync(uri);
                             break;
                         case MessageTemplate.HttpVerb_POST:
-                            responseMessage = await client.PostAsync(uri, new StringContent(ReplaceTokens(MsgTemplate.TextPayload), Encoding.UTF8, String.IsNullOrEmpty(MsgTemplate.ContentType) ? "text/plain" : MsgTemplate.ContentType));
+                            responseMessage = await client.PostAsync(uri, new StringContent(messageBody, Encoding.UTF8, String.IsNullOrEmpty(MsgTemplate.ContentType) ? "text/plain" : MsgTemplate.ContentType));
                             break;
                         case MessageTemplate.HttpVerb_PUT:
-                            responseMessage = await client.PutAsync(uri, new StringContent(ReplaceTokens(MsgTemplate.TextPayload), Encoding.UTF8, String.IsNullOrEmpty(MsgTemplate.ContentType) ? "text/plain" : MsgTemplate.ContentType));
+                            responseMessage = await client.PutAsync(uri, new StringContent(messageBody, Encoding.UTF8, String.IsNullOrEmpty(MsgTemplate.ContentType) ? "text/plain" : MsgTemplate.ContentType));
+                            break;
+                        case MessageTemplate.HttpVerb_DELETE:
+                            responseMessage = await client.DeleteAsync(uri);
+                            break;
+                    }
+                }
+                catch (HttpRequestException ex)
+                {
+                    var fullResponseString = new StringBuilder();
+                    fullResponseString.AppendLine(ex.Message);
+                    if (ex.InnerException != null)
+                    {
+                        fullResponseString.AppendLine(ex.InnerException.Message);
+                    }
+
+                    ReceivedContennt = fullResponseString.ToString();
+                    return;
+                }
+
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    var responseContent = await responseMessage.Content.ReadAsStringAsync();
+                    var fullResponseString = new StringBuilder();
+                    fullResponseString.AppendLine($"{DateTime.Now} {SimulatorCoreResources.SendMessage_MessageSent}");
+                    fullResponseString.AppendLine($"Response Code: {(int)responseMessage.StatusCode} ({responseMessage.ReasonPhrase})");
+                    foreach (var hdr in responseMessage.Headers)
+                    {
+                        fullResponseString.AppendLine($"{hdr.Key}\t:{hdr.Value.FirstOrDefault()}");
+                    }
+                    fullResponseString.AppendLine();
+                    fullResponseString.Append(responseContent);
+                    ReceivedContennt = fullResponseString.ToString();
+                }
+                else
+                {
+                    ReceivedContennt = $"{responseMessage.StatusCode} - {responseMessage.ReasonPhrase}";
+                }
+            }
+
+            if (this._pointIndex < pointArray.Length)
+            {
+                _timer = new Timer(SentNextPoint, null, delay, Timeout.Infinite);
+            }
+        }
+
+        private async Task SendRESTRequest()
+        {
+            if(MsgTemplate.PayloadType.Id == MessageTemplate.PayloadTypes_GeoPath)
+            {
+                await SendGeoMessage();
+            }
+
+            using (var client = new HttpClient())
+            {
+                var protocol = MsgTemplate.Transport.Value == TransportTypes.RestHttps ? "https" : "http";
+                var uri = $"{protocol}://{Simulator.DefaultEndPoint}:{Simulator.DefaultPort}{ReplaceTokens(MsgTemplate.PathAndQueryString)}";
+
+                if (!this.Simulator.Anonymous)
+                {
+                    if (String.IsNullOrEmpty(Simulator.Password))
+                    {
+                        await Popups.ShowAsync("Password is missing");
+                        return;
+                    }
+
+                    var authCreds = Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(Simulator.UserName + ":" + Simulator.Password));
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", authCreds);
+                }
+
+                HttpResponseMessage responseMessage = null;
+
+                foreach (var hdr in MsgTemplate.MessageHeaders)
+                {
+                    client.DefaultRequestHeaders.Add(hdr.HeaderName, ReplaceTokens(hdr.Value));
+                }
+
+            
+                var messageBody = ReplaceTokens(MsgTemplate.TextPayload);
+                try
+                {
+                    switch (MsgTemplate.HttpVerb)
+                    {
+                        case MessageTemplate.HttpVerb_GET:
+                            responseMessage = await client.GetAsync(uri);
+                            break;
+                        case MessageTemplate.HttpVerb_POST:
+                            responseMessage = await client.PostAsync(uri, new StringContent(messageBody, Encoding.UTF8, String.IsNullOrEmpty(MsgTemplate.ContentType) ? "text/plain" : MsgTemplate.ContentType));
+                            break;
+                        case MessageTemplate.HttpVerb_PUT:
+                            responseMessage = await client.PutAsync(uri, new StringContent(messageBody, Encoding.UTF8, String.IsNullOrEmpty(MsgTemplate.ContentType) ? "text/plain" : MsgTemplate.ContentType));
                             break;
                         case MessageTemplate.HttpVerb_DELETE:
                             responseMessage = await client.DeleteAsync(uri);
@@ -454,6 +559,11 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
             }
         }
 
+        private async void SentNextPoint(Object obj)
+        {
+            await SendRESTRequest();
+        }
+
         public async void Send()
         {
             IsBusy = true;
@@ -471,6 +581,8 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
                     case TransportTypes.RestHttps:
                     case TransportTypes.RestHttp: await SendRESTRequest(); break;
                 }
+
+                BuildRequestContent();
             }
             catch (Exception ex)
             {

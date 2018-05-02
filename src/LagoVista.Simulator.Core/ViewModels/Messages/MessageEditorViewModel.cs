@@ -52,7 +52,6 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
                 ShowErrorMessage = false;
                 HasTransport = true;
 
-
                 View[nameof(Model.TextPayload).ToFieldKey()].IsVisible = Model.PayloadType.Value == PaylodTypes.String;
                 View[nameof(Model.BinaryPayload).ToFieldKey()].IsVisible = Model.PayloadType.Value == PaylodTypes.Binary;
 
@@ -248,6 +247,11 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
                     FormAdapter.ShowView(nameof(Model.BinaryPayload));
                 }
                 else if (e.Value == MessageTemplate.PayloadTypes_Text)
+                {
+                    FormAdapter.ShowView(nameof(Model.TextPayload));
+                    FormAdapter.HideView(nameof(Model.BinaryPayload));
+                }
+                else if (e.Value == MessageTemplate.PayloadTypes_GeoPath)
                 {
                     FormAdapter.ShowView(nameof(Model.TextPayload));
                     FormAdapter.HideView(nameof(Model.BinaryPayload));

@@ -11,7 +11,7 @@
     <PackageReference Include="LagoVista.Core.Networking" Version="1.2.303-alpha1026" />
     <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models" Version="1.2.303-alpha1026" />
     <PackageReference Include="LagoVista.IoT.Logging" Version="1.2.303-alpha1026" />
-    <PackageReference Include="LagoVista.IoT.Simulator.Models" Version="1.2.303-alpha1026" />
+    <PackageReference Include="LagoVista.IoT.Simulator.Models" Version="2.1.346-beta1435" />
     <PackageReference Include="LagoVista.MQTT" Version="1.2.303-alpha1213" />
     <PackageReference Include="LagoVista.UserAdmin.Models" Version="1.2.303-alpha1026" />
     <PackageReference Include="LagoVista.XPlat" Version="1.2.303-alpha1157" />
