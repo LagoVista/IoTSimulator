@@ -18,21 +18,22 @@
     <None Remove="ViewModels\Orgs\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="LagoVista.Client.Core" Version="1.2.303-alpha1157" />
-    <PackageReference Include="LagoVista.Core" Version="1.2.303-alpha1026" />
-    <PackageReference Include="LagoVista.Core.Authentication" Version="1.2.303-alpha1026" />
-    <PackageReference Include="LagoVista.Core.Networking" Version="1.2.303-alpha1026" />
-    <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models" Version="1.2.303-alpha1026" />
-    <PackageReference Include="LagoVista.IoT.Logging" Version="1.2.303-alpha1026" />
-    <PackageReference Include="LagoVista.IoT.Simulator.Models" Version="2.1.346-beta1435" />
+    <PackageReference Include="DotNetty.Buffers" Version="0.4.8" />
+    <PackageReference Include="LagoVista.Client.Core" Version="1.2.438-alpha1729" />
+    <PackageReference Include="LagoVista.Core" Version="2.1.439-beta1607" />
+    <PackageReference Include="LagoVista.Core.Authentication" Version="2.1.439-beta1607" />
+    <PackageReference Include="LagoVista.Core.Networking" Version="2.1.439-beta1607" />
+    <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models" Version="2.1.439-beta1607" />
+    <PackageReference Include="LagoVista.IoT.Logging" Version="2.1.439-beta1607" />
+    <PackageReference Include="LagoVista.IoT.Simulator.Models" Version="2.1.439-beta1607" />
     <PackageReference Include="LagoVista.MQTT" Version="1.2.303-alpha1213" />
-    <PackageReference Include="LagoVista.UserAdmin.Models" Version="1.2.303-alpha1026" />
-    <PackageReference Include="LagoVista.XPlat" Version="1.2.303-alpha1157" />
-    <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.7.0" />
-    <PackageReference Include="Microsoft.Azure.Devices.Shared" Version="1.5.0" />
+    <PackageReference Include="LagoVista.UserAdmin.Models" Version="2.1.439-beta1607" />
+    <PackageReference Include="LagoVista.XPlat" Version="1.2.438-alpha1729" />
+    <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.17.1" />
+    <PackageReference Include="Microsoft.Azure.Devices.Shared" Version="1.15.1" />
     <PackageReference Include="Microsoft.Azure.EventHubs" Version="1.0.3" />
     <PackageReference Include="Microsoft.Azure.ServiceBus" Version="1.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Resources\SimulatorCoreResources.Designer.cs">
