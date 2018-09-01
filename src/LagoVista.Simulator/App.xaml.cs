@@ -87,7 +87,7 @@ namespace LagoVista.Simulator
 
             var navigation = new ViewModelNavigation(this);
             LagoVista.XPlat.Core.Startup.Init(this, navigation);
-            LagoVista.Client.Core.Startup.Init(serverInfo);
+            LagoVista.Client.Core.Startup.Init(serverInfo, new AppStyle());
 
             navigation.Add<MainViewModel, Views.MainView>();
             navigation.Add<SimulatorViewModel, Views.Simulator.SimulatorView>();
