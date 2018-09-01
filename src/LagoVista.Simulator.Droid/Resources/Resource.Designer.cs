@@ -2178,29 +2178,13 @@ namespace LagoVista.Simulator.Droid
 			global::Microsoft.AppCenter.Distribute.Resource.String.appcenter_distribute_update_failed_dialog_reinstall = global::LagoVista.Simulator.Droid.Resource.String.appcenter_distribute_update_failed_dialog_reinstall;
 			global::Microsoft.AppCenter.Distribute.Resource.String.appcenter_distribute_update_failed_dialog_title = global::LagoVista.Simulator.Droid.Resource.String.appcenter_distribute_update_failed_dialog_title;
 			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.ic_stat_notify_dot = global::LagoVista.Simulator.Droid.Resource.Drawable.ic_stat_notify_dot;
+			global::Microsoft.AppCenter.Push.Android.Resource.Integer.google_play_services_version = global::LagoVista.Simulator.Droid.Resource.Integer.google_play_services_version;
+			global::Microsoft.AppCenter.Push.Android.Resource.String.common_google_play_services_unknown_issue = global::LagoVista.Simulator.Droid.Resource.String.common_google_play_services_unknown_issue;
 			global::Microsoft.AppCenter.Push.Android.Resource.String.library_name = global::LagoVista.Simulator.Droid.Resource.String.library_name;
 			global::Microsoft.Azure.Amqp.Resource.String.ApplicationName = global::LagoVista.Simulator.Droid.Resource.String.ApplicationName;
-			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_dialog_actioned_on_disabled_toast = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_dialog_actioned_on_disabled_toast;
-			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_download_progress_number_format = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_download_progress_number_format;
-			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_downloading_mandatory_update = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_downloading_mandatory_update;
-			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_install = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_install;
-			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_install_ready_message = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_install_ready_message;
-			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_install_ready_title = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_install_ready_title;
-			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_notification_category = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_notification_category;
-			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_unknown_sources_dialog_message = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_unknown_sources_dialog_message;
-			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_unknown_sources_dialog_settings = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_unknown_sources_dialog_settings;
-			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_update_dialog_download = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_update_dialog_download;
-			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_update_dialog_message_mandatory = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_update_dialog_message_mandatory;
-			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_update_dialog_message_optional = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_update_dialog_message_optional;
-			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_update_dialog_postpone = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_update_dialog_postpone;
-			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_update_dialog_title = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_update_dialog_title;
-			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_update_dialog_view_release_notes = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_update_dialog_view_release_notes;
-			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_update_failed_dialog_ignore = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_update_failed_dialog_ignore;
-			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_update_failed_dialog_reinstall = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_update_failed_dialog_reinstall;
-			global::Microsoft.Azure.Mobile.Distribute.Resource.String.mobile_center_distribute_update_failed_dialog_title = global::LagoVista.Simulator.Droid.Resource.String.mobile_center_distribute_update_failed_dialog_title;
-			global::Microsoft.Azure.Mobile.Push.Android.Resource.Integer.google_play_services_version = global::LagoVista.Simulator.Droid.Resource.Integer.google_play_services_version;
-			global::Microsoft.Azure.Mobile.Push.Android.Resource.String.common_google_play_services_unknown_issue = global::LagoVista.Simulator.Droid.Resource.String.common_google_play_services_unknown_issue;
-			global::Microsoft.Azure.Mobile.Push.Android.Resource.String.library_name = global::LagoVista.Simulator.Droid.Resource.String.library_name;
+			global::Microsoft.IdentityModel.Clients.ActiveDirectory.Resource.Id.agentWebView = global::LagoVista.Simulator.Droid.Resource.Id.agentWebView;
+			global::Microsoft.IdentityModel.Clients.ActiveDirectory.Resource.Layout.WebAuthenticationBroker = global::LagoVista.Simulator.Droid.Resource.Layout.WebAuthenticationBroker;
+			global::Microsoft.IdentityModel.Clients.ActiveDirectory.Resource.String.ApplicationName = global::LagoVista.Simulator.Droid.Resource.String.ApplicationName;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::LagoVista.Simulator.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -5292,6 +5276,9 @@ namespace LagoVista.Simulator.Droid
 			// aapt resource value: 0x7f0b002b
 			public const int add = 2131427371;
 			
+			// aapt resource value: 0x7f0b00c8
+			public const int agentWebView = 2131427528;
+			
 			// aapt resource value: 0x7f0b006f
 			public const int alertTitle = 2131427439;
 			
@@ -5472,8 +5459,8 @@ namespace LagoVista.Simulator.Droid
 			// aapt resource value: 0x7f0b0060
 			public const int list_item = 2131427424;
 			
-			// aapt resource value: 0x7f0b00c9
-			public const int masked = 2131427529;
+			// aapt resource value: 0x7f0b00ca
+			public const int masked = 2131427530;
 			
 			// aapt resource value: 0x7f0b00b8
 			public const int media_actions = 2131427512;
@@ -5805,8 +5792,8 @@ namespace LagoVista.Simulator.Droid
 			// aapt resource value: 0x7f0b0016
 			public const int view_offset_helper = 2131427350;
 			
-			// aapt resource value: 0x7f0b00c8
-			public const int visible = 2131427528;
+			// aapt resource value: 0x7f0b00c9
+			public const int visible = 2131427529;
 			
 			// aapt resource value: 0x7f0b00aa
 			public const int volume_item_container = 2131427498;
@@ -6114,6 +6101,9 @@ namespace LagoVista.Simulator.Droid
 			// aapt resource value: 0x7f040045
 			public const int tooltip = 2130968645;
 			
+			// aapt resource value: 0x7f040046
+			public const int WebAuthenticationBroker = 2130968646;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -6143,11 +6133,11 @@ namespace LagoVista.Simulator.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f090053
-			public const int ApplicationName = 2131296339;
+			// aapt resource value: 0x7f090040
+			public const int ApplicationName = 2131296320;
 			
-			// aapt resource value: 0x7f090067
-			public const int Hello = 2131296359;
+			// aapt resource value: 0x7f090055
+			public const int Hello = 2131296341;
 			
 			// aapt resource value: 0x7f090017
 			public const int abc_action_bar_home_description = 2131296279;
@@ -6242,68 +6232,68 @@ namespace LagoVista.Simulator.Droid
 			// aapt resource value: 0x7f090029
 			public const int abc_toolbar_collapse_description = 2131296297;
 			
-			// aapt resource value: 0x7f090068
-			public const int app_name = 2131296360;
+			// aapt resource value: 0x7f090056
+			public const int app_name = 2131296342;
 			
 			// aapt resource value: 0x7f090038
 			public const int appbar_scrolling_view_behavior = 2131296312;
 			
+			// aapt resource value: 0x7f090042
+			public const int appcenter_distribute_dialog_actioned_on_disabled_toast = 2131296322;
+			
+			// aapt resource value: 0x7f090043
+			public const int appcenter_distribute_download_progress_number_format = 2131296323;
+			
+			// aapt resource value: 0x7f090044
+			public const int appcenter_distribute_downloading_mandatory_update = 2131296324;
+			
+			// aapt resource value: 0x7f090045
+			public const int appcenter_distribute_install = 2131296325;
+			
+			// aapt resource value: 0x7f090046
+			public const int appcenter_distribute_install_ready_message = 2131296326;
+			
+			// aapt resource value: 0x7f090047
+			public const int appcenter_distribute_install_ready_title = 2131296327;
+			
+			// aapt resource value: 0x7f090048
+			public const int appcenter_distribute_notification_category = 2131296328;
+			
+			// aapt resource value: 0x7f090049
+			public const int appcenter_distribute_unknown_sources_dialog_message = 2131296329;
+			
+			// aapt resource value: 0x7f09004a
+			public const int appcenter_distribute_unknown_sources_dialog_settings = 2131296330;
+			
+			// aapt resource value: 0x7f09004b
+			public const int appcenter_distribute_update_dialog_download = 2131296331;
+			
+			// aapt resource value: 0x7f09004c
+			public const int appcenter_distribute_update_dialog_message_mandatory = 2131296332;
+			
+			// aapt resource value: 0x7f09004d
+			public const int appcenter_distribute_update_dialog_message_optional = 2131296333;
+			
+			// aapt resource value: 0x7f09004e
+			public const int appcenter_distribute_update_dialog_postpone = 2131296334;
+			
+			// aapt resource value: 0x7f09004f
+			public const int appcenter_distribute_update_dialog_title = 2131296335;
+			
+			// aapt resource value: 0x7f090050
+			public const int appcenter_distribute_update_dialog_view_release_notes = 2131296336;
+			
+			// aapt resource value: 0x7f090051
+			public const int appcenter_distribute_update_failed_dialog_ignore = 2131296337;
+			
+			// aapt resource value: 0x7f090052
+			public const int appcenter_distribute_update_failed_dialog_message = 2131296338;
+			
+			// aapt resource value: 0x7f090053
+			public const int appcenter_distribute_update_failed_dialog_reinstall = 2131296339;
+			
 			// aapt resource value: 0x7f090054
-			public const int appcenter_distribute_dialog_actioned_on_disabled_toast = 2131296340;
-			
-			// aapt resource value: 0x7f090055
-			public const int appcenter_distribute_download_progress_number_format = 2131296341;
-			
-			// aapt resource value: 0x7f090056
-			public const int appcenter_distribute_downloading_mandatory_update = 2131296342;
-			
-			// aapt resource value: 0x7f090057
-			public const int appcenter_distribute_install = 2131296343;
-			
-			// aapt resource value: 0x7f090058
-			public const int appcenter_distribute_install_ready_message = 2131296344;
-			
-			// aapt resource value: 0x7f090059
-			public const int appcenter_distribute_install_ready_title = 2131296345;
-			
-			// aapt resource value: 0x7f09005a
-			public const int appcenter_distribute_notification_category = 2131296346;
-			
-			// aapt resource value: 0x7f09005b
-			public const int appcenter_distribute_unknown_sources_dialog_message = 2131296347;
-			
-			// aapt resource value: 0x7f09005c
-			public const int appcenter_distribute_unknown_sources_dialog_settings = 2131296348;
-			
-			// aapt resource value: 0x7f09005d
-			public const int appcenter_distribute_update_dialog_download = 2131296349;
-			
-			// aapt resource value: 0x7f09005e
-			public const int appcenter_distribute_update_dialog_message_mandatory = 2131296350;
-			
-			// aapt resource value: 0x7f09005f
-			public const int appcenter_distribute_update_dialog_message_optional = 2131296351;
-			
-			// aapt resource value: 0x7f090060
-			public const int appcenter_distribute_update_dialog_postpone = 2131296352;
-			
-			// aapt resource value: 0x7f090061
-			public const int appcenter_distribute_update_dialog_title = 2131296353;
-			
-			// aapt resource value: 0x7f090062
-			public const int appcenter_distribute_update_dialog_view_release_notes = 2131296354;
-			
-			// aapt resource value: 0x7f090063
-			public const int appcenter_distribute_update_failed_dialog_ignore = 2131296355;
-			
-			// aapt resource value: 0x7f090064
-			public const int appcenter_distribute_update_failed_dialog_message = 2131296356;
-			
-			// aapt resource value: 0x7f090065
-			public const int appcenter_distribute_update_failed_dialog_reinstall = 2131296357;
-			
-			// aapt resource value: 0x7f090066
-			public const int appcenter_distribute_update_failed_dialog_title = 2131296358;
+			public const int appcenter_distribute_update_failed_dialog_title = 2131296340;
 			
 			// aapt resource value: 0x7f090039
 			public const int bottom_sheet_behavior = 2131296313;
@@ -6317,62 +6307,8 @@ namespace LagoVista.Simulator.Droid
 			// aapt resource value: 0x7f090001
 			public const int fcm_fallback_notification_channel_label = 2131296257;
 			
-			// aapt resource value: 0x7f090040
-			public const int library_name = 2131296320;
-			
 			// aapt resource value: 0x7f090041
-			public const int mobile_center_distribute_dialog_actioned_on_disabled_toast = 2131296321;
-			
-			// aapt resource value: 0x7f090042
-			public const int mobile_center_distribute_download_progress_number_format = 2131296322;
-			
-			// aapt resource value: 0x7f090043
-			public const int mobile_center_distribute_downloading_mandatory_update = 2131296323;
-			
-			// aapt resource value: 0x7f090044
-			public const int mobile_center_distribute_install = 2131296324;
-			
-			// aapt resource value: 0x7f090045
-			public const int mobile_center_distribute_install_ready_message = 2131296325;
-			
-			// aapt resource value: 0x7f090046
-			public const int mobile_center_distribute_install_ready_title = 2131296326;
-			
-			// aapt resource value: 0x7f090047
-			public const int mobile_center_distribute_notification_category = 2131296327;
-			
-			// aapt resource value: 0x7f090048
-			public const int mobile_center_distribute_unknown_sources_dialog_message = 2131296328;
-			
-			// aapt resource value: 0x7f090049
-			public const int mobile_center_distribute_unknown_sources_dialog_settings = 2131296329;
-			
-			// aapt resource value: 0x7f09004a
-			public const int mobile_center_distribute_update_dialog_download = 2131296330;
-			
-			// aapt resource value: 0x7f09004b
-			public const int mobile_center_distribute_update_dialog_message_mandatory = 2131296331;
-			
-			// aapt resource value: 0x7f09004c
-			public const int mobile_center_distribute_update_dialog_message_optional = 2131296332;
-			
-			// aapt resource value: 0x7f09004d
-			public const int mobile_center_distribute_update_dialog_postpone = 2131296333;
-			
-			// aapt resource value: 0x7f09004e
-			public const int mobile_center_distribute_update_dialog_title = 2131296334;
-			
-			// aapt resource value: 0x7f09004f
-			public const int mobile_center_distribute_update_dialog_view_release_notes = 2131296335;
-			
-			// aapt resource value: 0x7f090050
-			public const int mobile_center_distribute_update_failed_dialog_ignore = 2131296336;
-			
-			// aapt resource value: 0x7f090051
-			public const int mobile_center_distribute_update_failed_dialog_reinstall = 2131296337;
-			
-			// aapt resource value: 0x7f090052
-			public const int mobile_center_distribute_update_failed_dialog_title = 2131296338;
+			public const int library_name = 2131296321;
 			
 			// aapt resource value: 0x7f090002
 			public const int mr_button_content_description = 2131296258;
