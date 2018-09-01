@@ -6,7 +6,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="LagoVista.Client.Core" Version="1.2.472-alpha1154" />
+    <PackageReference Include="LagoVista.Client.Core" Version="1.2.472-alpha1748" />
     <PackageReference Include="LagoVista.Core.Authentication" Version="2.1.439-beta1607" />
     <PackageReference Include="LagoVista.Core.Networking" Version="2.1.439-beta1607" />
     <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models" Version="2.1.439-beta1607" />
@@ -14,8 +14,8 @@
     <PackageReference Include="LagoVista.IoT.Simulator.Models" Version="2.1.439-beta1607" />
     <PackageReference Include="LagoVista.MQTT" Version="1.2.472-alpha1141" />
     <PackageReference Include="LagoVista.UserAdmin.Models" Version="2.1.439-beta1607" />
-    <PackageReference Include="LagoVista.XPlat" Version="1.2.472-alpha1154" />
-    <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.17.0" />
+    <PackageReference Include="LagoVista.XPlat" Version="1.2.472-alpha1748" />
+    <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.18.0" />
     <PackageReference Include="Microsoft.Azure.Devices.Shared" Version="1.15.1" />
     <PackageReference Include="Microsoft.Azure.EventHubs" Version="1.1.0" />
     <PackageReference Include="Microsoft.Azure.ServiceBus" Version="1.0.0" />

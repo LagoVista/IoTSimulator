@@ -2182,9 +2182,6 @@ namespace LagoVista.Simulator.Droid
 			global::Microsoft.AppCenter.Push.Android.Resource.String.common_google_play_services_unknown_issue = global::LagoVista.Simulator.Droid.Resource.String.common_google_play_services_unknown_issue;
 			global::Microsoft.AppCenter.Push.Android.Resource.String.library_name = global::LagoVista.Simulator.Droid.Resource.String.library_name;
 			global::Microsoft.Azure.Amqp.Resource.String.ApplicationName = global::LagoVista.Simulator.Droid.Resource.String.ApplicationName;
-			global::Microsoft.IdentityModel.Clients.ActiveDirectory.Resource.Id.agentWebView = global::LagoVista.Simulator.Droid.Resource.Id.agentWebView;
-			global::Microsoft.IdentityModel.Clients.ActiveDirectory.Resource.Layout.WebAuthenticationBroker = global::LagoVista.Simulator.Droid.Resource.Layout.WebAuthenticationBroker;
-			global::Microsoft.IdentityModel.Clients.ActiveDirectory.Resource.String.ApplicationName = global::LagoVista.Simulator.Droid.Resource.String.ApplicationName;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::LagoVista.Simulator.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -5276,9 +5273,6 @@ namespace LagoVista.Simulator.Droid
 			// aapt resource value: 0x7f0b002b
 			public const int add = 2131427371;
 			
-			// aapt resource value: 0x7f0b00c8
-			public const int agentWebView = 2131427528;
-			
 			// aapt resource value: 0x7f0b006f
 			public const int alertTitle = 2131427439;
 			
@@ -5459,8 +5453,8 @@ namespace LagoVista.Simulator.Droid
 			// aapt resource value: 0x7f0b0060
 			public const int list_item = 2131427424;
 			
-			// aapt resource value: 0x7f0b00ca
-			public const int masked = 2131427530;
+			// aapt resource value: 0x7f0b00c9
+			public const int masked = 2131427529;
 			
 			// aapt resource value: 0x7f0b00b8
 			public const int media_actions = 2131427512;
@@ -5792,8 +5786,8 @@ namespace LagoVista.Simulator.Droid
 			// aapt resource value: 0x7f0b0016
 			public const int view_offset_helper = 2131427350;
 			
-			// aapt resource value: 0x7f0b00c9
-			public const int visible = 2131427529;
+			// aapt resource value: 0x7f0b00c8
+			public const int visible = 2131427528;
 			
 			// aapt resource value: 0x7f0b00aa
 			public const int volume_item_container = 2131427498;
@@ -6100,9 +6094,6 @@ namespace LagoVista.Simulator.Droid
 			
 			// aapt resource value: 0x7f040045
 			public const int tooltip = 2130968645;
-			
-			// aapt resource value: 0x7f040046
-			public const int WebAuthenticationBroker = 2130968646;
 			
 			static Layout()
 			{
