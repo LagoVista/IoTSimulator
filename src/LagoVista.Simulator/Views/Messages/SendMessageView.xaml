@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <pge:LagoVistaContentPage
       xmlns:pge="clr-namespace:LagoVista.XPlat.Core;assembly=LagoVista.XPlat.Core"
       xmlns="http://xamarin.com/schemas/2014/forms"
@@ -126,7 +126,7 @@
                         <ColumnDefinition Width="200" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button Command="{Binding ApplySettingsCommand}" BackgroundColor="{StaticResource NuvIoTDark}" TextColor="White" Text="{trs:Translate SendMessage_Apply}" Margin="0,0,0,20" Grid.Column="1" />
+                    <Button Command="{Binding ApplySettingsCommand}" BackgroundColor="{StaticResource NuvIoTMedium}" TextColor="White" Text="{trs:Translate SendMessage_Apply}" Margin="0,0,0,20" Grid.Column="1" />
                 </Grid>
             </Grid>
         </Grid>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <pge:LagoVistaContentPage
       xmlns:pge="clr-namespace:LagoVista.XPlat.Core;assembly=LagoVista.XPlat.Core"
       xmlns="http://xamarin.com/schemas/2014/forms"
@@ -73,7 +73,7 @@
                 <Button Command="{Binding ConnectCommand}" Text="{trs:Translate Common_Connect}"  BackgroundColor="{StaticResource NuvIoTDark}" WidthRequest="120" Grid.Row="1" Grid.Column="1" HeightRequest="120" TextColor="White" />
             </Grid>
 
-            <Grid HeightRequest="48" BackgroundColor="{StaticResource MenuBarBackground}" Grid.Row="2" IsVisible="{Binding MessageTemplatesVisible}" >
+            <Grid HeightRequest="48" BackgroundColor="{StaticResource NuvIoTMedium}" Grid.Row="2" IsVisible="{Binding MessageTemplatesVisible}" >
                 <Label Text="{trs:Translate Simulator_MessageTemplates}" TextColor="{StaticResource MenuBarForeground}" FontSize="20" Margin="10,0,0,0" VerticalOptions="Center" />
             </Grid>
 
@@ -85,11 +85,9 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="auto" />
                                     <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="auto" />
                                 </Grid.ColumnDefinitions>
-                                <pge:Icon IconKey="fa-comments-o" TextColor="{StaticResource NuvIoTDark}" Grid.Column="0" FontSize="28" Margin="16,0,0,0" VerticalOptions="Center"  />
-                                <Label Text="{Binding Name}" FontSize="18" Margin="15,0,10,0" VerticalOptions="Center" Grid.Column="1" />
-                                <pge:Icon IconKey="fa-chevron-right" TextColor="{StaticResource NuvIoTDark}" Grid.Column="2" FontSize="28" Margin="0,0,16,0" VerticalOptions="Center"  />
+                                <pge:Icon IconKey="fa-comments-o" TextColor="{StaticResource NuvIoTLight}" Grid.Column="0" FontSize="28" Margin="16,0,0,0" VerticalOptions="Center"  />
+                                <Label Text="{Binding Name}" FontSize="18" Margin="10,0,10,0" VerticalOptions="Center" Grid.Column="1" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <pge:LagoVistaContentPage xmlns:pge="clr-namespace:LagoVista.XPlat.Core;assembly=LagoVista.XPlat.Core"
             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -27,27 +27,20 @@
                                     <ColumnDefinition Width="auto" />
                                     <ColumnDefinition Width="auto" />
                                 </Grid.ColumnDefinitions>
-                                <pge:Icon IconKey="md-developer-board"  Grid.Column="1" FontSize="48" VerticalOptions="Center" TextColor="{StaticResource NuvIoTDark}" Grid.RowSpan="2"  Margin="0,9,0,0" />
+                                <pge:Icon IconKey="md-developer-board"  Grid.Column="1" FontSize="48" VerticalOptions="Center" TextColor="{StaticResource NuvIoTLight}" Grid.RowSpan="2"  Margin="3,9,0,0" />
                                 <Label Text="{Binding Name}" Grid.Column="2" FontSize="18" Margin="0,10,0,0" TextColor="{StaticResource NuvIoTDark}" VerticalOptions="End" LineBreakMode="TailTruncation" />
 
                                 <!-- Sorty hacky, but we need this as a source to get the command parameter for the item that  will be deleted. -->
                                 <Label Text="{Binding Id}"  x:Name="SimulatorItem" IsVisible="False" />
-
+                                <pge:Label Text="{Binding EndPoint}" FontSize="12" Grid.Row="1" Grid.Column="2" LineBreakMode="TailTruncation" />
+                        
                                 <pge:IconButton IconKey="fa-trash-o" 
                                             BindingContext="{Binding Source={x:Reference SimulatorList}, Path=BindingContext}"
                                             Command="{Binding DeleteSimulatorCommand}" 
-                                            CommandParameter="{Binding Source={x:Reference SimulatorItem}, Path=Text}" TextColor="Red" FontSize="20"  Grid.Column="3" BorderColor="Transparent" BorderWidth="0" Margin="0,3,0,0" Grid.RowSpan="2" />
+                                            CommandParameter="{Binding Source={x:Reference SimulatorItem}, Path=Text}" TextColor="Red" FontSize="20"  Grid.Column="3" BorderColor="Transparent" BorderWidth="0" Margin="0,0,0,0" Grid.RowSpan="3" />
 
-                                <pge:Icon IconKey="fa-chevron-right" TextColor="{StaticResource NuvIoTDark}" Grid.Column="4" FontSize="28" Margin="0,5,16,0" VerticalOptions="Center" Grid.RowSpan="2" />
-
-                                <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="2">
-                                    <pge:Label Text="{Binding TransportType}" FontSize="13"/>
-                                    <pge:Label Text="-" FontSize="13"/>
-                                    <pge:Label Text="{Binding EndPoint}" FontSize="13" LineBreakMode="TailTruncation" />
-                                    <pge:Label Text="{Binding Port}" FontSize="13" IsVisible="{Binding Port}" LineBreakMode="TailTruncation" />
-                                    
-                                </StackLayout>
-                            </Grid>
+                        <!--        <pge:Icon IconKey="fa-chevron-right" TextColor="{StaticResource RightNavArrow}" Grid.Column="4" FontSize="28" Margin="0,0,8,0" VerticalOptions="Center" Grid.RowSpan="3" />-->
+                              </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
