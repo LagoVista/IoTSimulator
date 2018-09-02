@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagoVista.Simulator.Windows", "src\LagoVista.Simulator.Windows\LagoVista.Simulator.Windows.csproj", "{42696275-B7C9-4553-87F8-D635B8A27C97}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LagoVista.Simulator.Core", "src\LagoVista.Simulator.Core\LagoVista.Simulator.Core.csproj", "{7FCB98A9-7785-4074-BE75-EAD40A50DF58}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagoVista.Simulator.Core", "src\LagoVista.Simulator.Core\LagoVista.Simulator.Core.csproj", "{7FCB98A9-7785-4074-BE75-EAD40A50DF58}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LagoVista.Simulator", "src\LagoVista.Simulator\LagoVista.Simulator.csproj", "{7DFCEE8D-8197-4BA1-AD78-BDA440AA8337}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagoVista.Simulator", "src\LagoVista.Simulator\LagoVista.Simulator.csproj", "{7DFCEE8D-8197-4BA1-AD78-BDA440AA8337}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagoVista.Simulator.iOS", "src\LagoVista.Simulator.iOS\LagoVista.Simulator.iOS.csproj", "{EC06F587-499C-4247-BA95-0D9703A8D772}"
 EndProject
@@ -25,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6C8A60F3-7F9A-4776-ABC4-848AB32E6511}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LagoVista.Simulator.Tests", "tests\LagoVista.Simulator.Tests\LagoVista.Simulator.Tests.csproj", "{F34ED457-4812-427C-9F2D-9E5105EB8D91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagoVista.Simulator.Tests", "tests\LagoVista.Simulator.Tests\LagoVista.Simulator.Tests.csproj", "{F34ED457-4812-427C-9F2D-9E5105EB8D91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

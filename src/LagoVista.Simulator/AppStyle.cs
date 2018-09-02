@@ -8,7 +8,7 @@ namespace LagoVista.Simulator
 {
     class AppStyle : IAppStyle
     {
-        public Color TitleBarBackground => NamedColors.NuvIoTLight;
+        public Color TitleBarBackground => NamedColors.NuvIoTMedium;
 
         public Color TitleBarText => NamedColors.NuvIoTWhite;
 

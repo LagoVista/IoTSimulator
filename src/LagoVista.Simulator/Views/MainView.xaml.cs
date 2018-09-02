@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using Xamarin.Forms.Xaml;
 
 namespace LagoVista.Simulator.Views
@@ -19,7 +20,9 @@ namespace LagoVista.Simulator.Views
     {
         public MainView()
         {
-            InitializeComponent();            
+            InitializeComponent();
+
+            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
         }
     }
 }
