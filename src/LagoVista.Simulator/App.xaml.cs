@@ -68,7 +68,7 @@ namespace LagoVista.Simulator
             var serverInfo = new ServerInfo()
             {
                 SSL = true,
-                RootUrl = "stage-api.nuviot.com",
+                RootUrl = "test-api.nuviot.com",
             };
             _appConfig.Environment = Environments.Staging;
 #endif
