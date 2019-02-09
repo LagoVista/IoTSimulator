@@ -1,4 +1,4 @@
-﻿//#define IOTHUB
+﻿#define IOTHUB
 //#define SERVICEBUS
 #define EVENTHUB
 
@@ -44,7 +44,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
         bool _isConnected;
         bool _isEditing;
 
-        //Task ReceivingTask;
+        Task ReceivingTask;
 #endregion
 
 #region Constructor

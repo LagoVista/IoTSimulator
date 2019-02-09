@@ -123,6 +123,9 @@
   <data name="Err_DuplicateKey" xml:space="preserve">
     <value>Sorry the key you have specified is already in use.</value>
   </data>
+  <data name="MainView_SimulatorNetworks" xml:space="preserve">
+    <value>Simulator Networks</value>
+  </data>
   <data name="PasswordEntry_NotFound" xml:space="preserve">
     <value>We could not find your password or access key in the devices secure storage.
 
@@ -174,6 +177,9 @@ To use this simulator you will need to re-enter the resource credentials.</value
   </data>
   <data name="SimulatorEdit_UnlockRequired" xml:space="preserve">
     <value>You have selected to store passwords and/or access keys on your device.  You need to create or unlock your secure storage before these values can be stored.</value>
+  </data>
+  <data name="SimulatorInstance_SelectSimulatorBeforeTransmission" xml:space="preserve">
+    <value>Please select a simulator prior to adding a transmission plan.</value>
   </data>
   <data name="Simulator_AccessKeyIsRequired" xml:space="preserve">
     <value>Access key is required.</value>

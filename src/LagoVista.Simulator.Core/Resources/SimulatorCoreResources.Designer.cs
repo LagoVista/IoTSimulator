@@ -10,7 +10,6 @@
 
 namespace LagoVista.Simulator.Core.Resources {
     using System;
-    using System.Reflection;
     
     
     /// <summary>
@@ -40,7 +39,7 @@ namespace LagoVista.Simulator.Core.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LagoVista.Simulator.Core.Resources.SimulatorCoreResources", typeof(SimulatorCoreResources).GetTypeInfo().Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LagoVista.Simulator.Core.Resources.SimulatorCoreResources", typeof(SimulatorCoreResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -76,6 +75,15 @@ namespace LagoVista.Simulator.Core.Resources {
         internal static string Err_DuplicateKey {
             get {
                 return ResourceManager.GetString("Err_DuplicateKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Simulator Networks.
+        /// </summary>
+        internal static string MainView_SimulatorNetworks {
+            get {
+                return ResourceManager.GetString("MainView_SimulatorNetworks", resourceCulture);
             }
         }
         
@@ -296,6 +304,15 @@ namespace LagoVista.Simulator.Core.Resources {
         internal static string SimulatorEdit_UnlockRequired {
             get {
                 return ResourceManager.GetString("SimulatorEdit_UnlockRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select a simulator prior to adding a transmission plan..
+        /// </summary>
+        internal static string SimulatorInstance_SelectSimulatorBeforeTransmission {
+            get {
+                return ResourceManager.GetString("SimulatorInstance_SelectSimulatorBeforeTransmission", resourceCulture);
             }
         }
         

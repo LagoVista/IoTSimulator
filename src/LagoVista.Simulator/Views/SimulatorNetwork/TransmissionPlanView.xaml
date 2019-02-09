@@ -4,11 +4,11 @@
       xmlns="http://xamarin.com/schemas/2014/forms"
       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
       xmlns:trs="clr-namespace:LagoVista.Simulator;assembly=LagoVista.Simulator"    
-      x:Class="LagoVista.Simulator.Views.Simulator.SimulatorEditorView"
-      RightMenu="Save"
+      x:Class="LagoVista.Simulator.Views.SimulatorNetwork.TransmissionPlanView" 
       LeftMenu="Cancel"
-      Title="{trs:Translate SimulatorEditor_Title}">
+      RightMenu="Save"
+      Title="{trs:Translate TransmissionPlan_Title}" >
     <pge:LagoVistaContentPage.MainContent >
         <pge:FormViewer Form="{Binding FormAdapter}"  />
-    </pge:LagoVistaContentPage.MainContent >
+    </pge:LagoVistaContentPage.MainContent>
 </pge:LagoVistaContentPage>

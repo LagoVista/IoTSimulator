@@ -1,19 +1,20 @@
-﻿using LagoVista.Core.Commanding;
-using LagoVista.IoT.Simulator.Admin.Models;
-using LagoVista.Client.Core.Resources;
-using LagoVista.Simulator.Core.ViewModels.Simulator;
-using System.Collections.Generic;
+﻿using LagoVista.Client.Core.Resources;
 using LagoVista.Client.Core.ViewModels;
 using LagoVista.Client.Core.ViewModels.Auth;
 using LagoVista.Client.Core.ViewModels.Orgs;
+using LagoVista.Client.Core.ViewModels.Other;
+using LagoVista.Core.Commanding;
+using LagoVista.IoT.Simulator.Admin.Models;
+using LagoVista.Simulator.Core.Resources;
+using LagoVista.Simulator.Core.ViewModels.Simulator;
+using System.Collections.Generic;
 using System.Linq;
 using System.Resources;
-using LagoVista.Client.Core.ViewModels.Other;
 
 [assembly: NeutralResourcesLanguage("en")]
 
 namespace LagoVista.Simulator.Core.ViewModels
-{   
+{
     public class MainViewModel : ListViewModelBase<IoT.Simulator.Admin.Models.SimulatorSummary>
     {
         public MainViewModel()
@@ -24,6 +25,12 @@ namespace LagoVista.Simulator.Core.ViewModels
 
             MenuItems = new List<MenuItem>()
             {
+                new MenuItem()
+                {
+                    Command = new RelayCommand(() => ViewModelNavigation.NavigateAsync<SimulatorNetwork.SimulatorNetworksViewModel>(this)),
+                    Name = SimulatorCoreResources.MainView_SimulatorNetworks,
+                    FontIconKey = "fa-window-restore"
+                },
                 new MenuItem()
                 {
                     Command = new RelayCommand(() => ViewModelNavigation.NavigateAsync<UserOrgsViewModel>(this)),
@@ -41,7 +48,7 @@ namespace LagoVista.Simulator.Core.ViewModels
                     Command = new RelayCommand(() => ViewModelNavigation.NavigateAsync<InviteUserViewModel>(this)),
                     Name = ClientResources.MainMenu_InviteUser,
                     FontIconKey = "fa-user"
-                },                
+                },
                 new MenuItem()
                 {
                     Command = new RelayCommand(() => ViewModelNavigation.NavigateAsync<AboutViewModel>(this)),

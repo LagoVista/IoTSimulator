@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pge:LagoVistaContentPage
+      xmlns:pge="clr-namespace:LagoVista.XPlat.Core;assembly=LagoVista.XPlat.Core"
+      xmlns:trs="clr-namespace:LagoVista.Simulator;assembly=LagoVista.Simulator"    
+      xmlns="http://xamarin.com/schemas/2014/forms"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      LeftMenu="Back"
+      x:Class="LagoVista.Simulator.Views.SimulatorNetwork.MessagePickerView"
+      Title="{trs:Translate MessagePicker_Title}" >
+    <pge:LagoVistaContentPage.MainContent>
+        <ListView ItemsSource="{Binding ListItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Height="32">
+                        <Label FontSize="18" Text="{Binding Name}" VerticalOptions="Center"  Margin="20,0,0,0" />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </pge:LagoVistaContentPage.MainContent>
+</pge:LagoVistaContentPage>

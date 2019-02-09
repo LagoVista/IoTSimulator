@@ -1,7 +1,7 @@
-﻿//#define ENV_LOCAL
+﻿#define ENV_LOCAL
 //#define ENV_DEV
 //#define ENV_STAGE
-#define ENV_MASTER
+//#define ENV_MASTER
 
 using LagoVista.Client.Core;
 using LagoVista.Client.Core.Models;
@@ -22,6 +22,8 @@ using System.Resources;
 using LagoVista.MQTT.Core.Clients;
 using LagoVista.Core.Networking.Interfaces;
 using LagoVista.Core.Models;
+using LagoVista.IoT.Simulator.Admin.Models;
+using LagoVista.Simulator.Core.ViewModels.SimulatorNetwork;
 
 namespace LagoVista.Simulator
 {
@@ -99,6 +101,15 @@ namespace LagoVista.Simulator
             navigation.Add<UnlockStorageViewModel, Views.Simulator.UnlockStorageView>();
             navigation.Add<SetStoragePasswordViewModel, Views.Simulator.SetStoragePasswordView>();
             navigation.Add<DynamicAttributeViewModel, Views.Messages.DynamicAttributeView>();
+
+            navigation.Add<SimulatorInstanceViewModel, Views.SimulatorNetwork.SimulatorInstance>();
+            navigation.Add<SimulatorNetworkViewModel, Views.SimulatorNetwork.SimulatorNetwork>();
+            navigation.Add<SimulatorNetworksViewModel, Views.SimulatorNetwork.SimulatorNetworks>();
+            navigation.Add<AttributePickerViewModel, Views.SimulatorNetwork.AttributePickerView>();
+            navigation.Add<MessageValueViewModel, Views.SimulatorNetwork.MessageValueView>();
+            navigation.Add<SimulatorPickerViewModel, Views.SimulatorNetwork.SimulatorPickerView>();
+            navigation.Add<TransmissionPlanViewModel, Views.SimulatorNetwork.TransmissionPlanView>();
+            navigation.Add<MessagePickerViewModel, Views.SimulatorNetwork.MessagePickerView>();
 
             navigation.Add<SplashViewModel, Views.SplashView>();
 

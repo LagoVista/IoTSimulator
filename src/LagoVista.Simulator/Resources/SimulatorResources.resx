@@ -242,6 +242,12 @@ If you forget your password you will lose access to any stored simulator passwor
   <data name="SimulatorEditor_Title" xml:space="preserve">
     <value>Simulator Editor</value>
   </data>
+  <data name="SimulatorNetworks_Title" xml:space="preserve">
+    <value>Simulator Networks</value>
+  </data>
+  <data name="SimulatorNetwork_Title" xml:space="preserve">
+    <value>Simulator Network</value>
+  </data>
   <data name="Simulator_ConnectionStatus" xml:space="preserve">
     <value>Connection Status</value>
   </data>
@@ -271,5 +277,23 @@ If you forget your password you will lose access to any stored simulator passwor
   </data>
   <data name="Welcome_Title" xml:space="preserve">
     <value>Welcome - IoT Simulator</value>
+  </data>
+  <data name="SimulatorInstance_Title" xml:space="preserve">
+    <value>Simulator Instance</value>
+  </data>
+  <data name="AttributePicker_Title" xml:space="preserve">
+    <value>Select Attribute</value>
+  </data>
+  <data name="MessageAttribute_Title" xml:space="preserve">
+    <value>Message Attribute</value>
+  </data>
+  <data name="SimulatorPicker_Title" xml:space="preserve">
+    <value>Select Simulator</value>
+  </data>
+  <data name="TransmissionPlan_Title" xml:space="preserve">
+    <value>Transmittion Plan</value>
+  </data>
+  <data name="MessagePicker_Title" xml:space="preserve">
+    <value>Select a Message</value>
   </data>
 </root>

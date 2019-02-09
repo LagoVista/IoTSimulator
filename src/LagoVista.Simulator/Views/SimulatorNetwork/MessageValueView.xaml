@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <pge:LagoVistaContentPage
       xmlns:pge="clr-namespace:LagoVista.XPlat.Core;assembly=LagoVista.XPlat.Core"
+      xmlns:trs="clr-namespace:LagoVista.Simulator;assembly=LagoVista.Simulator"    
       xmlns="http://xamarin.com/schemas/2014/forms"
       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-      xmlns:trs="clr-namespace:LagoVista.Simulator;assembly=LagoVista.Simulator"    
-      x:Class="LagoVista.Simulator.Views.Simulator.SimulatorEditorView"
-      RightMenu="Save"
+      x:Class="LagoVista.Simulator.Views.SimulatorNetwork.MessageValueView"
       LeftMenu="Cancel"
-      Title="{trs:Translate SimulatorEditor_Title}">
+      RightMenu="Save"
+      Title="{trs:Translate MessageAttribute_Title}" >
     <pge:LagoVistaContentPage.MainContent >
         <pge:FormViewer Form="{Binding FormAdapter}"  />
-    </pge:LagoVistaContentPage.MainContent >
+    </pge:LagoVistaContentPage.MainContent>
 </pge:LagoVistaContentPage>

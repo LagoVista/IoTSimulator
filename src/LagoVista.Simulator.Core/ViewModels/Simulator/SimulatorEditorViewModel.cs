@@ -360,6 +360,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             ShowRow(nameof(Model.DefaultEndPoint));
             ShowRow(nameof(Model.DefaultPayloadType));
             ShowRow(nameof(Model.Subscription));
+            ShowRow(nameof(Model.Anonymous));
 
             if (Model.Anonymous)
             {

@@ -29,7 +29,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
                 parent.MessageTemplates.Add(Model);
             }
 
-            return InvokeResult.Success;
+            return result.ToInvokeResult();
         }
 
         protected override void BuildForm(EditFormAdapter form)
