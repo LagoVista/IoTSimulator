@@ -2,8 +2,6 @@
 using LagoVista.Core.Models.UIMetaData;
 using LagoVista.Core.Validation;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using LagoVista.Core;
 using System.Linq;
 using System.Threading.Tasks;
@@ -68,7 +66,7 @@ namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
             var parentVM = (LaunchArgs.ParentViewModel as TransmissionPlanViewModel);
 
             Simulator = parentVM.Simulator;
-            MessageTemplate = Simulator.MessageTemplates.Where(msg => msg.Id == parentVM.Model.Message.Id).FirstOrDefault();
+            MessageTemplate = parentVM.MessageTemplate;
         }
 
         protected override string GetRequestUri()

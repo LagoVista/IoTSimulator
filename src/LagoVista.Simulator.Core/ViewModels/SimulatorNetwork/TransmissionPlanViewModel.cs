@@ -44,6 +44,8 @@ namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
         {
             if (obj is MessageTemplate msg)
             {
+                MessageTemplate = msg;
+
                 Model.Message = new EntityHeader<MessageTemplate>()
                 {
                     Id = msg.Id,
@@ -64,7 +66,17 @@ namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
             form.AddViewCell(nameof(Model.PeriodMS));
             form.AddViewCell(nameof(Model.Message));
 
-            form.AddChildList<MessageValueViewModel>(nameof(Model.Values), Model.Values);
+            if (LaunchArgs.LaunchType != LaunchTypes.Create)
+            {                
+                MessageTemplate = Simulator.MessageTemplates.Where(msg => msg.Id == Model.Message.Id).FirstOrDefault();
+                if(MessageTemplate != null)
+                {
+                    if(MessageTemplate.DynamicAttributes.Any())
+                    {
+                        form.AddChildList<MessageValueViewModel>(nameof(Model.Values), Model.Values);
+                    }
+                }
+            }
         }
 
         public async override Task InitAsync()
@@ -87,5 +99,7 @@ namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
         }
 
         public IoT.Simulator.Admin.Models.Simulator Simulator { get; private set; }
+
+        public IoT.Simulator.Admin.Models.MessageTemplate MessageTemplate { get; private set; }
     }
 }

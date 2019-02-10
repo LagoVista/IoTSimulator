@@ -1,14 +1,13 @@
-﻿using LagoVista.Client.Core.ViewModels;
+﻿using LagoVista.Client.Core.Resources;
+using LagoVista.Client.Core.ViewModels;
+using LagoVista.Core;
 using LagoVista.Core.Models.UIMetaData;
 using LagoVista.Core.Validation;
-using System;
-using System.Linq;
-using LagoVista.Core;
-using System.Threading.Tasks;
 using LagoVista.Core.ViewModels;
 using LagoVista.IoT.Simulator.Admin.Models;
-using LagoVista.Client.Core.Resources;
-using LagoVista.Simulator.Core.Resources;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
 {
@@ -42,14 +41,7 @@ namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
         {
             if (fieldName == nameof(Model.Simulator))
             {
-                if (Model.Simulator == null)
-                {
-                    await Popups.ShowAsync(SimulatorCoreResources.SimulatorInstance_SelectSimulatorBeforeTransmission);
-                }
-                else
-                {
-                    await ViewModelNavigation.NavigateAndPickAsync<SimulatorPickerViewModel>(this, SimulatorPicked);
-                }
+                await ViewModelNavigation.NavigateAndPickAsync<SimulatorPickerViewModel>(this, SimulatorPicked);
             }
         }
 
@@ -65,6 +57,9 @@ namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
 
                 View[nameof(Model.Simulator).ToFieldKey()].Display = Model.Simulator.Text;
                 View[nameof(Model.Simulator).ToFieldKey()].Value = Model.Simulator.Id;
+
+                FormAdapter.AddChildList<TransmissionPlanViewModel>(nameof(Model.TransmissionPlans), Model.TransmissionPlans);
+                FormAdapter.Refresh();
             }
             else
             {
@@ -83,8 +78,11 @@ namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
             form.AddViewCell(nameof(Model.DeviceId));
             form.AddViewCell(nameof(Model.Description));
 
-            form.AddChildList<TransmissionPlanViewModel>(nameof(Model.TransmissionPlans), Model.TransmissionPlans);
-        }
+            if (LaunchArgs.LaunchType != LaunchTypes.Create)
+            {
+                form.AddChildList<TransmissionPlanViewModel>(nameof(Model.TransmissionPlans), Model.TransmissionPlans);
+            }
+        }        
 
         protected override string GetRequestUri()
         {

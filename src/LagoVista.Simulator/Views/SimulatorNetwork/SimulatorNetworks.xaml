@@ -11,16 +11,33 @@
              Title="{trs:Translate SimulatorNetworks_Title}">
     <pge:LagoVistaContentPage.MainContent >
         <Grid>
-            <ListView ItemsSource="{Binding ListItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" RowHeight="64"  x:Name="SimulatorList" >
+            <ListView ItemsSource="{Binding ListItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" RowHeight="64"  x:Name="NetworkList" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="auto" />
-                                    <RowDefinition Height="auto" />
                                 </Grid.RowDefinitions>
-                                <Label Text="{Binding Name}" />
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <pge:Icon IconKey="fa-window-restore"  Grid.Column="1" FontSize="48" VerticalOptions="Center" TextColor="{StaticResource NuvIoTLight}"  Margin="3,9,0,0" />
+
+                                <Label Text="{Binding Name}" Grid.Column="2" FontSize="36" Margin="16,0,0,0" TextColor="{StaticResource NuvIoTDark}" VerticalOptions="Center" LineBreakMode="TailTruncation" />
+
+                                <Label Text="{Binding Id}"  x:Name="NetworkItem" IsVisible="False" />
+
+                                <pge:IconButton IconKey="fa-trash-o" 
+                                            BindingContext="{Binding Source={x:Reference NetworkList}, Path=BindingContext}"
+                                            Command="{Binding DeleteSimNetworkCommand}" 
+                                            CommandParameter="{Binding Source={x:Reference NetworkItem}, Path=Text}" TextColor="Red" FontSize="20"  Grid.Column="3" BorderColor="Transparent" BorderWidth="0" Margin="0,0,0,0"  />
+
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
