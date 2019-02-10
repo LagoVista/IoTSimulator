@@ -257,28 +257,28 @@
       <Version>1.2.633-alpha1158</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Core">
-      <Version>2.1.633-beta1111</Version>
+      <Version>2.1.634-beta1854</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Core.Authentication">
-      <Version>2.1.633-beta1111</Version>
+      <Version>2.1.634-beta1854</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Core.Networking">
-      <Version>2.1.633-beta1111</Version>
+      <Version>2.1.634-beta1854</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models">
-      <Version>2.1.633-beta1111</Version>
+      <Version>2.1.634-beta1854</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.IoT.Logging">
-      <Version>2.1.633-beta1111</Version>
+      <Version>2.1.634-beta1854</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.IoT.Simulator.Models">
-      <Version>2.1.634-beta1635</Version>
+      <Version>2.1.634-beta1854</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.MQTT">
       <Version>1.2.472-alpha1141</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.UserAdmin.Models">
-      <Version>2.1.633-beta1111</Version>
+      <Version>2.1.634-beta1854</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.XPlat">
       <Version>1.2.633-alpha1158</Version>
