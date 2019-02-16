@@ -17,7 +17,6 @@ namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
         public override Task InitAsync()
         {
             ListItems = (LaunchArgs.ParentViewModel as TransmissionPlanViewModel).Simulator.MessageTemplates;
-
             return Task.FromResult(default(object));
         }
 
@@ -26,6 +25,5 @@ namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
             LaunchArgs.SelectedAction(model);
             await ViewModelNavigation.GoBackAsync();
         }
-
     }
 }

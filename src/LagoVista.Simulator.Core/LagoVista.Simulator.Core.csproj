@@ -20,14 +20,14 @@
   <ItemGroup>
     <PackageReference Include="DotNetty.Buffers" Version="0.6.0" />
     <PackageReference Include="LagoVista.Client.Core" Version="1.2.633-alpha1158" />
-    <PackageReference Include="LagoVista.Core" Version="2.1.634-beta1854" />
-    <PackageReference Include="LagoVista.Core.Authentication" Version="2.1.634-beta1854" />
-    <PackageReference Include="LagoVista.Core.Networking" Version="2.1.634-beta1854" />
-    <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models" Version="2.1.634-beta1854" />
-    <PackageReference Include="LagoVista.IoT.Logging" Version="2.1.634-beta1854" />
-    <PackageReference Include="LagoVista.IoT.Simulator.Models" Version="2.1.634-beta1854" />
+    <PackageReference Include="LagoVista.Core" Version="2.1.641-beta1502" />
+    <PackageReference Include="LagoVista.Core.Authentication" Version="2.1.641-beta1502" />
+    <PackageReference Include="LagoVista.Core.Networking" Version="2.1.641-beta1502" />
+    <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models" Version="2.1.641-beta1502" />
+    <PackageReference Include="LagoVista.IoT.Logging" Version="2.1.641-beta1502" />
+    <PackageReference Include="LagoVista.IoT.Simulator.Models" Version="2.1.641-beta1502" />
     <PackageReference Include="LagoVista.MQTT" Version="1.2.472-alpha1141" />
-    <PackageReference Include="LagoVista.UserAdmin.Models" Version="2.1.634-beta1854" />
+    <PackageReference Include="LagoVista.UserAdmin.Models" Version="2.1.641-beta1502" />
     <PackageReference Include="LagoVista.XPlat" Version="1.2.633-alpha1158" />
     <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.19.0" />
     <PackageReference Include="Microsoft.Azure.Devices.Shared" Version="1.15.2" />

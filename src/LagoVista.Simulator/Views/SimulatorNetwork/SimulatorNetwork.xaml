@@ -10,6 +10,18 @@
     Title="{trs:Translate SimulatorNetwork_Title}" >
 
     <pge:LagoVistaContentPage.MainContent >
-        <pge:FormViewer Form="{Binding FormAdapter}"  />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <pge:HyperLinkLabel NavigateCommand="{Binding ShowSettingsCommand}" Text="{Binding SettingsToggleContent}" Margin="10" />
+            <StackLayout Margin="10" IsVisible="{Binding SettingsVisible}" Grid.Row="1" >
+                <pge:TextArea Text="{Binding DockerString}" Margin="0,0,0,10" />
+                <pge:TextArea Text="{Binding ConsoleString}" Margin="0,0,0,10" />
+            </StackLayout>
+            <pge:FormViewer Form="{Binding FormAdapter}"  Grid.Row="2" />
+        </Grid>
     </pge:LagoVistaContentPage.MainContent>
 </pge:LagoVistaContentPage>
