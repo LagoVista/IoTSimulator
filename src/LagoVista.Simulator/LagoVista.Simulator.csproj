@@ -7,20 +7,20 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="LagoVista.Client.Core" Version="1.2.633-alpha1158" />
-    <PackageReference Include="LagoVista.Core.Authentication" Version="2.1.641-beta1502" />
-    <PackageReference Include="LagoVista.Core.Networking" Version="2.1.641-beta1502" />
-    <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models" Version="2.1.641-beta1502" />
-    <PackageReference Include="LagoVista.IoT.Logging" Version="2.1.641-beta1502" />
-    <PackageReference Include="LagoVista.IoT.Simulator.Models" Version="2.1.641-beta1502" />
+    <PackageReference Include="LagoVista.Core.Authentication" Version="2.1.647-beta1127" />
+    <PackageReference Include="LagoVista.Core.Networking" Version="2.1.647-beta1127" />
+    <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models" Version="2.1.647-beta1127" />
+    <PackageReference Include="LagoVista.IoT.Logging" Version="2.1.647-beta1127" />
+    <PackageReference Include="LagoVista.IoT.Simulator.Models" Version="2.1.647-beta1127" />
     <PackageReference Include="LagoVista.MQTT" Version="1.2.472-alpha1141" />
-    <PackageReference Include="LagoVista.UserAdmin.Models" Version="2.1.641-beta1502" />
+    <PackageReference Include="LagoVista.UserAdmin.Models" Version="2.1.647-beta1127" />
     <PackageReference Include="LagoVista.XPlat" Version="1.2.633-alpha1158" />
     <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.19.0" />
     <PackageReference Include="Microsoft.Azure.Devices.Shared" Version="1.15.2" />
     <PackageReference Include="Microsoft.Azure.EventHubs" Version="1.1.0" />
     <PackageReference Include="Microsoft.Azure.ServiceBus" Version="1.0.0" />
     <PackageReference Include="Xamarin.Forms" Version="3.5.0.129452" />
-    <PackageReference Include="LagoVista.Core" Version="2.1.641-beta1502" />
+    <PackageReference Include="LagoVista.Core" Version="2.1.647-beta1127" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LagoVista.Simulator.Core\LagoVista.Simulator.Core.csproj" />
@@ -58,7 +58,13 @@
     <EmbeddedResource Update="Views\SimulatorNetwork\SimulatorPickerView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\SimulatorNetwork\SimulatorStatePickerView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\SimulatorNetwork\TransmissionPlanView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Simulator\SimulatorStateView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

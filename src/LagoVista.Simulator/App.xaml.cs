@@ -1,5 +1,5 @@
-﻿#define ENV_LOCAL
-//#define ENV_DEV
+﻿//#define ENV_LOCAL
+#define ENV_DEV
 //#define ENV_STAGE
 //#define ENV_MASTER
 
@@ -101,6 +101,7 @@ namespace LagoVista.Simulator
             navigation.Add<UnlockStorageViewModel, Views.Simulator.UnlockStorageView>();
             navigation.Add<SetStoragePasswordViewModel, Views.Simulator.SetStoragePasswordView>();
             navigation.Add<DynamicAttributeViewModel, Views.Messages.DynamicAttributeView>();
+            navigation.Add<SimulatorStateViewModel, Views.Simulator.SimulatorStateView>();
 
             navigation.Add<SimulatorInstanceViewModel, Views.SimulatorNetwork.SimulatorInstance>();
             navigation.Add<SimulatorNetworkViewModel, Views.SimulatorNetwork.SimulatorNetwork>();
@@ -109,6 +110,8 @@ namespace LagoVista.Simulator
             navigation.Add<MessageValueViewModel, Views.SimulatorNetwork.MessageValueView>();
             navigation.Add<SimulatorPickerViewModel, Views.SimulatorNetwork.SimulatorPickerView>();
             navigation.Add<TransmissionPlanViewModel, Views.SimulatorNetwork.TransmissionPlanView>();
+            navigation.Add<SimulatorStatePickerViewModel, Views.SimulatorNetwork.SimulatorStatePickerView>();
+
             navigation.Add<MessagePickerViewModel, Views.SimulatorNetwork.MessagePickerView>();
 
             navigation.Add<SplashViewModel, Views.SplashView>();

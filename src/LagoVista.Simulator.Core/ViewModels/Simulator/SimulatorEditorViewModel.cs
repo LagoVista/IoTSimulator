@@ -184,6 +184,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             form.AddViewCell(nameof(Model.DefaultPayloadType));
             form.AddViewCell(nameof(Model.Description));
             form.AddChildList<MessageEditorViewModel>(nameof(Model.MessageTemplates), Model.MessageTemplates);
+            form.AddChildList<SimulatorStateViewModel>(nameof(Model.SimulatorStates), Model.SimulatorStates);
             ModelToView(Model, form);
             FormAdapter = form;
 

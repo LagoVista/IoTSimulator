@@ -38,6 +38,11 @@ namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
             {
                 await ViewModelNavigation.NavigateAndPickAsync<MessagePickerViewModel>(this, MessagePicked);
             }
+
+            else if (fieldName == nameof(Model.ForState))
+            {
+                await ViewModelNavigation.NavigateAndPickAsync<SimulatorStatePickerViewModel>(this, StatePicked);
+            }
         }
 
         private void MessagePicked(object obj)
@@ -57,12 +62,29 @@ namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
             }
         }
 
+        private void StatePicked(object obj)
+        {
+            if (obj is SimulatorState msg)
+            {
+                Model.ForState = new EntityHeader<SimulatorState>()
+                {
+                    Id = msg.Id,
+                    Text = msg.Name
+                };
+                
+                View[nameof(Model.ForState).ToFieldKey()].Display = Model.ForState.Text;
+                View[nameof(Model.ForState).ToFieldKey()].Value = Model.ForState.Id;
+            }
+        }
+
+
         protected override void BuildForm(EditFormAdapter form)
         {
             View[nameof(Model.Key).ToFieldKey()].IsUserEditable = LaunchArgs.LaunchType == LaunchTypes.Create;
 
             form.AddViewCell(nameof(Model.Name));
             form.AddViewCell(nameof(Model.Key));
+            form.AddViewCell(nameof(Model.ForState));
             form.AddViewCell(nameof(Model.PeriodMS));
             form.AddViewCell(nameof(Model.Message));
 

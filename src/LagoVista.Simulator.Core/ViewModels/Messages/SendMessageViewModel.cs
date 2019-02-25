@@ -303,7 +303,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
             var connectionString = $"Endpoint=sb://{Simulator.DefaultEndPoint}.servicebus.windows.net/;SharedAccessKeyName={Simulator.AccessKeyName};SharedAccessKey={Simulator.AccessKey}";
             var bldr = new ServiceBusConnectionStringBuilder(connectionString)
             {
-                EntityPath = MsgTemplate.QueueName
+                EntityPath = String.IsNullOrEmpty(MsgTemplate.QueueName) ? _simulator.QueueName : MsgTemplate.QueueName
             };
 
             var client = new QueueClient(bldr, ReceiveMode.PeekLock, Microsoft.Azure.ServiceBus.RetryExponential.Default);

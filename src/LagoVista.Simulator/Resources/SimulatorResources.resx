@@ -296,4 +296,10 @@ If you forget your password you will lose access to any stored simulator passwor
   <data name="MessagePicker_Title" xml:space="preserve">
     <value>Select a Message</value>
   </data>
+  <data name="SimulatorStatePicker_Title" xml:space="preserve">
+    <value>Select Simulator State</value>
+  </data>
+  <data name="SimulatorState_Title" xml:space="preserve">
+    <value>Simulator State</value>
+  </data>
 </root>
