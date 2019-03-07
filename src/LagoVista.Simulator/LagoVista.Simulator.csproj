@@ -6,21 +6,21 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="LagoVista.Client.Core" Version="1.2.633-alpha1158" />
-    <PackageReference Include="LagoVista.Core.Authentication" Version="2.1.650-beta0705" />
-    <PackageReference Include="LagoVista.Core.Networking" Version="2.1.650-beta0705" />
-    <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models" Version="2.1.650-beta0705" />
-    <PackageReference Include="LagoVista.IoT.Logging" Version="2.1.650-beta0705" />
-    <PackageReference Include="LagoVista.IoT.Simulator.Models" Version="2.1.650-beta0705" />
+    <PackageReference Include="LagoVista.Client.Core" Version="1.2.658-alpha1723" />
+    <PackageReference Include="LagoVista.Core.Authentication" Version="2.1.656-beta1121" />
+    <PackageReference Include="LagoVista.Core.Networking" Version="2.1.656-beta1121" />
+    <PackageReference Include="LagoVista.IoT.DeviceAdmin.Models" Version="2.1.656-beta1121" />
+    <PackageReference Include="LagoVista.IoT.Logging" Version="2.1.656-beta1121" />
+    <PackageReference Include="LagoVista.IoT.Simulator.Models" Version="2.1.656-beta1121" />
     <PackageReference Include="LagoVista.MQTT" Version="1.2.640-alpha1012" />
-    <PackageReference Include="LagoVista.UserAdmin.Models" Version="2.1.650-beta0705" />
-    <PackageReference Include="LagoVista.XPlat" Version="1.2.633-alpha1158" />
+    <PackageReference Include="LagoVista.UserAdmin.Models" Version="2.1.656-beta1121" />
+    <PackageReference Include="LagoVista.XPlat" Version="1.2.658-alpha1723" />
     <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.19.0" />
     <PackageReference Include="Microsoft.Azure.Devices.Shared" Version="1.15.2" />
-    <PackageReference Include="Microsoft.Azure.EventHubs" Version="1.1.0" />
-    <PackageReference Include="Microsoft.Azure.ServiceBus" Version="1.0.0" />
-    <PackageReference Include="Xamarin.Forms" Version="3.5.0.169047" />
-    <PackageReference Include="LagoVista.Core" Version="2.1.650-beta0705" />
+    <PackageReference Include="Microsoft.Azure.EventHubs" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Azure.ServiceBus" Version="3.3.0" />
+    <PackageReference Include="Xamarin.Forms" Version="3.6.0.220655" />
+    <PackageReference Include="LagoVista.Core" Version="2.1.656-beta1121" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LagoVista.Simulator.Core\LagoVista.Simulator.Core.csproj" />

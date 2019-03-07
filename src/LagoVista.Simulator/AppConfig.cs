@@ -26,6 +26,8 @@ namespace LagoVista.Simulator
 
         public string AppName => "IoT Simulator";
 
+        public string APIToken => "";
+
         public string AppLogo => "appicon.png";
 
         public string CompanyLogo => "slsys.png";
