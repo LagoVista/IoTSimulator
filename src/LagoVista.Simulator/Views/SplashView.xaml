@@ -18,11 +18,11 @@
                     <RowDefinition Height="10" />
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
-                <Image Source="splashbg.jpg" Aspect="AspectFill" Grid.RowSpan="5" />
-                <Label Text="IoT Simlator" FontSize="48" HorizontalOptions="Center" TextColor="White" Grid.Row="0" Margin="0,40,0,0"  />
-                <Image Source="nuviot.png" VerticalOptions="Center" HorizontalOptions="Center"  Grid.Row="2"/>
-                <Image Source="softwarelogistics.png" HorizontalOptions="Center" Grid.Row="4" Margin="20" />
-                <pge:Button Command="{Binding LoginCommand}" Text="{trs:Translate Common_GetStarted}" WidthRequest="200" HeightRequest="48" Margin="10" HorizontalOptions="Center"  Grid.Row="6" />
+                <Label Text="IoT Simulator" FontSize="48" HorizontalOptions="Center" TextColor="{StaticResource NuvIoTContrast}" Grid.Row="0" Margin="0,40,0,0"  />
+                <pge:Image FileName="applogo.png" Grid.Row="2" />
+                <pge:Image FileName="companylogo.png" Grid.Row="4" />
+                
+                <pge:Button Command="{Binding LoginCommand}" Text="{trs:Translate Common_GetStarted}" WidthRequest="200" HeightRequest="48" Margin="10,10,10,60" HorizontalOptions="Center"  Grid.Row="6" />
             </Grid>
         </Grid>
     </pge:LagoVistaContentPage.Content>

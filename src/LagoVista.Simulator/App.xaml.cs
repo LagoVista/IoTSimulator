@@ -1,6 +1,6 @@
-﻿//#define ENV_LOCAL
+﻿#define ENV_LOCAL
 //#define ENV_DEV
-#define ENV_STAGE
+//#define ENV_STAGE
 //#define ENV_MASTER
 
 using LagoVista.Client.Core;
@@ -145,7 +145,6 @@ namespace LagoVista.Simulator
                     logger.AddCustomEvent(LogLevel.Error, "App_HandleURIActivation", "InvalidPageType - Not LagoVistaNavigationPage", new System.Collections.Generic.KeyValuePair<string, string>("type", this.MainPage.GetType().Name));
                 }
             }
-
         }
 
         public void SetVersion(VersionInfo info)

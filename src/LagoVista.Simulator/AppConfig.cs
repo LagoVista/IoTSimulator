@@ -28,9 +28,9 @@ namespace LagoVista.Simulator
 
         public string APIToken => "";
 
-        public string AppLogo => "appicon.png";
+        public string AppLogo => "applogo.png";
 
-        public string CompanyLogo => "slsys.png";
+        public string CompanyLogo => "companylogo.png";
 
 #if DEBUG
         public bool EmitTestingCode => true;

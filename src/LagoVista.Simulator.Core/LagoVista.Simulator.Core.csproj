@@ -19,7 +19,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DotNetty.Buffers" Version="0.6.0" />
-    <PackageReference Include="LagoVista.Client.Core" Version="1.2.658-alpha1723" />
+    <PackageReference Include="LagoVista.Client.Core" Version="1.2.661-alpha0453" />
     <PackageReference Include="LagoVista.Core" Version="2.1.656-beta1121" />
     <PackageReference Include="LagoVista.Core.Authentication" Version="2.1.656-beta1121" />
     <PackageReference Include="LagoVista.Core.Networking" Version="2.1.656-beta1121" />
@@ -28,11 +28,11 @@
     <PackageReference Include="LagoVista.IoT.Simulator.Models" Version="2.1.656-beta1121" />
     <PackageReference Include="LagoVista.MQTT" Version="1.2.640-alpha1012" />
     <PackageReference Include="LagoVista.UserAdmin.Models" Version="2.1.656-beta1121" />
-    <PackageReference Include="LagoVista.XPlat" Version="1.2.658-alpha1723" />
+    <PackageReference Include="LagoVista.XPlat" Version="1.2.661-alpha0453" />
     <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.19.0" />
     <PackageReference Include="Microsoft.Azure.Devices.Shared" Version="1.15.2" />
-    <PackageReference Include="Microsoft.Azure.EventHubs" Version="3.0.0" />
-    <PackageReference Include="Microsoft.Azure.ServiceBus" Version="3.3.0" />
+    <PackageReference Include="Microsoft.Azure.EventHubs" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Azure.ServiceBus" Version="1.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
   </ItemGroup>
   <ItemGroup>
