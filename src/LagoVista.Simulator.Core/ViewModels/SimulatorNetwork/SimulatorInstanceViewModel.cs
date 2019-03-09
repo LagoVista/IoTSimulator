@@ -57,9 +57,6 @@ namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
 
                 View[nameof(Model.Simulator).ToFieldKey()].Display = Model.Simulator.Text;
                 View[nameof(Model.Simulator).ToFieldKey()].Value = Model.Simulator.Id;
-
-                FormAdapter.AddChildList<TransmissionPlanViewModel>(nameof(Model.TransmissionPlans), Model.TransmissionPlans);
-                FormAdapter.Refresh();
             }
             else
             {
@@ -82,7 +79,7 @@ namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
             {
                 form.AddChildList<TransmissionPlanViewModel>(nameof(Model.TransmissionPlans), Model.TransmissionPlans);
             }
-        }        
+        }
 
         protected override string GetRequestUri()
         {

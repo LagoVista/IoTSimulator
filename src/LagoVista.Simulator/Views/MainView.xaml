@@ -11,11 +11,12 @@
 
     <pge:LagoVistaContentPage.MainContent >
         <Grid>
-            <ListView ItemsSource="{Binding ListItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" RowHeight="64"  x:Name="SimulatorList" >
+            <Image Source="mainbg.jpg" Aspect="AspectFill" />
+            <ListView ItemsSource="{Binding ListItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" RowHeight="72"  x:Name="SimulatorList" >
                 <ListView.ItemTemplate>
                     <DataTemplate  >
                         <ViewCell>
-                            <Grid  >
+                            <Grid  Margin="10,5,0,10"  >
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="auto" />
                                     <RowDefinition Height="auto" />
@@ -27,12 +28,13 @@
                                     <ColumnDefinition Width="auto" />
                                     <ColumnDefinition Width="auto" />
                                 </Grid.ColumnDefinitions>
-                                <pge:Icon IconKey="md-developer-board"  Grid.Column="1" FontSize="48" VerticalOptions="Center" TextColor="{StaticResource NuvIoTLight}" Grid.RowSpan="2"  Margin="3,9,0,0" />
-                                <Label Text="{Binding Name}" Grid.Column="2" FontSize="18" Margin="0,10,0,0" TextColor="{StaticResource NuvIoTDark}" VerticalOptions="End" LineBreakMode="TailTruncation" />
+                                <BoxView BackgroundColor="LightGray" Opacity="0.8" Grid.ColumnSpan="5" Grid.RowSpan="2" />
+                                <pge:Icon IconKey="md-developer-board"  Grid.Column="1" FontSize="48" VerticalOptions="Center" TextColor="{StaticResource NuvIoTBlack}" Grid.RowSpan="2"  Margin="3,9,0,0" />
+                                <Label Text="{Binding Name}" Grid.Column="2" FontSize="18" Margin="0,10,0,0" TextColor="{StaticResource NuvIoTBlack}" VerticalOptions="End" LineBreakMode="TailTruncation" />
 
                                 <!-- Sorty hacky, but we need this as a source to get the command parameter for the item that  will be deleted. -->
                                 <Label Text="{Binding Id}"  x:Name="SimulatorItem" IsVisible="False" />
-                                <pge:Label Text="{Binding EndPoint}" FontSize="12" Grid.Row="1" Grid.Column="2" LineBreakMode="TailTruncation" />
+                                <pge:Label Text="{Binding EndPoint}" FontSize="12" Grid.Row="1" Grid.Column="2" LineBreakMode="TailTruncation"  TextColor="{StaticResource NuvIoTBlack}" />
                         
                                 <pge:IconButton IconKey="fa-trash-o" 
                                             BindingContext="{Binding Source={x:Reference SimulatorList}, Path=BindingContext}"

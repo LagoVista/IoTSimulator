@@ -96,7 +96,6 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <Content Include="add.png" />
-    <Content Include="Assets\appicon.png" />
     <Content Include="Assets\applogo.png" />
     <Content Include="Assets\BadgeLogo.scale-100.png" />
     <Content Include="Assets\BadgeLogo.scale-125.png" />
@@ -109,7 +108,6 @@
     <Content Include="Assets\LargeTile.scale-150.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
-    <Content Include="Assets\slsys.png" />
     <Content Include="Assets\SmallTile.scale-100.png" />
     <Content Include="Assets\SmallTile.scale-125.png" />
     <Content Include="Assets\SmallTile.scale-150.png" />
@@ -145,6 +143,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="mainbg.jpg" />
     <Content Include="nuviot.png" />
     <Content Include="softwarelogistics.png" />
     <Content Include="splashbg.jpg" />
@@ -229,8 +228,6 @@
     <Content Include="Assets\Icons\Transistor_100px.png" />
     <Content Include="Assets\Icons\Turbocharger_100px.png" />
     <Content Include="Assets\Icons\Upload_100px.png" />
-    <Content Include="Assets\NuvIoT-128x128W.png" />
-    <Content Include="Assets\NuvIoT-256x256W.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-200.png" />
@@ -256,7 +253,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="LagoVista.Client.Core">
-      <Version>1.2.661-alpha0453</Version>
+      <Version>1.2.661-alpha0851</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Core">
       <Version>2.1.656-beta1121</Version>
@@ -283,7 +280,7 @@
       <Version>2.1.656-beta1121</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.XPlat">
-      <Version>1.2.661-alpha0453</Version>
+      <Version>1.2.661-alpha0851</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter">
       <Version>1.13.2</Version>

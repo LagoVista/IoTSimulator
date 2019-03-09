@@ -1,5 +1,5 @@
-﻿#define ENV_LOCAL
-//#define ENV_DEV
+﻿//#define ENV_LOCAL
+#define ENV_DEV
 //#define ENV_STAGE
 //#define ENV_MASTER
 

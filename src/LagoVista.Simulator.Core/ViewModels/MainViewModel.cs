@@ -103,7 +103,7 @@ namespace LagoVista.Simulator.Core.ViewModels
 
         protected override string GetHelpLink()
         {
-            return "http://support.nuviot.com/help.html#/Simulator/Index.md";
+            return "http://support.nuviot.com/help.html#/simulator/index";
         }
 
         protected override void ItemSelected(SimulatorSummary model)

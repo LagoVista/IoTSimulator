@@ -89,7 +89,7 @@ namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
 
         protected override string GetRequestUri()
         {
-            return this.LaunchArgs.LaunchType == LaunchTypes.Edit ? $"/api/simulator/network/{LaunchArgs.ChildId}" : "/api/simulator/network/factory";
+            return this.LaunchArgs.LaunchType == LaunchTypes.Edit ? $"/api/simulator/network/{LaunchArgs.ChildId}/secure" : "/api/simulator/network/factory";
         }
 
         protected override void BuildForm(EditFormAdapter form)
