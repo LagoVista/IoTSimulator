@@ -6,6 +6,8 @@
              xmlns:trs="clr-namespace:LagoVista.Simulator;assembly=LagoVista.Simulator"
              x:Class="LagoVista.Simulator.Views.MainView"
              LeftMenu="Menu" RightMenu="Add"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true" 
              AddCommand ="{Binding AddNewSimulatorCommand}"
              Title="{trs:Translate AppName}">
 

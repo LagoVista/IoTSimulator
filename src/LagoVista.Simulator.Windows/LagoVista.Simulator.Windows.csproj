@@ -143,7 +143,9 @@
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
-    <Content Include="mainbg.jpg" />
+    <EmbeddedResource Include="mainbg.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="nuviot.png" />
     <Content Include="softwarelogistics.png" />
     <Content Include="splashbg.jpg" />
