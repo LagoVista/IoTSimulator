@@ -10,6 +10,7 @@ using LagoVista.Simulator.Core.ViewModels.Simulator;
 using System.Collections.Generic;
 using System.Linq;
 using System.Resources;
+using System.Threading.Tasks;
 
 [assembly: NeutralResourcesLanguage("en")]
 
@@ -62,7 +63,7 @@ namespace LagoVista.Simulator.Core.ViewModels
                     FontIconKey = "fa-sign-out"
                 }
             };
-        }
+        }        
 
         public void AddNewSimulator()
         {

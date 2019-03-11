@@ -71,7 +71,7 @@
       <Version>0.6.0</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Client.Core">
-      <Version>1.2.661-alpha0453</Version>
+      <Version>1.2.662-alpha1232</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Core">
       <Version>2.1.656-beta1121</Version>
@@ -92,7 +92,7 @@
       <Version>2.1.656-beta1121</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.XPlat">
-      <Version>1.2.661-alpha0453</Version>
+      <Version>1.2.662-alpha1232</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter">
       <Version>1.13.2</Version>
@@ -230,6 +230,9 @@
       <Project>{7dfcee8d-8197-4ba1-ad78-bda440aa8337}</Project>
       <Name>LagoVista.Simulator</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\drawable\sim.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

@@ -19,8 +19,8 @@
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
                 <Label Text="IoT Simulator" FontSize="48" HorizontalOptions="Center" TextColor="{StaticResource NuvIoTContrast}" Grid.Row="0" Margin="0,40,0,0"  />
-                <pge:Image FileName="applogo.png" Grid.Row="2" />
-                <pge:Image FileName="companylogo.png" Grid.Row="4" />
+                <pge:Image FileName="applogo.png" Grid.Row="2" UWPPath="Assets"/>
+                <pge:Image FileName="companylogo.png" Grid.Row="4" UWPPath="Assets" />
                 
                 <pge:Button Command="{Binding LoginCommand}" Text="{trs:Translate Common_GetStarted}" WidthRequest="200" HeightRequest="48" Margin="10,10,10,60" HorizontalOptions="Center"  Grid.Row="6" />
             </Grid>

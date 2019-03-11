@@ -1,18 +1,18 @@
-﻿using LagoVista.Core.Models.UIMetaData;
-using LagoVista.Core;
-using LagoVista.Core.ViewModels;
-using LagoVista.Simulator.Core.ViewModels.Messages;
-using LagoVista.Core.Validation;
-using LagoVista.IoT.Simulator.Admin.Models;
-using LagoVista.Client.Core.ViewModels;
-using System;
-using System.Threading.Tasks;
-using System.Linq;
+﻿using LagoVista.Client.Core.Auth;
 using LagoVista.Client.Core.Resources;
-using LagoVista.Core.Models;
-using LagoVista.Client.Core.Auth;
-using LagoVista.Simulator.Core.Resources;
+using LagoVista.Client.Core.ViewModels;
+using LagoVista.Core;
 using LagoVista.Core.Commanding;
+using LagoVista.Core.Models;
+using LagoVista.Core.Models.UIMetaData;
+using LagoVista.Core.Validation;
+using LagoVista.Core.ViewModels;
+using LagoVista.IoT.Simulator.Admin.Models;
+using LagoVista.Simulator.Core.Resources;
+using LagoVista.Simulator.Core.ViewModels.Messages;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace LagoVista.Simulator.Core.ViewModels.Simulator
 {
@@ -44,11 +44,12 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                 }
             }
 
-            if(!SecureStorage.IsUnlocked && 
-                !EntityHeader.IsNullOrEmpty(Model.CredentialStorage) && 
+            /* Will only be locked for Android, iOS/UWP just returns "true" */
+            if (!SecureStorage.IsUnlocked &&
+                !EntityHeader.IsNullOrEmpty(Model.CredentialStorage) &&
                 Model.CredentialStorage.Value == CredentialsStorage.OnDevice)
             {
-                if(SecureStorage.IsSetup)
+                if (SecureStorage.IsSetup)
                 {
                     await ViewModelNavigation.NavigateAsync<UnlockStorageViewModel>(this);
                 }
@@ -61,7 +62,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             }
 
             var validationResult = Validator.Validate(this.Model);
-            if(!validationResult.Successful)
+            if (!validationResult.Successful)
             {
                 await this.ShowValidationErrorsAsync(validationResult);
                 return InvokeResult.FromError("Please correct errors");
@@ -78,10 +79,13 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                             switch (this.Model.DefaultTransport.Value)
                             {
                                 case TransportTypes.RestHttp:
-                                    if (!this.Model.Anonymous) _secureStorage.Store(this.Model.Id, this.Model.Password);
-                                    break;
+                                case TransportTypes.RestHttps:
                                 case TransportTypes.MQTT:
-                                    if (!this.Model.Anonymous) _secureStorage.Store(this.Model.Id, this.Model.Password);
+                                    if (!this.Model.Anonymous)
+                                    {
+                                        _secureStorage.Store(this.Model.Id, this.Model.Password);
+                                    }
+
                                     break;
                                 case TransportTypes.AzureIoTHub:
                                 case TransportTypes.AzureServiceBus:
@@ -132,7 +136,7 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
 
         public RelayCommand EditAccessKeyCommand { get; private set; }
 
-        public override bool CanSave()                                                                                                                                        
+        public override bool CanSave()
         {
             return true;
         }
@@ -152,7 +156,6 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             frmEditPasswordLink.Name = EDIT_PASSWORD_CONTROL.ToFieldKey();
             frmEditPasswordLink.Watermark = SimulatorCoreResources.SimulatorEdit_EditPassword_Link;
             frmEditPasswordLink.Command = EditPasswordCommand;
-            frmEditPasswordLink.IsVisible = false;
             View.Add(EDIT_PASSWORD_CONTROL.ToFieldKey(), frmEditPasswordLink);
 
             var frmEditAccessKey = FormField.Create(EDIT_PASSWORD_CONTROL, new LagoVista.Core.Attributes.FormFieldAttribute(FieldType: LagoVista.Core.Attributes.FieldTypes.LinkButton));
@@ -160,7 +163,6 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             frmEditAccessKey.Name = EDIT_ACCESSKEY_CONTROL.ToFieldKey();
             frmEditAccessKey.Watermark = SimulatorCoreResources.SimulatorEdit_EditAccesKey_Link;
             frmEditAccessKey.Command = EditAccessKeyCommand;
-            frmEditAccessKey.IsVisible = false;
             View.Add(EDIT_ACCESSKEY_CONTROL.ToFieldKey(), frmEditAccessKey);
 
             form.AddViewCell(nameof(Model.Name));
@@ -169,8 +171,10 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             form.AddViewCell(nameof(Model.DefaultEndPoint));
             form.AddViewCell(nameof(Model.DefaultPort));
             form.AddViewCell(nameof(Model.DeviceId));
+
             form.AddViewCell(nameof(Model.Anonymous));
             form.AddViewCell(nameof(Model.BasicAuth));
+
             form.AddViewCell(nameof(Model.UserName));
             form.AddViewCell(nameof(Model.CredentialStorage));
             form.AddViewCell(nameof(Model.Password));
@@ -187,6 +191,11 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             form.AddChildList<SimulatorStateViewModel>(nameof(Model.SimulatorStates), Model.SimulatorStates);
             ModelToView(Model, form);
             FormAdapter = form;
+        }
+
+        public async override Task InitAsync()
+        {
+            await base.InitAsync();
 
             if (Model.DefaultTransport != null)
             {
@@ -244,29 +253,85 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             if (value != null)
             {
                 if (name == nameof(Model.DefaultTransport))
-                {                    
+                {
                     ShowFieldsForTransport((TransportTypes)Enum.Parse(typeof(TransportTypes), value, true));
                 }
                 else if (name == nameof(Model.Anonymous))
                 {
-                    if(value == "true")
+                    if (value == "true")
                     {
                         HideRow(nameof(Model.UserName));
                         HideRow(nameof(Model.Password));
                         HideRow(nameof(Model.CredentialStorage));
                         HideRow(nameof(Model.BasicAuth));
+                        FormAdapter.HideView(EDIT_PASSWORD_CONTROL);
+                        HideRow(nameof(Model.Password));
+
                     }
                     else
                     {
                         ShowRow(nameof(Model.UserName));
-                        ShowRow(nameof(Model.Password));
+
+                        if (IsEdit)
+                        {
+                            FormAdapter.ShowView(EDIT_PASSWORD_CONTROL);
+                        }
+                        else
+                        {
+                            ShowRow(nameof(Model.Password));
+                        }
+
                         ShowRow(nameof(Model.CredentialStorage));
-                        
-                        if(_currentTransport.Value == TransportTypes.RestHttp ||
+
+                        if (_currentTransport.Value == TransportTypes.RestHttp ||
                             _currentTransport.Value == TransportTypes.RestHttps)
                         {
                             ShowRow(nameof(Model.BasicAuth));
                         }
+                    }
+                }
+                else if (name == nameof(Model.CredentialStorage))
+                {
+                    switch (value)
+                    {
+                        case IoT.Simulator.Admin.Models.Simulator.CredentialsStorage_InCloud:
+                        case IoT.Simulator.Admin.Models.Simulator.CredentialsStorage_OnDevice:
+                            if (_currentTransport.Value == TransportTypes.RestHttp ||
+                                _currentTransport.Value == TransportTypes.MQTT ||
+                                _currentTransport.Value == TransportTypes.AMQP ||
+                                _currentTransport.Value == TransportTypes.RestHttps)
+                            {
+                                if (IsEdit)
+                                {
+                                    FormAdapter.ShowView(EDIT_PASSWORD_CONTROL);                                    
+                                }
+                                else
+                                {
+                                    ShowRow(nameof(Model.Password));
+                                }
+                            }
+                            else if (_currentTransport.Value == TransportTypes.AzureEventHub ||
+                                     _currentTransport.Value == TransportTypes.AzureIoTHub ||
+                                     _currentTransport.Value == TransportTypes.AzureServiceBus)
+                            {
+                                if (IsEdit)
+                                {
+                                    FormAdapter.ShowView(EDIT_ACCESSKEY_CONTROL);                                    
+                                }
+                                else
+                                {
+                                    ShowRow(nameof(Model.AccessKey));
+                                }
+                            }
+
+                            break;
+                        case IoT.Simulator.Admin.Models.Simulator.CredentialsStorage_Prompt:
+                            HideRow(nameof(Model.Password));
+                            FormAdapter.HideView(EDIT_PASSWORD_CONTROL);
+                            HideRow(nameof(Model.AccessKey));
+                            FormAdapter.HideView(EDIT_ACCESSKEY_CONTROL);
+
+                            break;
                     }
                 }
             }
@@ -283,8 +348,6 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             HideRow(nameof(Model.DefaultPort));
             HideRow(nameof(Model.DefaultEndPoint));
             HideRow(nameof(Model.UserName));
-            HideRow(nameof(Model.Anonymous));
-            HideRow(nameof(Model.BasicAuth));
             HideRow(nameof(Model.Password));
             HideRow(nameof(Model.QueueName));
             HideRow(nameof(Model.AccessKeyName));
@@ -293,6 +356,9 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             HideRow(nameof(Model.CredentialStorage));
             HideRow(EDIT_ACCESSKEY_CONTROL);
             HideRow(EDIT_PASSWORD_CONTROL);
+
+            HideRow(nameof(Model.Anonymous));
+            HideRow(nameof(Model.BasicAuth));
         }
 
         private void SetForAzureServiceBus()
@@ -422,14 +488,14 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             }
             else
             {
-                ShowRow(nameof(Model.UserName));                
+                ShowRow(nameof(Model.UserName));
                 ShowRow(nameof(Model.CredentialStorage));
 
                 if (LaunchArgs.LaunchType == LaunchTypes.Edit)
                 {
                     HideRow(nameof(Model.Password));
                     ShowRow(EDIT_PASSWORD_CONTROL);
-                    
+
                 }
                 else
                 {

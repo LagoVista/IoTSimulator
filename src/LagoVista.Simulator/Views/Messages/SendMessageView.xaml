@@ -21,19 +21,25 @@
                 <RowDefinition Height="70*" />
             </Grid.RowDefinitions>
 
-            <Grid BackgroundColor="{StaticResource NuvIoTLight}" Padding="10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="auto" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                </Grid.RowDefinitions>
-                <Label Text="{Binding MsgTemplate.Name}" FontSize="24" TextColor="{StaticResource NuvIoTDark}" />
-                <pge:Icon IconKey="fa-comments-o" FontSize="92" Margin="0,0,20,0"  TextColor="{StaticResource NuvIoTDark}" Grid.Row="1" />
-                <pge:IconButton IconKey="fa-paper-plane-o" FontSize="72" WidthRequest="92" TextColor="Black" HeightRequest="92" Margin="0,0,20,0" VerticalOptions="End"  Command="{Binding SendCommand}" Grid.Column="2" Grid.Row="1" />
+            <Grid Margin="10">
+                <BoxView CornerRadius="8" BackgroundColor="{StaticResource NuvIoTWhite}"  />
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+
+
+                    <Label Text="{Binding MsgTemplate.Name}" FontSize="24" TextColor="{StaticResource NuvIoTBlack}"  HeightRequest="64" />
+                    <pge:Icon IconKey="md-mail" FontSize="92" Margin="0,0,20,0" Grid.Row="1"  TextColor="{StaticResource NuvIoTBlack}" />
+                    <pge:IconButton IconKey="ion-log-in" FontSize="72" WidthRequest="92" HeightRequest="92" Margin="0,0,20,0" VerticalOptions="End"  Command="{Binding SendCommand}" Grid.Column="2" Grid.Row="1"   TextColor="{StaticResource NuvIoTBlack}"/>
+
+                </Grid>
             </Grid>
 
             <Label Grid.Row="1" Text="{trs:Translate SendMessage_Sent}" Style="{StaticResource SectionLabel}" />
@@ -46,11 +52,15 @@
 
             <Grid  Grid.Row="3" IsVisible="{Binding ViewSelectorVisible}" Margin="0,20,0,0" >
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
                     <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="auto" />
                     <ColumnDefinition Width="50*" />
                 </Grid.ColumnDefinitions>
-                <pge:HyperLinkLabel Text="{trs:Translate Simulator_SentMessageStatus}"  NavigateCommand="{Binding ShowSendStatusCommand}" Margin="10,0,10,0" HorizontalOptions="Center"  />
-                <pge:HyperLinkLabel  Text="{trs:Translate Simulator_ShowReceivedMessages}" NavigateCommand="{Binding ShowReceivedMessagesCommand}" Grid.Column="1" HorizontalOptions="Center" />
+                <pge:Icon IconKey="ion-log-in"  TextColor="{StaticResource NuvIoTBlack}" />
+                <pge:HyperLinkLabel Text="{trs:Translate Simulator_SentMessageStatus}"  NavigateCommand="{Binding ShowSendStatusCommand}" Margin="10,0,10,0" Grid.Column="1" />
+                <pge:Icon IconKey="ion-log-out" Grid.Column="2"  TextColor="{StaticResource NuvIoTBlack}" />
+                <pge:HyperLinkLabel  Text="{trs:Translate Simulator_ShowReceivedMessages}" NavigateCommand="{Binding ShowReceivedMessagesCommand}" Grid.Column="3" />
             </Grid>
 
             <Grid HeightRequest="48" BackgroundColor="{StaticResource MenuBarBackground}" Grid.Row="4" IsVisible="{Binding SendStatusVisible}" >

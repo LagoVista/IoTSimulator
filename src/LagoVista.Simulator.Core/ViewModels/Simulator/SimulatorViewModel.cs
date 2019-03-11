@@ -444,13 +444,11 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
                                             break;*/
 
                     case TransportTypes.AzureIoTHub:
-#if IOTHUB
                         var connectionString = $"HostName={Model.DefaultEndPoint};DeviceId={Model.DeviceId};SharedAccessKey={Model.AccessKey}";
-                        _azureIoTHubClient = DeviceClient.CreateFromConnectionString(connectionString, Microsoft.Azure.Devices.Client.TransportType.Amqp_Tcp_Only);
+                        _azureIoTHubClient = DeviceClient.CreateFromConnectionString(connectionString, Microsoft.Azure.Devices.Client.TransportType.Mqtt_Tcp_Only);
                         await _azureIoTHubClient.OpenAsync();
                         ReceivingTask = Task.Run(ReceiveDataFromAzure);
                         SetConnectedState();
-#endif
                         break;
                     case TransportTypes.MQTT:
                         _mqttClient = SLWIOC.Create<IMQTTDeviceClient>();

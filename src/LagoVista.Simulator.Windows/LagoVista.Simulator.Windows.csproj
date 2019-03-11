@@ -108,6 +108,7 @@
     <Content Include="Assets\LargeTile.scale-150.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\sim.png" />
     <Content Include="Assets\SmallTile.scale-100.png" />
     <Content Include="Assets\SmallTile.scale-125.png" />
     <Content Include="Assets\SmallTile.scale-150.png" />
@@ -182,6 +183,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomRenderer\SwitchRenderer.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -255,7 +257,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="LagoVista.Client.Core">
-      <Version>1.2.661-alpha0851</Version>
+      <Version>1.2.662-alpha1232</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.Core">
       <Version>2.1.656-beta1121</Version>
@@ -282,7 +284,7 @@
       <Version>2.1.656-beta1121</Version>
     </PackageReference>
     <PackageReference Include="LagoVista.XPlat">
-      <Version>1.2.661-alpha0851</Version>
+      <Version>1.2.662-alpha1232</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter">
       <Version>1.13.2</Version>
@@ -324,6 +326,7 @@
       <Version>3.6.0.220655</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
