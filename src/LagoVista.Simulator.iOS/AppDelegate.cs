@@ -4,6 +4,7 @@ using LagoVista.Core.IOC;
 using LagoVista.Core.Models;
 using LagoVista.MQTT.Core;
 using LagoVista.XPlat.iOS.Services;
+using ObjCRuntime;
 using System;
 using UIKit;
 
@@ -48,6 +49,11 @@ namespace LagoVista.Simulator.iOS
             LoadApplication(formsApp);
 
             return base.FinishedLaunching(app, options);
+        }
+
+        public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations(UIApplication application, [Transient] UIWindow forWindow)
+        {
+            return UIInterfaceOrientationMask.Portrait;
         }
 
         public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)

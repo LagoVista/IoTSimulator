@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <bitmap xmlns:android="http://schemas.android.com/apk/res/android"
-  android:src="@drawable/nuviot"
+  android:src="@drawable/applogo"
   android:gravity="center"
+  android:width="300dp"
   android:layout_gravity="center"/>

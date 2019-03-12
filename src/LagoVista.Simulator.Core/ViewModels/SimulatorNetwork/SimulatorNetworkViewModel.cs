@@ -8,7 +8,9 @@ using LagoVista.Core.Models.UIMetaData;
 using LagoVista.Core.Validation;
 using LagoVista.Core.ViewModels;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
 {
@@ -69,6 +71,20 @@ namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
             SettingsVisible = true;
 
             SettingsToggleContent = "Hide Settings";
+
+            FormAdapter.FormItems.Where(itm => itm.Name == nameof(Model.SharedAccessKey1).ToFieldKey()).First().Command = new RelayCommand((arg) => HandleAccessKey1(arg));
+            FormAdapter.FormItems.Where(itm => itm.Name == nameof(Model.SharedAccessKey1).ToFieldKey()).First().Command = new RelayCommand((arg) => HandleAccessKey2(arg));
+        }
+
+
+        public void HandleAccessKey1(object item)
+        {
+            Debug.WriteLine(item.ToString());
+        }
+
+        public void HandleAccessKey2(object item)
+        {
+            Debug.WriteLine(item.ToString());
         }
 
 

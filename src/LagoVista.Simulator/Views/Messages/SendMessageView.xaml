@@ -35,10 +35,9 @@
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
 
-                    <Label Text="{Binding MsgTemplate.Name}" FontSize="24" TextColor="{StaticResource NuvIoTBlack}"  HeightRequest="64" />
+                    <Label Text="{Binding MsgTemplate.Name}" FontSize="24" TextColor="{StaticResource NuvIoTBlack}"  HeightRequest="32" Grid.ColumnSpan="3" />
                     <pge:Icon IconKey="md-mail" FontSize="92" Margin="0,0,20,0" Grid.Row="1"  TextColor="{StaticResource NuvIoTBlack}" />
-                    <pge:IconButton IconKey="ion-log-in" FontSize="72" WidthRequest="92" HeightRequest="92" Margin="0,0,20,0" VerticalOptions="End"  Command="{Binding SendCommand}" Grid.Column="2" Grid.Row="1"   TextColor="{StaticResource NuvIoTBlack}"/>
-
+                    <pge:IconButton IconKey="ion-log-in" FontSize="72" WidthRequest="92" HeightRequest="92" VerticalOptions="End"  Command="{Binding SendCommand}" Grid.Column="2" Grid.Row="1"   TextColor="{StaticResource NuvIoTBlack}"/>
                 </Grid>
             </Grid>
 
@@ -58,14 +57,14 @@
                     <ColumnDefinition Width="auto" />
                     <ColumnDefinition Width="50*" />
                 </Grid.ColumnDefinitions>
-                <pge:Icon IconKey="ion-log-in"  TextColor="{StaticResource NuvIoTBlack}" />
-                <pge:HyperLinkLabel Text="{trs:Translate Simulator_SentMessageStatus}"  NavigateCommand="{Binding ShowSendStatusCommand}" Margin="10,0,10,0" Grid.Column="1" />
-                <pge:Icon IconKey="ion-log-out" Grid.Column="2"  TextColor="{StaticResource NuvIoTBlack}" />
-                <pge:HyperLinkLabel  Text="{trs:Translate Simulator_ShowReceivedMessages}" NavigateCommand="{Binding ShowReceivedMessagesCommand}" Grid.Column="3" />
+                <pge:Icon IconKey="ion-log-in"  TextColor="{StaticResource NuvIoTBlack}" FontSize="Small" />
+                <pge:HyperLinkLabel Text="{trs:Translate Simulator_SentMessageStatus}"  NavigateCommand="{Binding ShowSendStatusCommand}" Grid.Column="1" FontSize="Small" VerticalOptions="Center"  />
+                <pge:Icon IconKey="ion-log-out" Grid.Column="2"  TextColor="{StaticResource NuvIoTBlack}" FontSize="Small" />
+                <pge:HyperLinkLabel  Text="{trs:Translate Simulator_ShowReceivedMessages}" NavigateCommand="{Binding ShowReceivedMessagesCommand}" Grid.Column="3" FontSize="Small" VerticalOptions="Center" />
             </Grid>
 
-            <Grid HeightRequest="48" BackgroundColor="{StaticResource NuvIoTWhite}" Grid.Row="4" IsVisible="{Binding SendStatusVisible}" >
-                <Label Text="{trs:Translate SendMessage_Status}" TextColor="{StaticResource NuvIoTBlack}" FontSize="16" FontFamily="Roboto" Margin="10,0,0,0" VerticalOptions="Center" />
+            <Grid HeightRequest="48" BackgroundColor="{StaticResource NuvIoTWhite}" Grid.Row="4" IsVisible="{Binding SendStatusVisible}"  >
+                <Label Text="{trs:Translate SendMessage_Status}" TextColor="{StaticResource NuvIoTBlack}" FontSize="16" FontFamily="Roboto" VerticalOptions="Center" Margin="10,0,0,0" />
             </Grid>
 
             <ScrollView Grid.Row="5" Margin="10" IsVisible="{Binding SendStatusVisible}">

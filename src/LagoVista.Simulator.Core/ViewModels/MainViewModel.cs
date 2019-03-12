@@ -10,7 +10,6 @@ using LagoVista.Simulator.Core.ViewModels.Simulator;
 using System.Collections.Generic;
 using System.Linq;
 using System.Resources;
-using System.Threading.Tasks;
 
 [assembly: NeutralResourcesLanguage("en")]
 
@@ -24,46 +23,56 @@ namespace LagoVista.Simulator.Core.ViewModels
             SettingsCommand = new RelayCommand(ToggleSettings);
             DeleteSimulatorCommand = new RelayCommand(DeleteSimulator);
 
-            MenuItems = new List<MenuItem>()
+            var menuItems = new List<MenuItem>();
+
+            if (Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.UWP)
             {
-                new MenuItem()
+                menuItems.Add(new MenuItem()
                 {
                     Command = new RelayCommand(() => ViewModelNavigation.NavigateAsync<SimulatorNetwork.SimulatorNetworksViewModel>(this)),
                     Name = SimulatorCoreResources.MainView_SimulatorNetworks,
                     FontIconKey = "fa-window-restore"
-                },
-                new MenuItem()
-                {
-                    Command = new RelayCommand(() => ViewModelNavigation.NavigateAsync<UserOrgsViewModel>(this)),
-                    Name = ClientResources.MainMenu_SwitchOrgs,
-                    FontIconKey = "fa-users"
-                },
-                new MenuItem()
-                {
-                    Command = new RelayCommand(() => ViewModelNavigation.NavigateAsync<ChangePasswordViewModel>(this)),
-                    Name = ClientResources.MainMenu_ChangePassword,
-                    FontIconKey = "fa-key"
-                },
-                new MenuItem()
-                {
-                    Command = new RelayCommand(() => ViewModelNavigation.NavigateAsync<InviteUserViewModel>(this)),
-                    Name = ClientResources.MainMenu_InviteUser,
-                    FontIconKey = "fa-user"
-                },
-                new MenuItem()
-                {
-                    Command = new RelayCommand(() => ViewModelNavigation.NavigateAsync<AboutViewModel>(this)),
-                    Name = "About",
-                    FontIconKey = "fa-info"
-                },
-                new MenuItem()
-                {
-                    Command = new RelayCommand(() => Logout()),
-                    Name = ClientResources.Common_Logout,
-                    FontIconKey = "fa-sign-out"
-                }
-            };
-        }        
+                });
+            }
+
+            menuItems.Add(new MenuItem()
+            {
+                Command = new RelayCommand(() => ViewModelNavigation.NavigateAsync<UserOrgsViewModel>(this)),
+                Name = ClientResources.MainMenu_SwitchOrgs,
+                FontIconKey = "fa-users"
+            });
+
+            menuItems.Add(new MenuItem()
+            {
+                Command = new RelayCommand(() => ViewModelNavigation.NavigateAsync<ChangePasswordViewModel>(this)),
+                Name = ClientResources.MainMenu_ChangePassword,
+                FontIconKey = "fa-key"
+            });
+
+            /*
+            menuItems.Add(new MenuItem()
+            {
+                Command = new RelayCommand(() => ViewModelNavigation.NavigateAsync<InviteUserViewModel>(this)),
+                Name = ClientResources.MainMenu_InviteUser,
+                FontIconKey = "fa-user"
+            });*/
+
+            menuItems.Add(new MenuItem()
+            {
+                Command = new RelayCommand(() => ViewModelNavigation.NavigateAsync<AboutViewModel>(this)),
+                Name = "About",
+                FontIconKey = "fa-info"
+            });
+
+            menuItems.Add(new MenuItem()
+            {
+                Command = new RelayCommand(() => Logout()),
+                Name = ClientResources.Common_Logout,
+                FontIconKey = "fa-sign-out"
+            });
+
+            MenuItems = menuItems;
+        }
 
         public void AddNewSimulator()
         {
