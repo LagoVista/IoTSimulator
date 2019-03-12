@@ -19,7 +19,9 @@
             </Grid.RowDefinitions>
 
             <Grid Margin="10">
-                <BoxView CornerRadius="8" BackgroundColor="{StaticResource NuvIoTWhite}"  />
+                <BoxView CornerRadius="8" BackgroundColor="#E0E0E0" />
+                <BoxView CornerRadius="8" Margin="1" BackgroundColor="{StaticResource NuvIoTWhite}"   />
+                
                 <Grid Margin="10" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="48" />
@@ -53,13 +55,13 @@
                 </Grid>
             </Grid>
 
-            <Grid  Grid.Row="1" IsVisible="{Binding ViewSelectorVisible}"  >
+            <Grid Grid.Row="1" IsVisible="{Binding ViewSelectorVisible}" HeightRequest="32"  >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50*" />
                     <ColumnDefinition Width="50*" />
                 </Grid.ColumnDefinitions>
-                <pge:HyperLinkLabel Text="{trs:Translate Simulator_ShowMessageTemplates}"  NavigateCommand="{Binding ShowMessageTemplatesCommand}" />
-                <pge:HyperLinkLabel  Text="{trs:Translate Simulator_ShowReceivedMessages}" Grid.Column="1" NavigateCommand="{Binding ShowReceivedMessagesCommand}" />
+                <pge:HyperLinkLabel Margin="10,5,0,5" Text="{trs:Translate Simulator_ShowMessageTemplates}"  NavigateCommand="{Binding ShowMessageTemplatesCommand}" />
+                <pge:HyperLinkLabel Margin="10,5,0,5" Text="{trs:Translate Simulator_ShowReceivedMessages}" Grid.Column="1" NavigateCommand="{Binding ShowReceivedMessagesCommand}" />
             </Grid>
 
             <Grid Grid.Row="1" Grid.RowSpan="3" IsVisible="{Binding ConnectButtonVisible}" >
@@ -98,7 +100,7 @@
             </ListView>
 
             <Grid HeightRequest="48" BackgroundColor="{StaticResource NuvIoTWhite}" Grid.Row="2" IsVisible="{Binding ReceivedMessagesVisible}"  >
-                <Label Text="{trs:Translate Simulator_ReceivedMessages}" TextColor="{StaticResource NuvIoTBlack}" FontSize="20" Margin="10,0,0,0" VerticalOptions="Center" />
+                <Label Text="{trs:Translate Simulator_ReceivedMessages}" TextColor="{StaticResource NuvIoTBlack}" FontSize="16" FontFamily="Roboto" Margin="10,0,0,0" VerticalOptions="Center" />
             </Grid>
 
             <ListView ItemsSource="{Binding ReceivedMessageList}" SelectedItem="{Binding SelectedMessageTemplate, Mode=TwoWay}" Grid.Row="3" IsVisible="{Binding ReceivedMessagesVisible}"   >

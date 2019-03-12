@@ -16,8 +16,8 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <pge:HyperLinkLabel NavigateCommand="{Binding ShowSettingsCommand}" Text="{Binding SettingsToggleContent}" Margin="10" />
-            <StackLayout Margin="10" IsVisible="{Binding SettingsVisible}" Grid.Row="1" >
+            <pge:HyperLinkLabel NavigateCommand="{Binding ShowSettingsCommand}" Text="{Binding SettingsToggleContent}" Margin="10" HeightRequest="32"/>
+            <StackLayout Margin="10,0,10,0" IsVisible="{Binding SettingsVisible}" Grid.Row="1" >
                 <pge:TextArea Text="{Binding DockerString}" Margin="0,0,0,10" />
                 <pge:TextArea Text="{Binding ConsoleString}" Margin="0,0,0,10" />
             </StackLayout>

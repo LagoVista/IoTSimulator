@@ -22,7 +22,8 @@
             </Grid.RowDefinitions>
 
             <Grid Margin="10">
-                <BoxView CornerRadius="8" BackgroundColor="{StaticResource NuvIoTWhite}"  />
+                <BoxView CornerRadius="8" BackgroundColor="#E0E0E0" />
+                <BoxView CornerRadius="8" Margin="1" BackgroundColor="{StaticResource NuvIoTWhite}"  />
                 <Grid Margin="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto" />
@@ -34,7 +35,6 @@
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
 
-
                     <Label Text="{Binding MsgTemplate.Name}" FontSize="24" TextColor="{StaticResource NuvIoTBlack}"  HeightRequest="64" />
                     <pge:Icon IconKey="md-mail" FontSize="92" Margin="0,0,20,0" Grid.Row="1"  TextColor="{StaticResource NuvIoTBlack}" />
                     <pge:IconButton IconKey="ion-log-in" FontSize="72" WidthRequest="92" HeightRequest="92" Margin="0,0,20,0" VerticalOptions="End"  Command="{Binding SendCommand}" Grid.Column="2" Grid.Row="1"   TextColor="{StaticResource NuvIoTBlack}"/>
@@ -43,14 +43,15 @@
             </Grid>
 
             <Label Grid.Row="1" Text="{trs:Translate SendMessage_Sent}" Style="{StaticResource SectionLabel}" />
+            
             <ScrollView Grid.Row="2" Margin="10">
                 <Grid Padding="1" BackgroundColor="SlateGray">
                     <BoxView BackgroundColor="White" />
-                    <Label  Text="{Binding SentContent}" FontFamily="Consolas" FontSize="12" />
+                    <Label Margin="5" Text="{Binding SentContent}" FontFamily="Consolas" FontSize="12" />
                 </Grid>
             </ScrollView>
 
-            <Grid  Grid.Row="3" IsVisible="{Binding ViewSelectorVisible}" Margin="0,20,0,0" >
+            <Grid  Grid.Row="3" Margin="10,0,0,0" IsVisible="{Binding ViewSelectorVisible}" HeightRequest="32" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto" />
                     <ColumnDefinition Width="50*" />
@@ -63,8 +64,8 @@
                 <pge:HyperLinkLabel  Text="{trs:Translate Simulator_ShowReceivedMessages}" NavigateCommand="{Binding ShowReceivedMessagesCommand}" Grid.Column="3" />
             </Grid>
 
-            <Grid HeightRequest="48" BackgroundColor="{StaticResource MenuBarBackground}" Grid.Row="4" IsVisible="{Binding SendStatusVisible}" >
-                <Label Text="{trs:Translate SendMessage_Status}" TextColor="{StaticResource MenuBarForeground}" FontSize="20" Margin="10,0,0,0" VerticalOptions="Center" />
+            <Grid HeightRequest="48" BackgroundColor="{StaticResource NuvIoTWhite}" Grid.Row="4" IsVisible="{Binding SendStatusVisible}" >
+                <Label Text="{trs:Translate SendMessage_Status}" TextColor="{StaticResource NuvIoTBlack}" FontSize="16" FontFamily="Roboto" Margin="10,0,0,0" VerticalOptions="Center" />
             </Grid>
 
             <ScrollView Grid.Row="5" Margin="10" IsVisible="{Binding SendStatusVisible}">
@@ -74,8 +75,8 @@
                 </Grid>
             </ScrollView>
 
-            <Grid HeightRequest="48" BackgroundColor="{StaticResource MenuBarBackground}" Grid.Row="4" IsVisible="{Binding ReceivedMessagesVisible}"  >
-                <Label Text="{trs:Translate Simulator_ReceivedMessages}" TextColor="{StaticResource MenuBarForeground}" FontSize="20" Margin="10,0,0,0" VerticalOptions="Center" />
+            <Grid HeightRequest="48" BackgroundColor="{StaticResource NuvIoTWhite}" Grid.Row="4" IsVisible="{Binding ReceivedMessagesVisible}"  >
+                <Label Text="{trs:Translate Simulator_ReceivedMessages}" TextColor="{StaticResource NuvIoTBlack}" FontSize="16" FontFamily="Roboto" Margin="10,0,0,0" VerticalOptions="Center" />
             </Grid>
 
             <ListView ItemsSource="{Binding ReceivedMessageList}" SelectedItem="{Binding SelectedMessageTemplate, Mode=TwoWay}" Grid.Row="5" IsVisible="{Binding ReceivedMessagesVisible}" HasUnevenRows="True"    >

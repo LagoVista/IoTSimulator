@@ -27,16 +27,17 @@
                                     <ColumnDefinition Width="auto" />
                                 </Grid.ColumnDefinitions>
 
-                                <pge:Icon IconKey="fa-window-restore"  Grid.Column="1" FontSize="48" VerticalOptions="Center" TextColor="{StaticResource NuvIoTLight}"  Margin="3,9,0,0" />
+                                <pge:Icon IconKey="fa-window-restore"  Grid.Column="1" FontSize="48" VerticalOptions="Center" TextColor="{StaticResource NuvIoTBlack}"  Margin="3,9,0,0" />
 
-                                <Label Text="{Binding Name}" Grid.Column="2" FontSize="36" Margin="16,0,0,0" TextColor="{StaticResource NuvIoTDark}" VerticalOptions="Center" LineBreakMode="TailTruncation" />
+                                <Label Text="{Binding Name}" Grid.Column="2" FontSize="36" Margin="16,0,0,0" TextColor="{StaticResource NuvIoTBlack}" VerticalOptions="Center" LineBreakMode="TailTruncation" />
 
                                 <Label Text="{Binding Id}"  x:Name="NetworkItem" IsVisible="False" />
 
-                                <pge:IconButton IconKey="fa-trash-o" 
+                                <pge:IconButton IconKey="typcn-delete-outline" 
                                             BindingContext="{Binding Source={x:Reference NetworkList}, Path=BindingContext}"
                                             Command="{Binding DeleteSimNetworkCommand}" 
-                                            CommandParameter="{Binding Source={x:Reference NetworkItem}, Path=Text}" TextColor="Red" FontSize="20"  Grid.Column="3" BorderColor="Transparent" BorderWidth="0" Margin="0,0,0,0"  />
+                                            CommandParameter="{Binding Source={x:Reference NetworkItem}, Path=Text}" TextColor="Red" FontSize="24"  
+                                            Grid.Column="3" BorderColor="Transparent" BorderWidth="0" Margin="0,0,0,0"  />
 
                             </Grid>
                         </ViewCell>
