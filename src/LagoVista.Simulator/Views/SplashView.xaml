@@ -10,18 +10,19 @@
         <Grid>
             <Grid IsVisible="{Binding NotLoggedIn}">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="120" />
+                    <RowDefinition Height="120" />
+                    <RowDefinition Height="120" />
+                    <RowDefinition Height="120" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="10" />
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
-                <Label Text="IoT Simulator" FontSize="48" HorizontalOptions="Center" TextColor="{StaticResource NuvIoTContrast}" Grid.Row="0" Margin="0,40,0,0"  />
-                <pge:Image FileName="applogo.png" Grid.Row="2" UWPPath="Assets" WidthRequest="200"/>
-                
-                <pge:Button Command="{Binding LoginCommand}" Text="{trs:Translate Common_GetStarted}" WidthRequest="200" HeightRequest="48" Margin="10,10,10,60" HorizontalOptions="Center"  Grid.Row="6" />
+                <Label Text="IoT Simulator" FontSize="48" HorizontalOptions="Center" Grid.Row="1"  VerticalOptions="Center" />
+                <pge:Image FileName="applogo.png" Grid.Row="2" UWPPath="Assets" WidthRequest="300" VerticalOptions="Center" />
+                <Label Text="IoT Enablement Platform" FontSize="24" HorizontalOptions="Center" Grid.Row="3" VerticalOptions="Center"  />
+                <pge:Button Command="{Binding LoginCommand}" Text="{trs:Translate Common_GetStarted}" WidthRequest="200" HeightRequest="48" Margin="10" HorizontalOptions="Center"  Grid.Row="7" />
             </Grid>
         </Grid>
     </pge:LagoVistaContentPage.Content>
