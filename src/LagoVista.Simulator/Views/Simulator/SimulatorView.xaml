@@ -103,7 +103,7 @@
                 <Label Text="{trs:Translate Simulator_ReceivedMessages}" TextColor="{StaticResource NuvIoTBlack}" FontSize="16" FontFamily="Roboto" Margin="10,0,0,0" VerticalOptions="Center" />
             </Grid>
 
-            <ListView ItemsSource="{Binding ReceivedMessageList}" SelectedItem="{Binding SelectedMessageTemplate, Mode=TwoWay}" Grid.Row="3" IsVisible="{Binding ReceivedMessagesVisible}"   >
+            <ListView ItemsSource="{Binding ReceivedMessageList}" SelectedItem="{Binding SelectedMessageTemplate, Mode=TwoWay}" Grid.Row="3" IsVisible="{Binding ReceivedMessagesVisible}"  HasUnevenRows="true"  >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
