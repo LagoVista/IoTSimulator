@@ -421,7 +421,10 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
 
         private void SetForMQTT()
         {
-            SetValue(nameof(Model.DefaultPort), 1883.ToString());
+            if (Model.DefaultPort == 0)
+            {
+                SetValue(nameof(Model.DefaultPort), 1883.ToString());
+            }
 
             ShowRow(nameof(Model.DefaultPort));
             ShowRow(nameof(Model.DefaultEndPoint));
@@ -471,7 +474,11 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
 
         private void SetForREST(TransportTypes transportType)
         {
-            SetValue(nameof(Model.DefaultPort), transportType == TransportTypes.RestHttp ? 80.ToString() : 443.ToString());
+            if (Model.DefaultPort == 0)
+            {
+                SetValue(nameof(Model.DefaultPort), transportType == TransportTypes.RestHttp ? 80.ToString() : 443.ToString());
+            }
+
             SetValue(nameof(Model.DefaultPayloadType), "text");
             ShowRow(nameof(Model.Anonymous));
             ShowRow(nameof(Model.BasicAuth));

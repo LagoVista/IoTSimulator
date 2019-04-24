@@ -6,6 +6,8 @@
     xmlns:local="using:LagoVista.Simulator.Windows"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    MinHeight="768"
+    MinWidth="1366"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">

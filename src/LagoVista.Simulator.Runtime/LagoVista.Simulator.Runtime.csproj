@@ -6,8 +6,8 @@
 
   <ItemGroup>
     <PackageReference Include="DotNetty.Buffers" Version="0.6.0" />
-    <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.19.0" />
-    <PackageReference Include="Microsoft.Azure.Devices.Shared" Version="1.15.2" />
+    <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.20.0" />
+    <PackageReference Include="Microsoft.Azure.Devices.Shared" Version="1.16.0" />
     <PackageReference Include="Microsoft.Azure.EventHubs" Version="1.1.0" />
     <PackageReference Include="Microsoft.Azure.ServiceBus" Version="1.0.0" />
   </ItemGroup>
