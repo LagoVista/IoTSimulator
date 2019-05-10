@@ -49,15 +49,6 @@ $packageVersionNumber = "$versionContent.0.0"
 "Done setting version: $versionNumber"
 "Package Version Number: $packageVersionNumber"
 
-# Set the Signing Key
-$content = New-Object XML
-$content.Load($uwpprojectfile);
-$nsm = New-Object Xml.XmlNamespaceManager($content.NameTable)
-$nsm.AddNamespace('ns', $content.DocumentElement.NamespaceURI)
-$content.SelectSingleNode('//ns:PackageCertificateKeyFile', $nsm).InnerText = $pfxpath
-$content.SelectSingleNode('//ns:PackageCertificateThumbprint', $nsm).InnerText = $certthumbprint
-$content.save($uwpprojectfile)
-"Set certfile: $certfile and certhumbprint: XXXXXXXXXXXXXXXXXX' in $appmanifestFile"
 
 # Set the App Identity in the app manifest
 [xml] $content = Get-Content  $appmanifestFile
@@ -93,6 +84,9 @@ $assemblyInfoContent | Set-Content  $assemblyInfoFile
 $envRegEx = "#define ENV_[A-Z]*"
 $ucaseEnvironment = $branch.ToUpper();
 $mainAppContent = $mainAppContent -replace $envRegEx, "#define ENV_$ucaseEnvironment";
+
+"$mainAppContent"
+
 $mainAppContent | Set-Content $mainAppFile
 "Set $ucaseEnvironment in $mainAppFile"
 "------------------------------------------------"
