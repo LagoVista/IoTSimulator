@@ -28,9 +28,9 @@ function Generate-VersionNumber() {
 
 $scriptPath = (Split-Path $MyInvocation.MyCommand.Path);
 
-$coreappdir = "$scriptPath\src\LagoVista.DeviceManager"
-$uwpprojectdir = "$scriptPath\src\LagoVista.DeviceManager.UWP"
-$uwpprojectfile = "$uwpprojectdir\LagoVista.DeviceManager.UWP.csproj"
+$coreappdir = "$scriptPath\src\LagoVista.Simulator"
+$uwpprojectdir = "$scriptPath\src\LagoVista.Simulator.Windows"
+$uwpprojectfile = "$uwpprojectdir\LagoVista.Simulator.Windows.csproj"
 $appmanifestFile = "$uwpprojectdir\Package.appxmanifest"
 $storeAssociationFile = "$uwpprojectdir\Package.StoreAssociation.xml"
 $uwpAppFile = "$uwpprojectdir\App.xaml.cs"
@@ -47,6 +47,7 @@ $revisionNumber = Generate-VersionNumber
 $versionNumber = "$versionContent.$revisionNumber"
 $packageVersionNumber = "$versionContent.0.0"
 "Done setting version: $versionNumber"
+"Package Version Number: $packageVersionNumber"
 
 # Set the Signing Key
 $content = New-Object XML
