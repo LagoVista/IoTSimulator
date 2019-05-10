@@ -73,7 +73,7 @@ $assemblyInfoContent | Set-Content  $assemblyInfoFile
 $envRegEx = "#define ENV_[A-Z]*"
 "CUrrent Branch [$branch]"
 
-$ucaseEnvironment = %APPCENTER_BRANCH%.ToUpper();
+$ucaseEnvironment = "%APPCENTER_BRANCH%".ToUpper();
 
 "Tag replace [$ucaseEnvironment%] [%APPCENTER_BRANCH%] [%APPCENTER_APPID%]"
 
