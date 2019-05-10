@@ -1,14 +1,3 @@
-param([string]$uwpappidentity, [string]$appcenter_appid, [string]$branch, [string]$certfile, [string]$certthumbprint, [string]$certPwd)
-
-"$UWPAPPIDENTITY $APPCENTER_APPID $BRANCH $certfile $certthumbprint"
-
-#Note: There is a build task: Download Secure File, it will download the file to WORKFOLDER\_temp and the updated project file will pick it up from there.
-
-#required input params
-# UWPAPPIDENTITY
-# APPCENTER_APPID
-# APPCENTER_BRANCH
-
 function Generate-VersionNumber() {
     $end = Get-Date
     $start = Get-Date "5/17/2017"
@@ -84,9 +73,9 @@ $assemblyInfoContent | Set-Content  $assemblyInfoFile
 $envRegEx = "#define ENV_[A-Z]*"
 "CUrrent Branch [$branch]"
 
-$ucaseEnvironment = $branch.ToUpper();
+$ucaseEnvironment = $APPCENTER_BRANCH.ToUpper();
 
-"Tag replace [$ucaseEnvironment]"
+"Tag replace [$ucaseEnvironment] [$APPCENTER_BRANCH] [$APPCENTER_APPID]"
 
 $mainAppContent = $mainAppContent -replace $envRegEx, "#define ENV_$ucaseEnvironment";
 
