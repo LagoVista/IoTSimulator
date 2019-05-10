@@ -16,21 +16,11 @@ appProjectName=LagoVista.Simulator
 # Version is pulled from a file in the root, it contains first two digits of full version, such as 1.0
 version=$(<$APPCENTER_SOURCE_DIRECTORY/version.txt)
 
-# Build number is number of days since May 17, 2017
-platform=`uname -s`
-if [ "$platform" = "Darwin" ]; then
-    buildNumber=$(((`date +%s` - `date -jf"%Y%m%d%H%M%S" "20170517000000" +%s`)/86400))
-    echo 'running on mac'
-else
-    buildNumber=$(((`date +%s` - `date -d"%Y%m%d%H%M%S" "20170517000000" +%s`)/86400))
-    echo 'running on linux'
-fi
-
 # Revision is four digit number, always zero padded HHMM
 revision=`date +"%H%M"`
 
 # Version to be displayed to the user 1.0.219.0818
-fullVersion=$version.$buildNumber.$revision
+fullVersion=$version.$APPCENTER_BUILD_ID
 
 echo Setting Version
 echo $fullVersion
@@ -49,4 +39,6 @@ sed -i '' 's/MOBILE_CENTER_KEY = \"[0-9A-Fa-f\-]*\";/MOBILE_CENTER_KEY = \"'"$AP
 
 # icons are setup by branch name so just copy everything over
 cp -R $APPCENTER_SOURCE_DIRECTORY/BuildAssets/iOS/$APPCENTER_BRANCH/ $APPCENTER_SOURCE_DIRECTORY/src/$iOSProjectName/Resources/Media.xcassets/AppIcons.appiconset
+
+cat $APPCENTER_SOURCE_DIRECTORY/src/$iOSProjectName/Info.plist
 
