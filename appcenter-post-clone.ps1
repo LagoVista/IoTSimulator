@@ -27,7 +27,7 @@ $assemblyInfoFile = "$uwpprojectdir\Properties\AssemblyInfo.cs"
 $mainAppFile = "$coreappdir\App.xaml.cs"
 
 "Copy Environment Specific Icons"
-Copy-Item -Path ".\BuildAssets\UWP\$branch\*"  -Destination "$uwpprojectdir" -Force
+Copy-Item -Path ".\BuildAssets\UWP\$branch\*"  -Destination "$uwpprojectdir\Assets" -Force
 
 $versionFile = "$scriptPath\version.txt"
 
@@ -38,11 +38,11 @@ $packageVersionNumber = "$versionContent.0.0"
 "Done setting version: $versionNumber"
 "Package Version Number: $packageVersionNumber"
 
-
 # Set the App Identity in the app manifest
 [xml] $content = Get-Content  $appmanifestFile
 $content.Package.Identity.Name = $env:UWPAPPIDENTITY
 $content.Package.Identity.Version = $packageVersionNumber
+$content.Package.Properties.DisplayName = $env:APP_DISPLAY_NAME
 $content.save($appmanifestFile)
 "Set App Identity: $env:UWPAPPIDENTITY and package version $packageVersionNumber in $appmanifestFile"
 
