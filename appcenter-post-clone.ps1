@@ -49,6 +49,7 @@ $content.save($appmanifestFile)
 # Set the App Identity in the Store Association File
 [xml] $storeContent = (Get-Content  $storeAssociationFile) 
 $storeContent.StoreAssociation.ProductReservedInfo.MainPackageIdentityName = $env:UWPAPPIDENTITY
+$storeContent.StoreAssociation.ProductReservedInfo.ReservedNames.ReservedName = $env:APP_DISPLAY_NAME
 $storeContent.save($storeAssociationFile)
 "Set App Identity: $env:UWPAPPIDENTITY in $storeAssociationFile"
 
