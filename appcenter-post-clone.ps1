@@ -82,7 +82,12 @@ $assemblyInfoContent | Set-Content  $assemblyInfoFile
 # Set the server environment file in the Xamarin Forms App File
 [string] $mainAppContent = (Get-Content $mainAppFile) -join "`r`n"
 $envRegEx = "#define ENV_[A-Z]*"
+"CUrrent Branch [$branch]"
+
 $ucaseEnvironment = $branch.ToUpper();
+
+"Tag replace [$ucaseEnvironment]"
+
 $mainAppContent = $mainAppContent -replace $envRegEx, "#define ENV_$ucaseEnvironment";
 
 "$mainAppContent"

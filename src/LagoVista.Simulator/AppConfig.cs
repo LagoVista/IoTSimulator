@@ -15,7 +15,7 @@ namespace LagoVista.Simulator
                 case Device.UWP: PlatformType = PlatformTypes.WindowsUWP; break;
             }
 
-            WebAddress = "https://www.IoTAppStudio.com";
+            WebAddress = "https://www.NuvIoT.com";
         }
 
         public PlatformTypes PlatformType { get; private set; }
