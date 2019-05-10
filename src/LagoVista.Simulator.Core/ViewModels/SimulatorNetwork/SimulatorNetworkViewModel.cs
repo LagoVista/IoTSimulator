@@ -11,6 +11,7 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using LagoVista.XPlat.Core.Controls.FormControls;
 
 namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
 {
@@ -119,6 +120,32 @@ namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
             form.AddViewCell(nameof(Model.Description));
 
             form.AddChildList<SimulatorInstanceViewModel>(nameof(Model.Simulators), Model.Simulators);
+
+            View[nameof(Model.SharedAccessKey1).ToFieldKey()].Command = new RelayCommand(ShowAccessKey1);
+            View[nameof(Model.SharedAccessKey2).ToFieldKey()].Command = new RelayCommand(ShowAccessKey2);
+        }
+
+        void ShowAccessKey1(object param)
+        {
+            if(param != null)
+            {
+                switch(param.ToString())
+                {
+                    case TextEditRow.COPY_SECRET:
+
+                        break;
+                    case TextEditRow.VIEW_SECRET:
+                        View[nameof(Model.SharedAccessKey1).ToFieldKey()].Value = Model.SharedAccessKey1;
+                        break;
+                    case TextEditRow.REFRESH_SECRET:
+                        break;
+                }
+            }
+        }
+
+        void ShowAccessKey2(object parm)
+        {
+            Debug.WriteLine(parm);
         }
 
         public RelayCommand ShowSettingsCommand { get; }

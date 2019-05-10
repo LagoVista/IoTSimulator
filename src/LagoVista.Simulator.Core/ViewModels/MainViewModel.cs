@@ -42,14 +42,14 @@ namespace LagoVista.Simulator.Core.ViewModels
                 FontIconKey = "fa-users"
             });
 
+            /*
             menuItems.Add(new MenuItem()
             {
                 Command = new RelayCommand(() => ViewModelNavigation.NavigateAsync<ChangePasswordViewModel>(this)),
                 Name = ClientResources.MainMenu_ChangePassword,
                 FontIconKey = "fa-key"
             });
-
-            /*
+            
             menuItems.Add(new MenuItem()
             {
                 Command = new RelayCommand(() => ViewModelNavigation.NavigateAsync<InviteUserViewModel>(this)),
