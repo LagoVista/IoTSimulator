@@ -41,23 +41,23 @@ $packageVersionNumber = "$versionContent.0.0"
 
 # Set the App Identity in the app manifest
 [xml] $content = Get-Content  $appmanifestFile
-$content.Package.Identity.Name = %UWPAPPIDENTITY%
+$content.Package.Identity.Name = $env:UWPAPPIDENTITY
 $content.Package.Identity.Version = $packageVersionNumber
 $content.save($appmanifestFile)
-"Set App Identity: %UWPAPPIDENTITY% and package version $packageVersionNumber in $appmanifestFile"
+"Set App Identity: $env:UWPAPPIDENTITY and package version $packageVersionNumber in $appmanifestFile"
 
 # Set the App Identity in the Store Association File
 [xml] $storeContent = (Get-Content  $storeAssociationFile) 
-$storeContent.StoreAssociation.ProductReservedInfo.MainPackageIdentityName = $uwpappidentity
+$storeContent.StoreAssociation.ProductReservedInfo.MainPackageIdentityName = $env:UWPAPPIDENTITY
 $storeContent.save($storeAssociationFile)
-"Set App Identity: %UWPAPPIDENTITY% in $storeAssociationFile"
+"Set App Identity: $env:UWPAPPIDENTITY in $storeAssociationFile"
 
 # Set the App Center Id for the current app.
 [string] $uwpAppFileContent = (Get-Content $uwpAppFile) -join "`r`n"
 $regEx = "MOBILE_CENTER_KEY = \""[0-9a-f\-]+\"";"
-$uwpAppFileContent = $uwpAppFileContent -replace $regEx, "MOBILE_CENTER_KEY = ""%APPCENTER_APPID%"";";
+$uwpAppFileContent = $uwpAppFileContent -replace $regEx, "MOBILE_CENTER_KEY = ""$env:APPCENTER_APPID"";";
 $uwpAppFileContent | Set-Content $uwpAppFile
-"Set App CenterId: %APPCENTER_APPID% in $uwpAppFile"
+"Set App CenterId: $env:APPCENTER_APPID in $uwpAppFile"
 
 # Set the Version Numbers in the AssemblyInfo.cs file.
 [string] $assemblyInfoContent = (Get-Content $assemblyInfoFile) -join "`r`n"
@@ -73,9 +73,9 @@ $assemblyInfoContent | Set-Content  $assemblyInfoFile
 $envRegEx = "#define ENV_[A-Z]*"
 "CUrrent Branch [$branch]"
 
-$ucaseEnvironment = "%APPCENTER_BRANCH%".ToUpper();
+$ucaseEnvironment = $env:APPCENTER_BRANCH.ToUpper();
 
-"Tag replace [$ucaseEnvironment%] [%APPCENTER_BRANCH%] [%APPCENTER_APPID%]"
+"Tag replace [$ucaseEnvironment] [$env:APPCENTER_APPID]"
 
 $mainAppContent = $mainAppContent -replace $envRegEx, "#define ENV_$ucaseEnvironment";
 
