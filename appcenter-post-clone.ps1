@@ -27,7 +27,7 @@ $assemblyInfoFile = "$uwpprojectdir\Properties\AssemblyInfo.cs"
 $mainAppFile = "$coreappdir\App.xaml.cs"
 
 "Copy Environment Specific Icons"
-Copy-Item -Path ".\BuildAssets\UWP\$branch\*"  -Destination "$uwpprojectdir\Assets" -Force
+Copy-Item -Path ".\BuildAssets\UWP\$env:APPCENTER_BRANCH\*"  -Destination "$uwpprojectdir\Assets" -Force
 
 $versionFile = "$scriptPath\version.txt"
 
