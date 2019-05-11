@@ -1,4 +1,4 @@
-﻿using LagoVista.Client.Core;
+using LagoVista.Client.Core;
 using LagoVista.Core.IOC;
 using LagoVista.Core.PlatformSupport;
 using LagoVista.Core.UWP.Services;

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="SoftwareLogisticsLLC.IoTSimulator-Dev" Publisher="CN=610EF21F-3A3C-4783-B4BF-B7C267BC0CA0" Version="1.1.1.1044" />
+  <Identity Name="SoftwareLogisticsLLC.IoTSimulator-Dev" Publisher="CN=610EF21F-3A3C-4783-B4BF-B7C267BC0CA0" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="37150d9e-4341-4cbb-9d4d-a2dc189f59c0" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>IoT Simulator - Dev</DisplayName>
@@ -19,7 +19,7 @@
         <uap:Extension Category="windows.protocol">
           <uap:Protocol Name="nuviot">
             <uap:Logo>assets\appicon.png</uap:Logo>
-            <uap:DisplayName>NuvIoT IoT Simulator</uap:DisplayName>
+            <uap:DisplayName>IoT Simulator - Dev</uap:DisplayName>
           </uap:Protocol>
         </uap:Extension>
       </Extensions>
