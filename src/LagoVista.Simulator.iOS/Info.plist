@@ -57,10 +57,10 @@
 		<string>Fonts/RobotoCondensed-Regular.ttf</string>
 	</array>
   <key>NSAppTransportSecurity</key>
-  <dic>
+  <dict>
     <key>NSAllowsArbitraryLoads</key>
     <true/>
-  </dic>
+  </dict>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon-60@2x.png</string>
