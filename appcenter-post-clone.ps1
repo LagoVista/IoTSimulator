@@ -46,6 +46,14 @@ $content.Package.Identity.Name = $env:UWPAPPIDENTITY
 $content.Package.Identity.Version = $packageVersionNumber
 $content.Package.Properties.DisplayName = $env:APP_DISPLAY_NAME
 $content.Package.Applications.Application.DisplayName = $env:APP_DISPLAY_NAME
+
+
+$$content.GetElementsByTagName("Package.Applications.Application.DisplayName", "http://schemas.microsoft.com/appx/manifest/uap/windows10") | 
+	ForEach-Object {
+		$_
+	#/$_.Portals.Portal.PortalID = "testvalueforportalid"
+    }
+
 $content.save($appmanifestFile)
 "Set App Identity: $env:UWPAPPIDENTITY and package version $packageVersionNumber in $appmanifestFile"
 
