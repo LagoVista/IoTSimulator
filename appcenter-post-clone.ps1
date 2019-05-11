@@ -45,9 +45,9 @@ $content.Package.Properties
 $content.Package.Identity.Name = $env:UWPAPPIDENTITY
 $content.Package.Identity.Version = $packageVersionNumber
 $content.Package.Properties.DisplayName = $env:APP_DISPLAY_NAME
-$content.Package.Applications.Application.DisplayName = $env:APP_DISPLAY_NAME
+#$content.Package.Applications.Application.DisplayName = $env:APP_DISPLAY_NAME
 
-$content.Package.Applications.Application.DisplayName
+$content.Package.Applications.Application
 
 #$$content.GetElementsByTagName("Package.Applications.Application.DisplayName", "http://schemas.microsoft.com/appx/manifest/uap/windows10") | 
 #	ForEach-Object {
