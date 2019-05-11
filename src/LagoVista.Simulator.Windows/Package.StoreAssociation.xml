@@ -360,7 +360,7 @@
   <ProductReservedInfo>
     <MainPackageIdentityName>SoftwareLogisticsLLC.IoTSimulator-Dev</MainPackageIdentityName>
     <ReservedNames>
-      <ReservedName>IoT Simulator - Dev</ReservedName>
+      <ReservedName>IoT Simulator</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames>

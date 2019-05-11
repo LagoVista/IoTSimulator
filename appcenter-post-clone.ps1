@@ -42,7 +42,6 @@ $packageVersionNumber = "$versionContent.0.0"
 [xml] $content = Get-Content  $appmanifestFile
 $content.Package.Identity.Name = $env:UWPAPPIDENTITY
 $content.Package.Identity.Version = $packageVersionNumber
-$content.Package.Properties.DisplayName = $env:APP_DISPLAY_NAME
 $content.save($appmanifestFile)
 "Set App Identity: $env:UWPAPPIDENTITY and package version $packageVersionNumber in $appmanifestFile"
 

@@ -3,7 +3,7 @@
   <Identity Name="SoftwareLogisticsLLC.IoTSimulator-Dev" Publisher="CN=610EF21F-3A3C-4783-B4BF-B7C267BC0CA0" Version="1.1.1.1044" />
   <mp:PhoneIdentity PhoneProductId="37150d9e-4341-4cbb-9d4d-a2dc189f59c0" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>IoT Simulator - Dev</DisplayName>
+    <DisplayName>IoT Simulator</DisplayName>
     <PublisherDisplayName>Software Logistics LLC</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -23,7 +23,7 @@
           </uap:Protocol>
         </uap:Extension>
       </Extensions>
-      <uap:VisualElements DisplayName="IoT Simulator - Dev" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="A free simulator provided Software Logistics to simulate IoT devices." BackgroundColor="white">
+      <uap:VisualElements DisplayName="IoT Simulator" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="A free simulator provided Software Logistics to simulate IoT devices." BackgroundColor="white">
         <uap:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\BadgeLogo.png" />
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="IoT Simulator" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png">
           <uap:ShowNameOnTiles>
