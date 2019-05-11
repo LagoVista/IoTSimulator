@@ -56,6 +56,11 @@
 		<string>Fonts/RobotoCondensed-LightItalic.ttf</string>
 		<string>Fonts/RobotoCondensed-Regular.ttf</string>
 	</array>
+  <key>NSAppTransportSecurity</key>
+  <dic>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+  </dic>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon-60@2x.png</string>
