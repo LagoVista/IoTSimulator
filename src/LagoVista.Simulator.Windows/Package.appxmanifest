@@ -19,7 +19,7 @@
         <uap:Extension Category="windows.protocol">
           <uap:Protocol Name="nuviot">
             <uap:Logo>assets\appicon.png</uap:Logo>
-            <uap:DisplayName>IoT Simulator</uap:DisplayName>
+            <uap:DisplayName>IoT Simulator - Dev</uap:DisplayName>
           </uap:Protocol>
         </uap:Extension>
       </Extensions>

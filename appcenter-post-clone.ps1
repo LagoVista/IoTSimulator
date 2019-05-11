@@ -42,12 +42,15 @@ $packageVersionNumber = "$versionContent.0.0"
 [xml] $content = Get-Content  $appmanifestFile
 $content.Package.Identity.Name = $env:UWPAPPIDENTITY
 $content.Package.Identity.Version = $packageVersionNumber
+$contnet.Package.Properties.DisplayName = $env:APP_DISPLAY_NAME
+$contnet.Package.Applications.Application.DisplayName = $env:APP_DISPLAY_NAME
 $content.save($appmanifestFile)
 "Set App Identity: $env:UWPAPPIDENTITY and package version $packageVersionNumber in $appmanifestFile"
 
 # Set the App Identity in the Store Association File
 [xml] $storeContent = (Get-Content  $storeAssociationFile) 
 $storeContent.StoreAssociation.ProductReservedInfo.MainPackageIdentityName = $env:UWPAPPIDENTITY
+$storeContent.StoreAssociation.ProductReservedInfo.ReservedNames.ReservedName = $env:APP_DISPLAY_NAME
 $storeContent.save($storeAssociationFile)
 "Set App Identity: $env:UWPAPPIDENTITY in $storeAssociationFile"
 
