@@ -17,7 +17,7 @@ namespace LagoVista.Simulator.Windows
 {
     sealed partial class App : Application
     {
-        private const string MOBILE_CENTER_KEY = "";
+        private const string MOBILE_CENTER_KEY = "f4def9b7-eb9f-465f-a474-1956ab779936";
 
         public App()
         {

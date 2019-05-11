@@ -358,9 +358,9 @@
     <Language Code="zu-za" InMinimumRequirementSet="true" />
   </SupportedLocales>
   <ProductReservedInfo>
-    <MainPackageIdentityName>SoftwareLogisticsLLC.IoTSimulator</MainPackageIdentityName>
+    <MainPackageIdentityName>SoftwareLogisticsLLC.IoTSimulator-Dev</MainPackageIdentityName>
     <ReservedNames>
-      <ReservedName>IoT Simulator</ReservedName>
+      <ReservedName>IoT Simulator - Dev</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames>

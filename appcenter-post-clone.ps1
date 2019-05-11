@@ -40,20 +40,17 @@ $packageVersionNumber = "$versionContent.0.0"
 
 # Set the App Identity in the app manifest
 [xml] $content = Get-Content  $appmanifestFile
-$content.Package.Properties
+#$content.Package.Properties
 
 $content.Package.Identity.Name = $env:UWPAPPIDENTITY
 $content.Package.Identity.Version = $packageVersionNumber
 $content.Package.Properties.DisplayName = $env:APP_DISPLAY_NAME
 #$content.Package.Applications.Application.DisplayName = $env:APP_DISPLAY_NAME
 
-"app concept $content.Package.Applications.Application"
-
-#$$content.GetElementsByTagName("Package.Applications.Application.DisplayName", "http://schemas.microsoft.com/appx/manifest/uap/windows10") | 
-#	ForEach-Object {
-#		$_
-	#/$_.Portals.Portal.PortalID = "testvalueforportalid"
-#    }
+$content.GetElementsByTagName("VisualElements", "http://schemas.microsoft.com/appx/manifest/uap/windows10") | 
+	ForEach-Object {
+		$_.DisplayName = $env:APP_DISPLAY_NAME
+	}
 
 $content.save($appmanifestFile)
 "Set App Identity: $env:UWPAPPIDENTITY and package version $packageVersionNumber in $appmanifestFile"
@@ -84,7 +81,6 @@ $assemblyInfoContent | Set-Content  $assemblyInfoFile
 # Set the server environment file in the Xamarin Forms App File
 [string] $mainAppContent = (Get-Content $mainAppFile) -join "`r`n"
 $envRegEx = "#define ENV_[A-Z]*"
-"CUrrent Branch [$branch]"
 
 $ucaseEnvironment = $env:APPCENTER_BRANCH.ToUpper();
 
@@ -93,6 +89,5 @@ $ucaseEnvironment = $env:APPCENTER_BRANCH.ToUpper();
 $mainAppContent = $mainAppContent -replace $envRegEx, "#define ENV_$ucaseEnvironment";
 
 $mainAppContent | Set-Content $mainAppFile
-"Set $ucaseEnvironment in $mainAppFile"
 "------------------------------------------------"
 ""
