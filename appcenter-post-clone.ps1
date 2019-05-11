@@ -40,10 +40,12 @@ $packageVersionNumber = "$versionContent.0.0"
 
 # Set the App Identity in the app manifest
 [xml] $content = Get-Content  $appmanifestFile
+$content.Package.Properties
+
 $content.Package.Identity.Name = $env:UWPAPPIDENTITY
 $content.Package.Identity.Version = $packageVersionNumber
-$contnet.Package.Properties.DisplayName = $env:APP_DISPLAY_NAME
-$contnet.Package.Applications.Application.DisplayName = $env:APP_DISPLAY_NAME
+$content.Package.Properties.DisplayName = $env:APP_DISPLAY_NAME
+$content.Package.Applications.Application.DisplayName = $env:APP_DISPLAY_NAME
 $content.save($appmanifestFile)
 "Set App Identity: $env:UWPAPPIDENTITY and package version $packageVersionNumber in $appmanifestFile"
 
@@ -80,8 +82,6 @@ $ucaseEnvironment = $env:APPCENTER_BRANCH.ToUpper();
 "Tag replace [$ucaseEnvironment] [$env:APPCENTER_APPID]"
 
 $mainAppContent = $mainAppContent -replace $envRegEx, "#define ENV_$ucaseEnvironment";
-
-"$mainAppContent"
 
 $mainAppContent | Set-Content $mainAppFile
 "Set $ucaseEnvironment in $mainAppFile"
