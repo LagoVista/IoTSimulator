@@ -31,9 +31,15 @@ namespace LagoVista.Simulator.iOS
             Console.WriteLine($"NSLog Version {version}");
 
             var versionParts = version.Split('.');
+            if(versionParts.Length == 3)
+            {
+                version += ".0";
+                versionParts = version.Split('.');
+            }
+
             var versionInfo = new VersionInfo();
             if (versionParts.Length != 4)
-            {
+            { 
                 throw new Exception("Expecting CFBundleVersion to be a version consisting of four parts 1.0.218.1231 [Major].[Minor].[Build].[Revision]");
             }
 
