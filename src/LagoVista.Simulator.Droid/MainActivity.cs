@@ -52,7 +52,7 @@ namespace LagoVista.Simulator.Droid
             versionInfo.Build = Convert.ToInt32(versionParts[2]);
             versionInfo.Revision = Convert.ToInt32(versionParts[3]);
 
-            var app = new App();            
+            var app = new LagoVista.Simulator.App();            
             app.SetVersion(versionInfo);
 
             LoadApplication(app);
