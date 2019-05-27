@@ -31,8 +31,15 @@ namespace LagoVista.Simulator.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
             var packageInfo = PackageManager.GetPackageInfo(PackageName, 0);
+            var version = packageInfo.VersionName;
 
-            var versionParts = packageInfo.VersionName.Split('.');
+            var versionParts = version.Split('.');
+            if(versionParts.Length == 3)
+            {
+                version += ".0";
+                versionParts = version.Split('.');
+            }
+
             var versionInfo = new VersionInfo();
             if (versionParts.Length != 4)
             {
@@ -45,7 +52,7 @@ namespace LagoVista.Simulator.Droid
             versionInfo.Build = Convert.ToInt32(versionParts[2]);
             versionInfo.Revision = Convert.ToInt32(versionParts[3]);
 
-            var app = new App();            
+            var app = new LagoVista.Simulator.App();            
             app.SetVersion(versionInfo);
 
             LoadApplication(app);
