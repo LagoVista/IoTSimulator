@@ -20,7 +20,7 @@
     <PackageReference Include="Microsoft.Azure.Devices.Shared" Version="1.16.0" />
     <PackageReference Include="Microsoft.Azure.EventHubs" Version="1.1.0" />
     <PackageReference Include="Microsoft.Azure.ServiceBus" Version="1.0.0" />
-    <PackageReference Include="Xamarin.Forms" Version="4.3.0.991250" />
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.910310" />
     <PackageReference Include="LagoVista.Core" Version="2.1.1064-beta1512" />
   </ItemGroup>
   <ItemGroup>
