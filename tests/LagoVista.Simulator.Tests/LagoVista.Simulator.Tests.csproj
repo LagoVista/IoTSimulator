@@ -8,8 +8,8 @@
     <PackageTargetFallback>$(PackageTargetFallback);dotnet5.4;portable-net451+win8</PackageTargetFallback>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="LagoVista.Client.Core" Version="1.2.1064-alpha1046" />
-    <PackageReference Include="LagoVista.XPlat" Version="1.2.1064-alpha1046" />
+    <PackageReference Include="LagoVista.Client.Core" Version="1.2.1065-alpha1210" />
+    <PackageReference Include="LagoVista.XPlat" Version="1.2.1065-alpha1210" />
     <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.20.1" />
     <PackageReference Include="Microsoft.Azure.EventHubs" Version="1.1.0" />
     <PackageReference Include="Microsoft.Azure.ServiceBus" Version="1.0.0" />
