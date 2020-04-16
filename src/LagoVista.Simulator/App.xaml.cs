@@ -1,7 +1,8 @@
 #define ENV_DEV
-//#define ENV_MASTER
+//
 #define ENV_STAGE
 #define ENV_LOCAL
+#define ENV_MASTER
 
 using LagoVista.Client.Core;
 using LagoVista.Client.Core.Models;

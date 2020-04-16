@@ -88,7 +88,7 @@ namespace LagoVista.Simulator.Core.ViewModels.SimulatorNetwork
             Debug.WriteLine(item.ToString());
         }
 
-
+       
         public override async Task<InvokeResult> SaveRecordAsync()
         {
             return await PerformNetworkOperation(async () =>
