@@ -12,6 +12,7 @@ using LagoVista.Simulator.Core.Resources;
 using LagoVista.Simulator.Core.ViewModels.Messages;
 using System;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace LagoVista.Simulator.Core.ViewModels.Simulator
@@ -151,14 +152,14 @@ namespace LagoVista.Simulator.Core.ViewModels.Simulator
             View[nameof(Model.Key).ToFieldKey()].IsUserEditable = LaunchArgs.LaunchType == LaunchTypes.Create;
             View[nameof(Model.DefaultTransport).ToFieldKey()].IsEnabled = LaunchArgs.LaunchType == LaunchTypes.Create;
 
-            var frmEditPasswordLink = FormField.Create(EDIT_PASSWORD_CONTROL, new LagoVista.Core.Attributes.FormFieldAttribute(FieldType: LagoVista.Core.Attributes.FieldTypes.LinkButton));
+            var frmEditPasswordLink = FormField.Create(EDIT_PASSWORD_CONTROL, new LagoVista.Core.Attributes.FormFieldAttribute(FieldType: LagoVista.Core.Attributes.FieldTypes.LinkButton), null);
             frmEditPasswordLink.Label = SimulatorCoreResources.SimulatorEdit_EditPassword;
             frmEditPasswordLink.Name = EDIT_PASSWORD_CONTROL.ToFieldKey();
             frmEditPasswordLink.Watermark = SimulatorCoreResources.SimulatorEdit_EditPassword_Link;
             frmEditPasswordLink.Command = EditPasswordCommand;
             View.Add(EDIT_PASSWORD_CONTROL.ToFieldKey(), frmEditPasswordLink);
 
-            var frmEditAccessKey = FormField.Create(EDIT_PASSWORD_CONTROL, new LagoVista.Core.Attributes.FormFieldAttribute(FieldType: LagoVista.Core.Attributes.FieldTypes.LinkButton));
+            var frmEditAccessKey = FormField.Create(EDIT_PASSWORD_CONTROL, new LagoVista.Core.Attributes.FormFieldAttribute(FieldType: LagoVista.Core.Attributes.FieldTypes.LinkButton), null);
             frmEditAccessKey.Label = SimulatorCoreResources.SimulatorEdit_EditAccessKey;
             frmEditAccessKey.Name = EDIT_ACCESSKEY_CONTROL.ToFieldKey();
             frmEditAccessKey.Watermark = SimulatorCoreResources.SimulatorEdit_EditAccesKey_Link;

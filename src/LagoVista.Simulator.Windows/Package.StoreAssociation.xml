@@ -2,6 +2,7 @@
 <StoreAssociation xmlns="http://schemas.microsoft.com/appx/2010/storeassociation">
   <Publisher>CN=610EF21F-3A3C-4783-B4BF-B7C267BC0CA0</Publisher>
   <PublisherDisplayName>Software Logistics LLC</PublisherDisplayName>
+  <DeveloperAccountType>MSA</DeveloperAccountType>
   <GeneratePackageHash>http://www.w3.org/2001/04/xmlenc#sha256</GeneratePackageHash>
   <SupportedLocales>
     <Language Code="af" InMinimumRequirementSet="true" />
@@ -240,6 +241,8 @@
     <Language Code="no-no" InMinimumRequirementSet="true" />
     <Language Code="nso" InMinimumRequirementSet="true" />
     <Language Code="nso-za" InMinimumRequirementSet="true" />
+    <Language Code="om" InMinimumRequirementSet="false" />
+    <Language Code="om-et" InMinimumRequirementSet="false" />
     <Language Code="or" InMinimumRequirementSet="true" />
     <Language Code="or-in" InMinimumRequirementSet="true" />
     <Language Code="pa" InMinimumRequirementSet="true" />
@@ -382,6 +385,7 @@
     <MainPackageIdentityName>SoftwareLogisticsLLC.LagoVistaIoT</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.NuvIoTSimulator</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.SeaWolf</MainPackageIdentityName>
+    <MainPackageIdentityName>SoftwareLogisticsLLC.SeaWolfMarine</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.TankBot</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.TankBotFirmware</MainPackageIdentityName>
     <MainPackageIdentityName>SoftwareLogisticsLLC.YahamaAVRController</MainPackageIdentityName>

@@ -59,5 +59,7 @@ namespace LagoVista.Simulator
         public string InstanceAuthKey { get; set; }
         public string DeviceId { get; set; }
         public string DeviceRepoId { get; set; }
+
+        public EntityHeader SystemOwnerOrg => throw new System.NotImplementedException();
     }
 }

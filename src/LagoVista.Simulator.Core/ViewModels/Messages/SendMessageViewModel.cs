@@ -363,6 +363,8 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
 #endif
         }
 
+        private static readonly DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
         private async Task SendMQTTMessage()
         {
             var qos = QOS.QOS0;
@@ -376,7 +378,52 @@ namespace LagoVista.Simulator.Core.ViewModels.Messages
                 }
             }
 
-            await LaunchArgs.GetParam<IMQTTDeviceClient>("mqttclient").PublishAsync(ReplaceTokens(MsgTemplate.Topic), GetMessageBytes(), qos, MsgTemplate.RetainFlag);
+            if (MsgTemplate.PayloadType.Value == PaylodTypes.PointArray)
+            {
+
+                var rnd = new Random();
+
+                var bytes = new List<Byte>();
+
+                var parameters = new Dictionary<string, string>();
+
+                var payload = ReplaceTokens(MsgTemplate.TextPayload);
+                var parts = payload.Split(';');
+                foreach (var part in parts)
+                {
+                    if (part.Split('=').Length == 2)
+                    {
+                        var key = part.Split('=')[0];
+                        var value = part.Split('=')[1];
+                        parameters.Add(key, value);
+                    }
+                }
+
+                var pointCount = parameters.ContainsKey("pointCount") ? int.Parse(parameters["pointCount"]) : 300;
+                var sensorIndex = parameters.ContainsKey("sensorIndex") ? double.Parse(parameters["sensorIndex"]) : 1.0;
+                var interval = parameters.ContainsKey("interval") ? double.Parse(parameters["interval"]) : 1.0;
+                var min = parameters.ContainsKey("min") ? double.Parse(parameters["min"]) : 0.0;
+                var max = parameters.ContainsKey("max") ? double.Parse(parameters["max"]) : 100.0;
+
+                var range = max - min;
+
+                var seconds = Convert.ToInt32((DateTime.UtcNow - epoch).TotalSeconds);
+                bytes.AddRange(BitConverter.GetBytes(seconds));
+                bytes.AddRange(BitConverter.GetBytes((UInt16)sensorIndex));
+                bytes.AddRange(BitConverter.GetBytes((UInt16)pointCount));
+                bytes.AddRange(BitConverter.GetBytes((UInt16)(interval * 10)));
+                for (var idx = 0; idx < pointCount; ++idx)
+                {
+                    var dataPoint = (rnd.NextDouble() * range) + min;
+                    bytes.AddRange(BitConverter.GetBytes((Int16)(dataPoint * 100)));
+                }
+
+                await LaunchArgs.GetParam<IMQTTDeviceClient>("mqttclient").PublishAsync(ReplaceTokens(MsgTemplate.Topic), bytes.ToArray(), qos, MsgTemplate.RetainFlag);
+            }
+            else
+            {
+                await LaunchArgs.GetParam<IMQTTDeviceClient>("mqttclient").PublishAsync(ReplaceTokens(MsgTemplate.Topic), GetMessageBytes(), qos, MsgTemplate.RetainFlag);
+            }
 
             ReceivedContennt = $"{DateTime.Now} {SimulatorCoreResources.SendMessage_MessagePublished}";
         }
